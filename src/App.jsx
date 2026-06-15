@@ -302,7 +302,7 @@ CRITICAL RULES — never break these:
 
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.textPrimary, fontFamily: "'Inter', sans-serif" }}>
-      {!disclaimerAccepted && <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} />}
+     {/* <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} /> */}
       <RiskBanner />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
