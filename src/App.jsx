@@ -302,7 +302,7 @@ CRITICAL RULES — never break these:
 
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.textPrimary, fontFamily: "'Inter', sans-serif" }}>
-     {/* <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} /> */}
+      {!disclaimerAccepted && <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} />}
       <RiskBanner />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
@@ -525,77 +525,85 @@ CRITICAL RULES — never break these:
 
         {/* TOOLS */}
         {activeTab === "tools" && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-            <div>
-              <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-                <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16 }}>⚡ Sats Converter</div>
-                <div style={{ marginBottom: 16 }}>
-                  <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>CAD Amount ($)</label>
-                  <input type="number" value={satsAmount} onChange={e => setSatsAmount(Number(e.target.value))}
-                    style={{ width: "100%", background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
+          <div>
+            <style>{`
+              @media (min-width: 640px) {
+                .tools-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; }
+                .chat-window { height: 500px !important; }
+              }
+            `}</style>
+            <div className="tools-grid" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              <div>
+                <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
+                  <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16 }}>⚡ Sats Converter</div>
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>CAD Amount ($)</label>
+                    <input type="number" value={satsAmount} onChange={e => setSatsAmount(Number(e.target.value))}
+                      style={{ width: "100%", background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
+                  </div>
+                  <div style={{ background: "#0A0F1E", borderRadius: 8, padding: 16, textAlign: "center" }}>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 4 }}>${satsAmount} CAD =</div>
+                    <div style={{ fontSize: 28, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{cadToSats} sats</div>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>satoshis ⚡</div>
+                  </div>
                 </div>
-                <div style={{ background: "#0A0F1E", borderRadius: 8, padding: 16, textAlign: "center" }}>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 4 }}>${satsAmount} CAD =</div>
-                  <div style={{ fontSize: 28, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{cadToSats} sats</div>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>satoshis ⚡</div>
+
+                <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
+                  <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12 }}>🌡️ Market Sentiment</div>
+                  {fearGreed && (
+                    <div>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                        <span style={{ fontSize: 13, color: COLORS.textMuted }}>Fear & Greed Index</span>
+                        <span style={{ fontSize: 13, color: fgColor, fontWeight: 600 }}>{fearGreed.label}</span>
+                      </div>
+                      <div style={{ background: "#0A0F1E", borderRadius: 6, height: 12, overflow: "hidden" }}>
+                        <div style={{ width: `${fearGreed.value}%`, height: "100%", background: `linear-gradient(90deg, ${COLORS.red}, ${COLORS.orange}, ${COLORS.green})`, borderRadius: 6, transition: "width 1s ease" }} />
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6, fontSize: 11, color: COLORS.textMuted }}>
+                        <span>Extreme Fear</span><span>{fearGreed.value}/100</span><span>Extreme Greed</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
-                <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12 }}>🌡️ Market Sentiment</div>
-                {fearGreed && (
+              {/* AI Chat */}
+              <div className="chat-window" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, display: "flex", flexDirection: "column", minHeight: 380 }}>
+                <div style={{ padding: "16px 20px", borderBottom: `1px solid ${COLORS.cardBorder}`, display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 28, height: 28, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff", fontWeight: 700 }}>₿</div>
                   <div>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                      <span style={{ fontSize: 13, color: COLORS.textMuted }}>Fear & Greed Index</span>
-                      <span style={{ fontSize: 13, color: fgColor, fontWeight: 600 }}>{fearGreed.label}</span>
-                    </div>
-                    <div style={{ background: "#0A0F1E", borderRadius: 6, height: 12, overflow: "hidden" }}>
-                      <div style={{ width: `${fearGreed.value}%`, height: "100%", background: `linear-gradient(90deg, ${COLORS.red}, ${COLORS.orange}, ${COLORS.green})`, borderRadius: 6, transition: "width 1s ease" }} />
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6, fontSize: 11, color: COLORS.textMuted }}>
-                      <span>Extreme Fear</span><span>{fearGreed.value}/100</span><span>Extreme Greed</span>
-                    </div>
+                    <div style={{ fontWeight: 600, fontSize: 14 }}>BTC Planner AI Guide</div>
+                    <div style={{ fontSize: 11, color: COLORS.green }}>● Online</div>
                   </div>
-                )}
-              </div>
-            </div>
-
-            {/* AI Chat */}
-            <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, display: "flex", flexDirection: "column", height: 500 }}>
-              <div style={{ padding: "16px 20px", borderBottom: `1px solid ${COLORS.cardBorder}`, display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 28, height: 28, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff", fontWeight: 700 }}>₿</div>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 14 }}>BTC Planner AI Guide</div>
-                  <div style={{ fontSize: 11, color: COLORS.green }}>● Online</div>
                 </div>
-              </div>
-              <div style={{ flex: 1, overflowY: "auto", padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
-                {chatMessages.map((msg, i) => (
-                  <div key={i} style={{ display: "flex", justifyContent: msg.role === "user" ? "flex-end" : "flex-start" }}>
-                    <div style={{
-                      maxWidth: "80%", padding: "10px 14px",
-                      borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
-                      background: msg.role === "user" ? COLORS.orange : "#1E2A3B",
-                      color: msg.role === "user" ? "#000" : COLORS.textPrimary,
-                      fontSize: 13, lineHeight: 1.6,
-                    }}>
-                      {msg.text}
+                <div style={{ flex: 1, overflowY: "auto", padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
+                  {chatMessages.map((msg, i) => (
+                    <div key={i} style={{ display: "flex", justifyContent: msg.role === "user" ? "flex-end" : "flex-start" }}>
+                      <div style={{
+                        maxWidth: "85%", padding: "10px 14px",
+                        borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
+                        background: msg.role === "user" ? COLORS.orange : "#1E2A3B",
+                        color: msg.role === "user" ? "#000" : COLORS.textPrimary,
+                        fontSize: 13, lineHeight: 1.6,
+                      }}>
+                        {msg.text}
+                      </div>
                     </div>
-                  </div>
-                ))}
-                {chatLoading && (
-                  <div style={{ display: "flex", gap: 4, padding: "8px 14px", background: "#1E2A3B", borderRadius: "16px 16px 16px 4px", width: "fit-content" }}>
-                    {[0, 1, 2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.textMuted, animation: `pulse ${0.6 + i * 0.2}s infinite` }} />)}
-                  </div>
-                )}
-              </div>
-              <div style={{ padding: 12, borderTop: `1px solid ${COLORS.cardBorder}`, display: "flex", gap: 8 }}>
-                <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendChat()}
-                  placeholder="Ask anything about Bitcoin…"
-                  style={{ flex: 1, background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 13, fontFamily: "'Inter', sans-serif" }} />
-                <button onClick={sendChat} style={{ background: COLORS.orange, border: "none", borderRadius: 8, padding: "10px 16px", color: "#000", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>
-                  Send
-                </button>
+                  ))}
+                  {chatLoading && (
+                    <div style={{ display: "flex", gap: 4, padding: "8px 14px", background: "#1E2A3B", borderRadius: "16px 16px 16px 4px", width: "fit-content" }}>
+                      {[0, 1, 2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.textMuted, animation: `pulse ${0.6 + i * 0.2}s infinite` }} />)}
+                    </div>
+                  )}
+                </div>
+                <div style={{ padding: 12, borderTop: `1px solid ${COLORS.cardBorder}`, display: "flex", gap: 8 }}>
+                  <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendChat()}
+                    placeholder="Ask anything about Bitcoin…"
+                    style={{ flex: 1, background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 13, fontFamily: "'Inter', sans-serif" }} />
+                  <button onClick={sendChat} style={{ background: COLORS.orange, border: "none", borderRadius: 8, padding: "10px 16px", color: "#000", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>
+                    Send
+                  </button>
+                </div>
               </div>
             </div>
           </div>
