@@ -104,25 +104,25 @@ const affiliates = [
   {
     category: "🇨🇦 Canadian Exchanges",
     items: [
-      { name: "Shakepay", desc: "Best for Canadians — buy BTC via e-Transfer, no fees on first $200", commission: "$30/referral", url: "#shakepay", badge: "Top Pick" },
-      { name: "Newton", desc: "Zero-commission trading, FINTRAC registered, CDIC eligible cash", commission: "$25/referral", url: "#newton", badge: null },
-      { name: "Bull Bitcoin", desc: "Bitcoin-only, non-custodial. For those who want self-sovereignty", commission: "$20/referral", url: "#bullbitcoin", badge: "BTC Only" },
-      { name: "Kraken", desc: "Global exchange, low fees, trusted since 2011. Available in Canada", commission: "20% lifetime fees", url: "#kraken", badge: null },
+      { name: "Shakepay", desc: "Buy BTC via Interac e-Transfer. One of the easiest ways to get started in Canada.", url: "https://shakepay.com" },
+      { name: "Newton", desc: "Zero-commission trading, FINTRAC registered, CDIC eligible cash holdings.", url: "https://newton.co" },
+      { name: "Bull Bitcoin", desc: "Bitcoin-only, non-custodial exchange. For those who want full self-sovereignty.", url: "https://bullbitcoin.com" },
+      { name: "Kraken", desc: "Global exchange with low fees, trusted since 2011 and available in Canada.", url: "https://kraken.com" },
     ]
   },
   {
     category: "🔐 Cold Storage Wallets",
     items: [
-      { name: "Ledger Nano X", desc: "Industry standard hardware wallet. Bluetooth enabled, stores 5,500+ assets", commission: "10% (~$12/sale)", url: "#ledger", badge: "Most Popular" },
-      { name: "Trezor Model T", desc: "Open-source firmware, touchscreen, no Bluetooth (air-gapped option)", commission: "10% (~$15/sale)", url: "#trezor", badge: null },
-      { name: "Coldcard Mk4", desc: "Bitcoin-only. The most secure wallet on the market. For serious stackers", commission: "8% (~$14/sale)", url: "#coldcard", badge: "Max Security" },
+      { name: "Ledger Nano X", desc: "Industry standard hardware wallet with Bluetooth support. Widely trusted and easy to set up.", url: "https://ledger.com" },
+      { name: "Trezor Model T", desc: "Open-source firmware, touchscreen interface. A great air-gapped option for security-conscious users.", url: "https://trezor.io" },
+      { name: "Coldcard Mk4", desc: "Bitcoin-only hardware wallet. Considered the most secure option for serious long-term stackers.", url: "https://coldcard.com" },
     ]
   },
   {
     category: "📈 DCA Platforms",
     items: [
-      { name: "Swan Bitcoin", desc: "Automated weekly/monthly buys, low fees, phenomenal education resources", commission: "$100/referral", url: "#swan", badge: "💰 Best Commission" },
-      { name: "River", desc: "Low fees, automatic recurring buys, US-focused but ships globally", commission: "$50/referral", url: "#river", badge: null },
+      { name: "Swan Bitcoin", desc: "Automated weekly or monthly Bitcoin buys with low fees and excellent educational resources.", url: "https://swanbitcoin.com" },
+      { name: "River", desc: "Clean interface, low fees, and automatic recurring buys. US-focused but accessible globally.", url: "https://river.com" },
     ]
   }
 ];
@@ -265,7 +265,7 @@ export default function BTCPlanner({ onNavigate }) {
     setChatInput("");
     setChatLoading(true);
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -405,9 +405,9 @@ CRITICAL RULES — never break these:
                 <MapleLeaf size={14} color={COLORS.maple} opacity={0.7} />
               </div>
               {[
-                { step: "1", title: "If you decide to buy BTC", body: "You can use a Canadian exchange like Kraken (only use CSA authorized Bitcoin exchanges). Fund via Interac e-Transfer. Start with as little as $20 CAD." },
-                { step: "2", title: "Set up a DCA (Dollar-Cost-Average) plan", body: "Automate weekly or monthly buys." },
-                { step: "3", title: "Move to cold storage", body: "When you're ready, you can get a hardware wallet (Like Trezor or Ledger). Your keys, your Bitcoin." },
+                { step: "1", title: "Buy your first Bitcoin", body: "Use a Canadian exchange like Shakepay or Newton. Fund via Interac e-Transfer. Start with as little as $20 CAD." },
+                { step: "2", title: "Set up a DCA plan", body: "Automate weekly or monthly buys. Remove emotion. Stack consistently regardless of price." },
+                { step: "3", title: "Move to cold storage", body: "Once you have $500+, get a hardware wallet (Ledger or Trezor). Your keys, your Bitcoin." },
               ].map(s => (
                 <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "flex-start" }}>
                   <div style={{ minWidth: 32, height: 32, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "#000" }}>{s.step}</div>
@@ -617,15 +617,11 @@ CRITICAL RULES — never break these:
                   {cat.items.map((item, ii) => (
                     <div key={ii} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 20, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
                       <div style={{ flex: 1 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                          <span style={{ fontWeight: 600, fontSize: 15 }}>{item.name}</span>
-                          {item.badge && <span style={{ fontSize: 11, background: `${COLORS.orange}22`, color: COLORS.orange, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>{item.badge}</span>}
-                        </div>
-                        <div style={{ fontSize: 13, color: COLORS.textSub, marginBottom: 6, lineHeight: 1.5 }}>{item.desc}</div>
-                        <div style={{ fontSize: 12, color: COLORS.green }}>💰 Commission: {item.commission}</div>
+                        <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 6 }}>{item.name}</div>
+                        <div style={{ fontSize: 13, color: COLORS.textSub, lineHeight: 1.5 }}>{item.desc}</div>
                       </div>
-                      <a href={item.url} style={{ background: COLORS.orange, color: "#000", padding: "10px 18px", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 13, whiteSpace: "nowrap", fontFamily: "'Space Grotesk', sans-serif" }}>
-                        Get Started →
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ background: COLORS.orange, color: "#000", padding: "10px 18px", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 13, whiteSpace: "nowrap", fontFamily: "'Space Grotesk', sans-serif" }}>
+                        Visit →
                       </a>
                     </div>
                   ))}
