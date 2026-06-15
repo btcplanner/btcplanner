@@ -1,12 +1,22 @@
 export default async function handler(req, res) {
-  // Only allow POST
+  // Set CORS headers on every response
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle preflight OPTIONS request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  // Only allow POST beyond this point
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   // Check API key is configured
   if (!process.env.ANTHROPIC_API_KEY) {
-    return res.status(500).json({ error: 'API key not configured' });
+    return res.status(500).json({ error: 'API key not configured on server' });
   }
 
   try {
@@ -24,7 +34,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       console.error('Anthropic API error:', data);
-      return res.status(response.status).json({ error: data.error?.message || 'API error' });
+      return res.status(response.status).json({ error: data.error?.message || 'Anthropic API error' });
     }
 
     return res.status(200).json(data);
