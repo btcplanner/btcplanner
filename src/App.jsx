@@ -405,9 +405,9 @@ CRITICAL RULES — never break these:
                 <MapleLeaf size={14} color={COLORS.maple} opacity={0.7} />
               </div>
               {[
-                { step: "1", title: "Buy your first Bitcoin", body: "Use a Canadian exchange like Shakepay or Newton. Fund via Interac e-Transfer. Start with as little as $20 CAD." },
-                { step: "2", title: "Set up a DCA plan", body: "Automate weekly or monthly buys. Remove emotion. Stack consistently regardless of price." },
-                { step: "3", title: "Move to cold storage", body: "Once you have $500+, get a hardware wallet (Ledger or Trezor). Your keys, your Bitcoin." },
+                { step: "1", title: "If you decide to buy BTC", body: "You can use a Canadian exchange like Kraken (only use CSA authorized Bitcoin exchanges). Fund via Interac e-Transfer. Start with as little as $20 CAD." },
+                { step: "2", title: "Set up a DCA (Dollar-Cost-Average) plan", body: "Automate weekly or monthly buys." },
+                { step: "3", title: "Move to cold storage", body: "When you're ready, you can get a hardware wallet (Like Trezor or Ledger). Your keys, your Bitcoin." },
               ].map(s => (
                 <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "flex-start" }}>
                   <div style={{ minWidth: 32, height: 32, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "#000" }}>{s.step}</div>
