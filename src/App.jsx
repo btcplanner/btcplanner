@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-// ── DISCLAIMER MODAL ──────────────────────────────────────────────
+// ── DISCLAIMER MODAL (simplified, mobile-friendly) ──────────────
 function DisclaimerModal({ onAccept }) {
   return (
     <div style={{
@@ -10,57 +10,25 @@ function DisclaimerModal({ onAccept }) {
     }}>
       <div style={{
         background: "#111827", border: "1px solid #1E2A3B",
-        borderRadius: 16, maxWidth: 520, width: "100%",
-        padding: "32px 28px", boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
+        borderRadius: 16, maxWidth: 400, width: "100%",
+        padding: "28px 24px", boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
       }}>
-        {/* Header */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-          <div style={{ width: 42, height: 42, borderRadius: 10, background: "#F7931A", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }}>₿</div>
-          <div>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#F5F5F0" }}>BTC Planner</div>
-            <div style={{ fontSize: 11, color: "#6B7280" }}>Important Notice Before You Continue</div>
-          </div>
+          <div style={{ width: 38, height: 38, borderRadius: 10, background: "#F7931A", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }}>₿</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#F5F5F0" }}>BTC Planner</div>
         </div>
 
-        {/* Risk warning box */}
-        <div style={{ background: "#1a0a00", border: "1px solid #7C4A0D", borderRadius: 10, padding: 16, marginBottom: 20 }}>
-          <div style={{ fontSize: 13, fontWeight: 700, color: "#F7931A", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.06em" }}>⚠️ Risk Warning</div>
-          <div style={{ fontSize: 13, color: "#D1D5DB", lineHeight: 1.7 }}>
-            Cryptocurrency investments are <strong style={{ color: "#F5F5F0" }}>highly speculative and volatile</strong>. You could lose some or all of your invested capital. Bitcoin has no guaranteed value and is not insured or protected by any Canadian government body, CDIC, or financial regulator.
-          </div>
+        <div style={{ fontSize: 14, color: "#D1D5DB", lineHeight: 1.8, marginBottom: 24 }}>
+          This site is for <strong style={{ color: "#F5F5F0" }}>informational and educational purposes only</strong>. Nothing here is financial advice. Always do your own research and consult a qualified advisor before making investment decisions.
         </div>
 
-        {/* Disclaimer text */}
-        <div style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.8, marginBottom: 24 }}>
-          <p style={{ marginBottom: 10 }}>
-            <strong style={{ color: "#F5F5F0" }}>Not Financial Advice.</strong> All content on btcplanner.ca — including tools, calculators, AI chat responses, and educational materials — is provided for <strong style={{ color: "#F5F5F0" }}>informational and educational purposes only</strong>. Nothing on this site constitutes financial, investment, legal, or tax advice.
-          </p>
-          <p style={{ marginBottom: 10 }}>
-            <strong style={{ color: "#F5F5F0" }}>No Advisor Relationship.</strong> BTC Planner is not a registered investment advisor, financial planner, or securities dealer under any Canadian provincial or federal law. Using this site does not create an advisor-client relationship.
-          </p>
-          <p>
-            <strong style={{ color: "#F5F5F0" }}>Do Your Own Research.</strong> Always consult a qualified financial advisor before making any investment decisions. Past performance of Bitcoin is not indicative of future results.
-          </p>
-        </div>
-
-        {/* Affiliate disclosure */}
-        <div style={{ background: "#0A0F1E", borderRadius: 8, padding: 12, marginBottom: 24, fontSize: 12, color: "#6B7280", lineHeight: 1.6 }}>
-          <strong style={{ color: "#9CA3AF" }}>Affiliate Disclosure:</strong> This site contains affiliate links. BTC Planner may earn a commission if you sign up through our links, at no additional cost to you.
-        </div>
-
-        {/* Accept button */}
         <button onClick={onAccept} style={{
           width: "100%", background: "#F7931A", border: "none", borderRadius: 10,
           padding: "14px 0", color: "#000", fontWeight: 700, fontSize: 15,
           fontFamily: "'Space Grotesk', sans-serif", cursor: "pointer",
-          letterSpacing: "0.02em",
         }}>
-          I Understand — Enter BTC Planner
+          I Understand
         </button>
-
-        <div style={{ textAlign: "center", marginTop: 12, fontSize: 11, color: "#4B5563" }}>
-          By continuing you agree to our Terms of Use and acknowledge these risks.
-        </div>
       </div>
     </div>
   );
@@ -200,7 +168,9 @@ function StatCard({ label, value, sub, color, pulse }) {
 }
 
 export default function BTCPlanner({ onNavigate }) {
-  const [disclaimerAccepted, setDisclaimerAccepted] = useState(false);
+  const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
+    try { return sessionStorage.getItem("btcplanner_disclaimer") === "1"; } catch { return false; }
+  });
   const [btcPrice, setBtcPrice] = useState(null);
   const [priceChange, setPriceChange] = useState(null);
   const [fearGreed, setFearGreed] = useState(null);
@@ -258,20 +228,7 @@ export default function BTCPlanner({ onNavigate }) {
   const satsValue = btcPrice ? ((satsAmount / 100_000_000) * btcPrice.cad).toFixed(2) : "—";
   const cadToSats = btcPrice ? Math.floor((satsAmount / btcPrice.cad) * 100_000_000).toLocaleString() : "—";
 
-  async function sendChat() {
-    if (!chatInput.trim()) return;
-    const userMsg = chatInput.trim();
-    setChatMessages(prev => [...prev, { role: "user", text: userMsg }]);
-    setChatInput("");
-    setChatLoading(true);
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-6",
-          max_tokens: 1000,
-          system: `You are a Bitcoin education assistant on BTCPlanner.ca, a Canadian Bitcoin information site. Your role is strictly educational.
+  const chatSystemPrompt = `You are a Bitcoin education assistant on BTCPlanner.ca, a Canadian Bitcoin information site. Your role is strictly educational.
 
 CRITICAL RULES — never break these:
 1. NEVER tell anyone to buy, sell, or hold Bitcoin or any asset. You are NOT a financial advisor.
@@ -281,14 +238,31 @@ CRITICAL RULES — never break these:
 5. Always end any response touching on investment decisions with: "This is educational information only — not financial advice. Please do your own research and consult a qualified advisor."
 6. Mention Canadian context (CRA taxes, CAD, Shakepay/Newton/Bull Bitcoin) where relevant.
 7. Keep answers concise (2-4 sentences) and friendly.
-8. You can explain HOW things work (DCA, cold storage, wallets, exchanges). Never advise WHETHER someone should do them.`,
-          messages: [
-            ...chatMessages.filter((m, idx) => idx > 0).map(m => ({ role: m.role === "assistant" ? "assistant" : "user", content: m.text })),
-            { role: "user", content: userMsg }
-          ]
+8. You can explain HOW things work (DCA, cold storage, wallets, exchanges). Never advise WHETHER someone should do them.`;
+
+  async function sendChat() {
+    if (!chatInput.trim()) return;
+    const userMsg = chatInput.trim();
+    setChatMessages(prev => [...prev, { role: "user", text: userMsg }]);
+    setChatInput("");
+    setChatLoading(true);
+    try {
+      const history = chatMessages
+        .filter((_, idx) => idx > 0)
+        .map(m => ({ role: m.role === "assistant" ? "assistant" : "user", content: m.text }));
+
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system: chatSystemPrompt,
+          messages: [...history, { role: "user", content: userMsg }]
         })
       });
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "API error");
+      }
       const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Try again!";
       setChatMessages(prev => [...prev, { role: "assistant", text: reply }]);
     } catch {
@@ -298,11 +272,20 @@ CRITICAL RULES — never break these:
   }
 
   const fgColor = fearGreed ? (fearGreed.value > 60 ? COLORS.green : fearGreed.value > 40 ? COLORS.orange : COLORS.red) : COLORS.textMuted;
-  const tabs = ["dashboard", "dca", "learn", "tools", "affiliates"];
+  const tabs = [
+    { id: "dashboard", label: "Home" },
+    { id: "dca", label: "DCA" },
+    { id: "learn", label: "Learn" },
+    { id: "tools", label: "Tools" },
+    { id: "affiliates", label: "Start" },
+  ];
 
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.textPrimary, fontFamily: "'Inter', sans-serif" }}>
-     {/* <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} /> */}
+      {!disclaimerAccepted && <DisclaimerModal onAccept={() => {
+        setDisclaimerAccepted(true);
+        try { sessionStorage.setItem("btcplanner_disclaimer", "1"); } catch {}
+      }} />}
       <RiskBanner />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
@@ -355,16 +338,16 @@ CRITICAL RULES — never break these:
       </div>
 
       {/* ── NAV ── */}
-      <div style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#080D1A", overflowX: "auto" }}>
+      <div style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#080D1A" }}>
         {tabs.map(tab => (
-          <button key={tab} onClick={() => setActiveTab(tab)} style={{
-            padding: "12px 20px", background: "none", border: "none",
-            color: activeTab === tab ? COLORS.orange : COLORS.textMuted,
-            borderBottom: activeTab === tab ? `2px solid ${COLORS.orange}` : "2px solid transparent",
+          <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
+            flex: 1, padding: "12px 0", background: "none", border: "none",
+            color: activeTab === tab.id ? COLORS.orange : COLORS.textMuted,
+            borderBottom: activeTab === tab.id ? `2px solid ${COLORS.orange}` : "2px solid transparent",
             fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 500,
-            textTransform: "capitalize", whiteSpace: "nowrap",
+            whiteSpace: "nowrap", textAlign: "center",
           }}>
-            {tab === "dca" ? "DCA Calculator" : tab === "affiliates" ? "Get Started" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+            {tab.label}
           </button>
         ))}
       </div>
