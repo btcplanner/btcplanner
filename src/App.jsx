@@ -355,12 +355,12 @@ CRITICAL RULES — never break these:
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 20, color: COLORS.textPrimary, letterSpacing: "-0.3px" }}>
-                BTC PLANNER
+                BTCPLANNER.CA
               </span>
               <CanadaFlag size={18} />
             </div>
             <div style={{ fontSize: 11, color: COLORS.textMuted, letterSpacing: "0.04em" }}>
-              btcplanner.ca — Canada's Bitcoin guide
+              Canada's Bitcoin guide
             </div>
           </div>
         </div>
@@ -700,7 +700,7 @@ CRITICAL RULES — never break these:
       <div style={{ borderTop: `1px solid ${COLORS.cardBorder}`, padding: "28px 24px", background: COLORS.card, marginTop: 40 }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 10 }}>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTC PLANNER</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTCPLANNER.CA</span>
             <CanadaFlag size={14} />
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginBottom: 12, flexWrap: "wrap" }}>
