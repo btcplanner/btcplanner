@@ -1,30 +1,29 @@
 import { useState, useEffect, useCallback } from "react";
 
-// ── DISCLAIMER MODAL (simplified, mobile-friendly) ──────────────
 function DisclaimerModal({ onAccept }) {
   return (
     <div style={{
-      position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)",
+      position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)",
       display: "flex", alignItems: "center", justifyContent: "center",
       zIndex: 9999, padding: 16,
     }}>
       <div style={{
-        background: "#111827", border: "1px solid #1E2A3B",
+        background: "#fff", border: "1px solid #E5E7EB",
         borderRadius: 16, maxWidth: 400, width: "100%",
-        padding: "28px 24px", boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
+        padding: "28px 24px", boxShadow: "0 25px 60px rgba(0,0,0,0.15)",
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
           <div style={{ width: 38, height: 38, borderRadius: 10, background: "#F7931A", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }}>₿</div>
-          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#F5F5F0" }}>BTC Planner</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#1D1D1B" }}>BTC Planner</div>
         </div>
 
-        <div style={{ fontSize: 14, color: "#D1D5DB", lineHeight: 1.8, marginBottom: 24 }}>
-          This site is for <strong style={{ color: "#F5F5F0" }}>informational and educational purposes only</strong>. Nothing here is financial advice. Always do your own research and consult a qualified advisor before making investment decisions.
+        <div style={{ fontSize: 14, color: "#4B5563", lineHeight: 1.8, marginBottom: 24 }}>
+          This site is for <strong style={{ color: "#1D1D1B" }}>informational and educational purposes only</strong>. Nothing here is financial advice. Always do your own research and consult a qualified advisor before making investment decisions.
         </div>
 
         <button onClick={onAccept} style={{
           width: "100%", background: "#F7931A", border: "none", borderRadius: 10,
-          padding: "14px 0", color: "#000", fontWeight: 700, fontSize: 15,
+          padding: "14px 0", color: "#fff", fontWeight: 700, fontSize: 15,
           fontFamily: "'Space Grotesk', sans-serif", cursor: "pointer",
         }}>
           I Understand
@@ -34,63 +33,59 @@ function DisclaimerModal({ onAccept }) {
   );
 }
 
-// ── RISK BANNER (persistent top bar) ─────────────────────────────
 function RiskBanner() {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
     <div style={{
-      background: "#1a0a00", borderBottom: "1px solid #7C4A0D",
+      background: "#FFF7ED", borderBottom: "1px solid #F7931A",
       padding: "8px 24px", display: "flex", alignItems: "center",
       justifyContent: "space-between", gap: 12,
     }}>
-      <div style={{ fontSize: 12, color: "#D1D5DB", lineHeight: 1.5 }}>
-        <span style={{ color: "#F7931A", fontWeight: 600 }}>⚠️ Risk Warning: </span>
-        Crypto assets are highly volatile and unregulated. You may lose your entire investment. This site is for educational purposes only — not financial advice.
+      <div style={{ fontSize: 12, color: "#4B5563", lineHeight: 1.5 }}>
+        <span style={{ color: "#F7931A", fontWeight: 600 }}>Risk Warning: </span>
+        Crypto assets are highly volatile. You may lose your entire investment. This site is for educational purposes only — not financial advice.
       </div>
-      <button onClick={() => setVisible(false)} style={{ background: "none", border: "none", color: "#6B7280", fontSize: 18, cursor: "pointer", flexShrink: 0 }}>✕</button>
+      <button onClick={() => setVisible(false)} style={{ background: "none", border: "none", color: "#9CA3AF", fontSize: 18, cursor: "pointer", flexShrink: 0 }}>✕</button>
     </div>
   );
 }
 
 const COLORS = {
-  bg: "#0A0F1E",
-  card: "#111827",
-  cardBorder: "#1E2A3B",
+  bg: "#FFFFFF",
+  card: "#F9FAFB",
+  cardBorder: "#E5E7EB",
   orange: "#F7931A",
-  orangeDim: "#7C4A0D",
-  blue: "#3B82F6",
+  orangeLight: "#FFF7ED",
   green: "#10B981",
   red: "#EF4444",
   maple: "#FF0000",
-  textPrimary: "#F5F5F0",
+  textPrimary: "#1D1D1B",
   textMuted: "#6B7280",
-  textSub: "#9CA3AF",
+  textSub: "#4B5563",
 };
 
 const affiliates = [
   {
-    category: "🇨🇦 Canadian Exchanges",
+    category: "Bitcoin Exchanges for Canadians",
     items: [
-      { name: "Shakepay", desc: "Buy BTC via Interac e-Transfer. One of the easiest ways to get started in Canada.", url: "https://shakepay.com" },
-      { name: "Newton", desc: "Zero-commission trading, FINTRAC registered, CDIC eligible cash holdings.", url: "https://newton.co" },
-      { name: "Bull Bitcoin", desc: "Bitcoin-only, non-custodial exchange. For those who want full self-sovereignty.", url: "https://bullbitcoin.com" },
-      { name: "Kraken", desc: "Global exchange with low fees, trusted since 2011 and available in Canada.", url: "https://kraken.com" },
+      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://www.kraken.com", logo: "https://www.kraken.com/favicon.ico" },
+      { name: "Newton", desc: "Canadian exchange with zero-commission trading and Interac funding.", url: "https://www.newton.co", logo: "https://www.newton.co/favicon.ico" },
+      { name: "Shakepay", desc: "Buy and earn Bitcoin with instant Interac deposits in Canada.", url: "https://www.shakepay.com", logo: "https://shakepay.com/favicon.ico" },
+      { name: "Coinbase", desc: "One of the world's largest exchanges with a simple interface.", url: "https://www.coinbase.com", logo: "https://www.coinbase.com/favicon.ico" },
     ]
   },
   {
-    category: "🔐 Cold Storage Wallets",
+    category: "Bitcoin Lending",
     items: [
-      { name: "Ledger Nano X", desc: "Industry standard hardware wallet with Bluetooth support. Widely trusted and easy to set up.", url: "https://ledger.com" },
-      { name: "Trezor Model T", desc: "Open-source firmware, touchscreen interface. A great air-gapped option for security-conscious users.", url: "https://trezor.io" },
-      { name: "Coldcard Mk4", desc: "Bitcoin-only hardware wallet. Considered the most secure option for serious long-term stackers.", url: "https://coldcard.com" },
+      { name: "Ledn", desc: "Earn interest on your Bitcoin holdings with competitive rates.", url: "https://www.ledn.io", logo: "https://www.ledn.io/favicon.ico" },
     ]
   },
   {
-    category: "📈 DCA Platforms",
+    category: "Cold Storage",
     items: [
-      { name: "Swan Bitcoin", desc: "Automated weekly or monthly Bitcoin buys with low fees and excellent educational resources.", url: "https://swanbitcoin.com" },
-      { name: "River", desc: "Clean interface, low fees, and automatic recurring buys. US-focused but accessible globally.", url: "https://river.com" },
+      { name: "Trezor", desc: "Open-source hardware wallet for secure offline Bitcoin storage.", url: "https://www.trezor.io", logo: "https://trezor.io/favicon.ico" },
+      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://www.ledger.com", logo: "https://www.ledger.com/favicon.ico" },
     ]
   }
 ];
@@ -104,13 +99,12 @@ const dcaData = [
 
 const faqs = [
   { q: "Is Bitcoin legal in Canada?", a: "Yes. Bitcoin is fully legal in Canada. The CRA treats it as a commodity — capital gains tax applies when you sell. 50% of gains are included in your taxable income." },
-  { q: "What's the safest way to store Bitcoin?", a: "Cold storage (hardware wallet like Ledger or Trezor) is the gold standard. Never leave large amounts on an exchange. 'Not your keys, not your coins.'" },
-  { q: "What is DCA (Dollar Cost Averaging)?", a: "Buying a fixed dollar amount of Bitcoin on a regular schedule (e.g. $100/week) regardless of price. It removes emotion from investing and smooths out volatility over time." },
+  { q: "What's the safest way to store Bitcoin?", a: "Cold storage (hardware wallet like Trezor or Ledger) is the gold standard. Never leave large amounts on an exchange. 'Not your keys, not your coins.'" },
+  { q: "What is DCA (Dollar Cost Averaging)?", a: "DCA means buying a fixed dollar amount of Bitcoin on a regular schedule (e.g. $100/week) regardless of the current price. By spreading your purchases over time, you buy more Bitcoin when the price is low and less when it's high, which averages out your cost basis over the long term." },
   { q: "How much Bitcoin should I buy?", a: "Most advisors suggest only investing what you can afford to lose entirely. Common starting points: 1–5% of investable assets for conservative, up to 10–20% for higher risk tolerance." },
   { q: "What about crypto taxes in Canada?", a: "Every sale, trade, or use of Bitcoin is a taxable event. Keep records of every transaction with date, CAD value, and amount. Tools like Koinly or CoinTracker integrate with Canadian exchanges." },
 ];
 
-// Maple leaf SVG component
 function MapleLeaf({ size = 22, color = "#FF0000", opacity = 1 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill={color} opacity={opacity} style={{ display: "inline-block", verticalAlign: "middle" }}>
@@ -119,7 +113,6 @@ function MapleLeaf({ size = 22, color = "#FF0000", opacity = 1 }) {
   );
 }
 
-// Mini bar chart component
 function MiniChart({ data }) {
   const max = Math.max(...data.map(d => d.value));
   return (
@@ -140,7 +133,6 @@ function MiniChart({ data }) {
   );
 }
 
-// Stat card
 function StatCard({ label, value, sub, color, pulse }) {
   return (
     <div style={{
@@ -292,25 +284,17 @@ CRITICAL RULES — never break these:
         * { box-sizing: border-box; margin: 0; padding: 0; }
         @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
         @keyframes ticker { 0% { opacity:0.7; } 50% { opacity:1; } 100% { opacity:0.7; } }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
         input, select { outline: none; }
         button:hover { opacity: 0.85; cursor: pointer; }
         a:hover { opacity: 0.85; }
       `}</style>
 
       {/* ── HEADER ── */}
-      <div style={{ borderBottom: `1px solid ${COLORS.cardBorder}`, padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "#080D1A" }}>
-
-        {/* Logo lockup */}
+      <div style={{ borderBottom: `1px solid ${COLORS.cardBorder}`, padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "#fff" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          {/* Bitcoin circle icon */}
           <div style={{ width: 40, height: 40, borderRadius: 10, background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }}>
             ₿
           </div>
-
-          {/* Wordmark + domain */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 20, color: COLORS.textPrimary, letterSpacing: "-0.3px" }}>
@@ -324,9 +308,8 @@ CRITICAL RULES — never break these:
           </div>
         </div>
 
-        {/* Live price ticker */}
         {btcPrice && (
-          <div style={{ textAlign: "right", animation: "ticker 3s infinite" }}>
+          <div style={{ textAlign: "right" }}>
             <div style={{ fontSize: 20, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>
               ${btcPrice.cad.toLocaleString()} CAD
             </div>
@@ -338,7 +321,7 @@ CRITICAL RULES — never break these:
       </div>
 
       {/* ── NAV ── */}
-      <div style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#080D1A" }}>
+      <div style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#fff" }}>
         {tabs.map(tab => (
           <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
             flex: 1, padding: "12px 0", background: "none", border: "none",
@@ -367,10 +350,10 @@ CRITICAL RULES — never break these:
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 24 }}>
-              <StatCard label="BTC Price (CAD)" value={loading ? "Loading…" : `$${btcPrice?.cad.toLocaleString()}`} sub={`$${btcPrice?.usd.toLocaleString()} USD`} color={COLORS.orange} pulse={true} />
+              <StatCard label="BTC Price (CAD)" value={loading ? "Loading..." : `$${btcPrice?.cad.toLocaleString()}`} sub={`$${btcPrice?.usd.toLocaleString()} USD`} color={COLORS.orange} pulse={true} />
               <StatCard label="24h Change" value={loading ? "—" : `${priceChange > 0 ? "+" : ""}${priceChange}%`} sub="vs yesterday" color={Number(priceChange) > 0 ? COLORS.green : COLORS.red} />
               <StatCard label="Fear & Greed" value={loading ? "—" : `${fearGreed?.value} — ${fearGreed?.label}`} sub="Market sentiment" color={fgColor} />
-              <StatCard label="1 Satoshi" value={loading ? "—" : `$${((1 / 100_000_000) * (btcPrice?.cad || 0)).toFixed(6)}`} sub="Smallest BTC unit" color={COLORS.blue} />
+              <StatCard label="1 Satoshi" value={loading ? "—" : `$${((1 / 100_000_000) * (btcPrice?.cad || 0)).toFixed(6)}`} sub="Smallest BTC unit" color={COLORS.orange} />
             </div>
 
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -384,19 +367,19 @@ CRITICAL RULES — never break these:
 
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                <span style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>🚀 Getting Started in 3 Steps</span>
+                <span style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>Getting Started in 3 Steps</span>
                 <MapleLeaf size={14} color={COLORS.maple} opacity={0.7} />
               </div>
               {[
-                { step: "1", title: "Buy your first Bitcoin", body: "Use a Canadian exchange like Shakepay or Newton. Fund via Interac e-Transfer. Start with as little as $20 CAD." },
-                { step: "2", title: "Set up a DCA plan", body: "Automate weekly or monthly buys. Remove emotion. Stack consistently regardless of price." },
-                { step: "3", title: "Move to cold storage", body: "Once you have $500+, get a hardware wallet (Ledger or Trezor). Your keys, your Bitcoin." },
+                { step: "1", title: "Buy Bitcoin", body: <>Use a Canadian-friendly exchange like <a href="https://www.kraken.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Kraken</a> or <a href="https://www.coinbase.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Coinbase</a>. Fund via Interac e-Transfer or bank deposit and purchase your first Bitcoin.</> },
+                { step: "2", title: <>Set up <button onClick={() => setActiveTab("learn")} style={{ background: "none", border: "none", color: COLORS.orange, textDecoration: "underline", fontWeight: 600, fontSize: "inherit", fontFamily: "inherit", cursor: "pointer", padding: 0 }}>DCA (Dollar Cost Averaging)</button></>, body: "DCA means buying a fixed dollar amount of Bitcoin on a regular schedule — weekly, bi-weekly, or monthly — regardless of the current price. Over time, this averages out your purchase price, so you buy more when it's cheap and less when it's expensive." },
+                { step: "3", title: "Move to cold storage", body: <>Get a hardware wallet (<a href="https://www.trezor.io" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Trezor</a> or <a href="https://www.ledger.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Ledger</a>) to store your Bitcoin offline. <a href="https://bitcoin.org/en/secure-your-wallet" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Your keys, your Bitcoin</a> — keeping coins on an exchange means you don't truly own them.</> },
               ].map(s => (
                 <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "flex-start" }}>
-                  <div style={{ minWidth: 32, height: 32, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "#000" }}>{s.step}</div>
+                  <div style={{ minWidth: 32, height: 32, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "#fff" }}>{s.step}</div>
                   <div>
                     <div style={{ fontWeight: 600, marginBottom: 4 }}>{s.title}</div>
-                    <div style={{ fontSize: 14, color: COLORS.textSub }}>{s.body}</div>
+                    <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.6 }}>{s.body}</div>
                   </div>
                 </div>
               ))}
@@ -416,12 +399,12 @@ CRITICAL RULES — never break these:
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>Amount (CAD $)</label>
                   <input type="number" value={dcaAmount} onChange={e => setDcaAmount(Number(e.target.value))} min={10} max={10000}
-                    style={{ width: "100%", background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
+                    style={{ width: "100%", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
                 </div>
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>Frequency</label>
                   <select value={dcaFreq} onChange={e => setDcaFreq(e.target.value)}
-                    style={{ width: "100%", background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 14 }}>
+                    style={{ width: "100%", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 14 }}>
                     <option value="weekly">Weekly</option>
                     <option value="monthly">Monthly</option>
                   </select>
@@ -442,7 +425,7 @@ CRITICAL RULES — never break these:
                   <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.textPrimary, fontFamily: "'Space Grotesk', sans-serif" }}>{dcaResult.totalInvested}</div>
                   <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>CAD over {dcaYears} year{dcaYears > 1 ? "s" : ""}</div>
                 </div>
-                <div style={{ background: COLORS.card, border: `1px solid ${COLORS.orange}55`, borderRadius: 12, padding: 24, flex: 1 }}>
+                <div style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}55`, borderRadius: 12, padding: 24, flex: 1 }}>
                   <div style={{ fontSize: 12, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8 }}>Projected Value*</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{dcaResult.projectedValue}</div>
                   <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>{dcaResult.multiplier}x return (historical avg. model)</div>
@@ -450,8 +433,8 @@ CRITICAL RULES — never break these:
               </div>
             </div>
 
-            <div style={{ background: "#0D1117", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: 16, fontSize: 12, color: COLORS.textMuted }}>
-              ⚠️ <strong style={{ color: COLORS.textSub }}>Disclaimer:</strong> Projections are based on Bitcoin's historical average growth and are not a guarantee of future returns. Bitcoin is highly volatile. Only invest what you can afford to lose. This is not financial advice.
+            <div style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}44`, borderRadius: 8, padding: 16, fontSize: 12, color: COLORS.textSub }}>
+              <strong>Disclaimer:</strong> Projections are based on Bitcoin's historical average growth and are not a guarantee of future returns. Bitcoin is highly volatile. Only invest what you can afford to lose. This is not financial advice.
             </div>
           </div>
         )}
@@ -487,7 +470,8 @@ CRITICAL RULES — never break these:
 
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                <span style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>🇨🇦 Canadian Bitcoin Tax Basics</span>
+                <span style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>Canadian Bitcoin Tax Basics</span>
+                <MapleLeaf size={14} color={COLORS.maple} opacity={0.7} />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 {[
@@ -496,7 +480,7 @@ CRITICAL RULES — never break these:
                   { label: "HODLing", val: "Not taxable until you sell or trade" },
                   { label: "Tax Tools", val: "Koinly, CoinTracker (CRA compatible)" },
                 ].map(t => (
-                  <div key={t.label} style={{ background: "#0A0F1E", borderRadius: 8, padding: 14 }}>
+                  <div key={t.label} style={{ background: "#fff", borderRadius: 8, padding: 14, border: `1px solid ${COLORS.cardBorder}` }}>
                     <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>{t.label}</div>
                     <div style={{ fontSize: 14, color: COLORS.textPrimary }}>{t.val}</div>
                   </div>
@@ -518,28 +502,28 @@ CRITICAL RULES — never break these:
             <div className="tools-grid" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <div>
                 <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-                  <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16 }}>⚡ Sats Converter</div>
+                  <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16 }}>Sats Converter</div>
                   <div style={{ marginBottom: 16 }}>
                     <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>CAD Amount ($)</label>
                     <input type="number" value={satsAmount} onChange={e => setSatsAmount(Number(e.target.value))}
-                      style={{ width: "100%", background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
+                      style={{ width: "100%", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
                   </div>
-                  <div style={{ background: "#0A0F1E", borderRadius: 8, padding: 16, textAlign: "center" }}>
+                  <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: 16, textAlign: "center" }}>
                     <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 4 }}>${satsAmount} CAD =</div>
                     <div style={{ fontSize: 28, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{cadToSats} sats</div>
-                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>satoshis ⚡</div>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>satoshis</div>
                   </div>
                 </div>
 
                 <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
-                  <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12 }}>🌡️ Market Sentiment</div>
+                  <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12 }}>Market Sentiment</div>
                   {fearGreed && (
                     <div>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
                         <span style={{ fontSize: 13, color: COLORS.textMuted }}>Fear & Greed Index</span>
                         <span style={{ fontSize: 13, color: fgColor, fontWeight: 600 }}>{fearGreed.label}</span>
                       </div>
-                      <div style={{ background: "#0A0F1E", borderRadius: 6, height: 12, overflow: "hidden" }}>
+                      <div style={{ background: "#E5E7EB", borderRadius: 6, height: 12, overflow: "hidden" }}>
                         <div style={{ width: `${fearGreed.value}%`, height: "100%", background: `linear-gradient(90deg, ${COLORS.red}, ${COLORS.orange}, ${COLORS.green})`, borderRadius: 6, transition: "width 1s ease" }} />
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6, fontSize: 11, color: COLORS.textMuted }}>
@@ -556,7 +540,7 @@ CRITICAL RULES — never break these:
                   <div style={{ width: 28, height: 28, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff", fontWeight: 700 }}>₿</div>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 14 }}>BTC Planner AI Guide</div>
-                    <div style={{ fontSize: 11, color: COLORS.green }}>● Online</div>
+                    <div style={{ fontSize: 11, color: COLORS.green }}>Online</div>
                   </div>
                 </div>
                 <div style={{ flex: 1, overflowY: "auto", padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
@@ -565,25 +549,26 @@ CRITICAL RULES — never break these:
                       <div style={{
                         maxWidth: "85%", padding: "10px 14px",
                         borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
-                        background: msg.role === "user" ? COLORS.orange : "#1E2A3B",
-                        color: msg.role === "user" ? "#000" : COLORS.textPrimary,
+                        background: msg.role === "user" ? COLORS.orange : "#fff",
+                        color: msg.role === "user" ? "#fff" : COLORS.textPrimary,
                         fontSize: 13, lineHeight: 1.6,
+                        border: msg.role === "user" ? "none" : `1px solid ${COLORS.cardBorder}`,
                       }}>
                         {msg.text}
                       </div>
                     </div>
                   ))}
                   {chatLoading && (
-                    <div style={{ display: "flex", gap: 4, padding: "8px 14px", background: "#1E2A3B", borderRadius: "16px 16px 16px 4px", width: "fit-content" }}>
+                    <div style={{ display: "flex", gap: 4, padding: "8px 14px", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: "16px 16px 16px 4px", width: "fit-content" }}>
                       {[0, 1, 2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.textMuted, animation: `pulse ${0.6 + i * 0.2}s infinite` }} />)}
                     </div>
                   )}
                 </div>
                 <div style={{ padding: 12, borderTop: `1px solid ${COLORS.cardBorder}`, display: "flex", gap: 8 }}>
                   <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendChat()}
-                    placeholder="Ask anything about Bitcoin…"
-                    style={{ flex: 1, background: "#0A0F1E", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 13, fontFamily: "'Inter', sans-serif" }} />
-                  <button onClick={sendChat} style={{ background: COLORS.orange, border: "none", borderRadius: 8, padding: "10px 16px", color: "#000", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>
+                    placeholder="Ask anything about Bitcoin..."
+                    style={{ flex: 1, background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 13, fontFamily: "'Inter', sans-serif" }} />
+                  <button onClick={sendChat} style={{ background: COLORS.orange, border: "none", borderRadius: 8, padding: "10px 16px", color: "#fff", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>
                     Send
                   </button>
                 </div>
@@ -599,29 +584,28 @@ CRITICAL RULES — never break these:
               <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700 }}>Get Started</h2>
               <MapleLeaf size={18} color={COLORS.maple} opacity={0.8} />
             </div>
-            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>Curated tools for Canadian Bitcoiners. We may earn a commission — at no extra cost to you.</p>
+            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>Recommended tools and services for Canadian Bitcoin investors.</p>
 
             {affiliates.map((cat, ci) => (
               <div key={ci} style={{ marginBottom: 32 }}>
                 <div style={{ fontSize: 14, fontWeight: 600, color: COLORS.textMuted, marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.08em" }}>{cat.category}</div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {cat.items.map((item, ii) => (
-                    <div key={ii} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 20, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
+                    <a key={ii} href={item.url} target="_blank" rel="noopener noreferrer" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "inherit" }}>
+                      <img src={item.logo} alt="" style={{ width: 28, height: 28, borderRadius: 6, flexShrink: 0 }} onError={e => { e.target.style.display = "none"; }} />
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 6 }}>{item.name}</div>
-                        <div style={{ fontSize: 13, color: COLORS.textSub, lineHeight: 1.5 }}>{item.desc}</div>
+                        <div style={{ fontWeight: 600, fontSize: 15, color: COLORS.textPrimary }}>{item.name}</div>
+                        <div style={{ fontSize: 13, color: COLORS.textMuted, lineHeight: 1.4 }}>{item.desc}</div>
                       </div>
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ background: COLORS.orange, color: "#000", padding: "10px 18px", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 13, whiteSpace: "nowrap", fontFamily: "'Space Grotesk', sans-serif" }}>
-                        Visit →
-                      </a>
-                    </div>
+                      <span style={{ color: COLORS.orange, fontSize: 18, flexShrink: 0 }}>→</span>
+                    </a>
                   ))}
                 </div>
               </div>
             ))}
 
-            <div style={{ background: "#0D1117", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: 16, fontSize: 12, color: COLORS.textMuted }}>
-              <strong style={{ color: COLORS.textSub }}>Affiliate Disclosure:</strong> Some links on btcplanner.ca are affiliate links. If you sign up through our link, we may receive a commission at no extra cost to you. We only recommend services we trust.
+            <div style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}44`, borderRadius: 8, padding: 16, fontSize: 12, color: COLORS.textSub }}>
+              <strong>Affiliate Disclosure:</strong> Some links on btcplanner.ca are affiliate links. If you sign up through our link, we may receive a commission at no extra cost to you. We only recommend services we trust.
             </div>
           </div>
         )}
@@ -629,7 +613,7 @@ CRITICAL RULES — never break these:
       </div>
 
       {/* Footer */}
-      <div style={{ borderTop: `1px solid ${COLORS.cardBorder}`, padding: "28px 24px", background: "#080D1A", marginTop: 40 }}>
+      <div style={{ borderTop: `1px solid ${COLORS.cardBorder}`, padding: "28px 24px", background: COLORS.card, marginTop: 40 }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 10 }}>
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTC PLANNER</span>
@@ -652,9 +636,9 @@ CRITICAL RULES — never break these:
               </button>
             ))}
           </div>
-          <div style={{ fontSize: 11, color: "#4B5563", textAlign: "center", lineHeight: 1.6 }}>
+          <div style={{ fontSize: 11, color: COLORS.textMuted, textAlign: "center", lineHeight: 1.6 }}>
             btcplanner.ca is for educational purposes only — not financial advice. Cryptocurrency investments involve significant risk including total loss of capital.
-            BTC Planner is not a registered investment advisor. Always consult a qualified financial advisor. 🇨🇦
+            BTC Planner is not a registered investment advisor. Always consult a qualified financial advisor.
           </div>
         </div>
       </div>
