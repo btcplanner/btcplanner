@@ -214,7 +214,7 @@ export default function BTCPlanner({ onNavigate }) {
         const [priceRes, fgRes, chartRes] = await Promise.all([
           fetch("https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false"),
           fetch("https://api.alternative.me/fng/"),
-          fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=cad&days=200&interval=daily")
+          fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=cad&days=1825&interval=daily")
         ]);
         const priceData = await priceRes.json();
         const fgData = await fgRes.json();
@@ -226,20 +226,31 @@ export default function BTCPlanner({ onNavigate }) {
           d7: md.price_change_percentage_7d,
           d30: md.price_change_percentage_30d,
           y1: md.price_change_percentage_1y,
+          y3: null,
+          y5: null,
         });
         setFearGreed({ value: fgData.data[0].value, label: fgData.data[0].value_classification });
         try {
           const chartData = await chartRes.json();
           if (chartData.prices && chartData.prices.length > 0) {
             const prices = chartData.prices.map(p => p[1]);
-            const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+            const last200 = prices.slice(-200);
+            const avg = last200.reduce((a, b) => a + b, 0) / last200.length;
             setMovingAvg200(avg);
+            const currentPrice = prices[prices.length - 1];
+            const y3Price = prices.length > 1095 ? prices[prices.length - 1095] : null;
+            const y5Price = prices.length > 1825 ? prices[0] : null;
+            setPriceChanges(prev => ({
+              ...prev,
+              y3: y3Price ? ((currentPrice - y3Price) / y3Price) * 100 : null,
+              y5: y5Price ? ((currentPrice - y5Price) / y5Price) * 100 : null,
+            }));
           }
         } catch {}
       } catch (e) {
         setBtcPrice({ cad: 142350, usd: 104800 });
         setPriceChange(2.4);
-        setPriceChanges({ d1: 2.4, d7: 5.1, d30: 12.3, y1: 85.6 });
+        setPriceChanges({ d1: 2.4, d7: 5.1, d30: 12.3, y1: 85.6, y3: 210.5, y5: 420.3 });
         setMovingAvg200(118000);
         setFearGreed({ value: 72, label: "Greed" });
       }
@@ -415,6 +426,8 @@ CRITICAL RULES — never break these:
                     { label: "7d", val: priceChanges.d7 },
                     { label: "30d", val: priceChanges.d30 },
                     { label: "1y", val: priceChanges.y1 },
+                    { label: "3y", val: priceChanges.y3 },
+                    { label: "5y", val: priceChanges.y5 },
                   ].map(p => (
                     <div key={p.label} style={{ background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "12px 14px", textAlign: "center" }}>
                       <div style={{ fontSize: 11, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{p.label}</div>
