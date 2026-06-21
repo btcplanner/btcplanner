@@ -248,11 +248,7 @@ export default function BTCPlanner({ onNavigate }) {
           }
         } catch {}
       } catch (e) {
-        setBtcPrice({ cad: 142350, usd: 104800 });
-        setPriceChange(2.4);
-        setPriceChanges({ d1: 2.4, d7: 5.1, d30: 12.3, y1: 85.6, y3: 210.5, y5: 420.3 });
-        setMovingAvg200(118000);
-        setFearGreed({ value: 72, label: "Greed" });
+        // Leave values as null — UI will show dashes
       }
       setLoading(false);
     }
@@ -411,10 +407,10 @@ CRITICAL RULES — never break these:
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 24 }}>
-              <StatCard label="BTC Price (CAD)" value={loading ? "Loading..." : `$${btcPrice?.cad.toLocaleString()}`} sub={`$${btcPrice?.usd.toLocaleString()} USD`} color={COLORS.orange} pulse={true} />
-              <StatCard label="24h Change" value={loading ? "—" : `${priceChange > 0 ? "+" : ""}${priceChange}%`} sub="vs yesterday" color={Number(priceChange) > 0 ? COLORS.green : COLORS.red} />
-              <StatCard label="Fear & Greed" value={loading ? "—" : `${fearGreed?.value} — ${fearGreed?.label}`} sub="Market sentiment" color={fgColor} />
-              <StatCard label="1 Satoshi" value={loading ? "—" : `$${((1 / 100_000_000) * (btcPrice?.cad || 0)).toFixed(6)}`} sub="Smallest BTC unit" color={COLORS.orange} />
+              <StatCard label="BTC Price (CAD)" value={loading ? "Loading..." : btcPrice ? `$${btcPrice.cad.toLocaleString()}` : "—"} sub={btcPrice ? `$${btcPrice.usd.toLocaleString()} USD` : ""} color={COLORS.orange} pulse={!!btcPrice} />
+              <StatCard label="24h Change" value={loading ? "—" : priceChange != null ? `${priceChange > 0 ? "+" : ""}${priceChange}%` : "—"} sub="vs yesterday" color={priceChange != null ? (Number(priceChange) > 0 ? COLORS.green : COLORS.red) : COLORS.textMuted} />
+              <StatCard label="Fear & Greed" value={loading ? "—" : fearGreed ? `${fearGreed.value} — ${fearGreed.label}` : "—"} sub="Market sentiment" color={fgColor} />
+              <StatCard label="1 Satoshi" value={loading ? "—" : btcPrice ? `$${((1 / 100_000_000) * btcPrice.cad).toFixed(6)}` : "—"} sub="Smallest BTC unit" color={COLORS.orange} />
             </div>
 
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }}>
