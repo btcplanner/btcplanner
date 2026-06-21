@@ -84,7 +84,7 @@ const affiliates = [
     category: "Cold Storage",
     items: [
       { name: "Trezor", desc: "Open-source hardware wallet for secure offline Bitcoin storage.", url: "https://www.trezor.io", color: "#00854D" },
-      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://www.ledger.com", color: "#000000" },
+      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://shop.ledger.com/?r=a8b2555293e6", color: "#000000" },
     ]
   }
 ];
