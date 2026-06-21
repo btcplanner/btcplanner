@@ -68,23 +68,23 @@ const affiliates = [
   {
     category: "Bitcoin Exchanges for Canadians",
     items: [
-      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://www.kraken.com", logo: "https://www.kraken.com/favicon.ico" },
-      { name: "Newton", desc: "Canadian exchange with zero-commission trading and Interac funding.", url: "https://www.newton.co", logo: "https://www.newton.co/favicon.ico" },
-      { name: "Shakepay", desc: "Buy and earn Bitcoin with instant Interac deposits in Canada.", url: "https://www.shakepay.com", logo: "https://shakepay.com/favicon.ico" },
-      { name: "Coinbase", desc: "One of the world's largest exchanges with a simple interface.", url: "https://www.coinbase.com", logo: "https://www.coinbase.com/favicon.ico" },
+      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://www.kraken.com", color: "#7B61FF" },
+      { name: "Newton", desc: "Canadian exchange with zero-commission trading and Interac funding.", url: "https://www.newton.co", color: "#00C281" },
+      { name: "Shakepay", desc: "Buy and earn Bitcoin with instant Interac deposits in Canada.", url: "https://www.shakepay.com", color: "#F7931A" },
+      { name: "Coinbase", desc: "One of the world's largest exchanges with a simple interface.", url: "https://www.coinbase.com", color: "#0052FF" },
     ]
   },
   {
-    category: "Bitcoin Lending",
+    category: "Bitcoin-Backed Loans",
     items: [
-      { name: "Ledn", desc: "Earn interest on your Bitcoin holdings with competitive rates.", url: "https://www.ledn.io", logo: "https://www.ledn.io/favicon.ico" },
+      { name: "Ledn", desc: "Borrow against your Bitcoin without selling it — keep your stack and access liquidity.", url: "https://www.ledn.io", color: "#1A1A2E" },
     ]
   },
   {
     category: "Cold Storage",
     items: [
-      { name: "Trezor", desc: "Open-source hardware wallet for secure offline Bitcoin storage.", url: "https://www.trezor.io", logo: "https://trezor.io/favicon.ico" },
-      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://www.ledger.com", logo: "https://www.ledger.com/favicon.ico" },
+      { name: "Trezor", desc: "Open-source hardware wallet for secure offline Bitcoin storage.", url: "https://www.trezor.io", color: "#00854D" },
+      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://www.ledger.com", color: "#000000" },
     ]
   }
 ];
@@ -355,12 +355,12 @@ CRITICAL RULES — never break these:
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 20, color: COLORS.textPrimary, letterSpacing: "-0.3px" }}>
-                BTC PLANNER
+                BTCPLANNER.CA
               </span>
               <CanadaFlag size={18} />
             </div>
             <div style={{ fontSize: 11, color: COLORS.textMuted, letterSpacing: "0.04em" }}>
-              btcplanner.ca — Canada's Bitcoin guide
+              Canada's Bitcoin guide
             </div>
           </div>
         </div>
@@ -427,8 +427,8 @@ CRITICAL RULES — never break these:
                 <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>Bitcoin Power Law Model</div>
                 <div style={{ fontSize: 12, color: COLORS.textMuted }}>Log scale</div>
               </div>
-              <div style={{ fontSize: 13, color: COLORS.textSub, marginBottom: 8, lineHeight: 1.5 }}>
-                The Power Law theory suggests Bitcoin's price follows a long-term mathematical corridor based on its adoption curve and network growth.
+              <div style={{ fontSize: 13, color: COLORS.textSub, marginBottom: 8, lineHeight: 1.7 }}>
+                The Bitcoin Power Law is a mathematical model that maps Bitcoin's price over time on a logarithmic scale. It suggests that Bitcoin's long-term price growth follows a predictable corridor driven by network adoption, similar to how other technologies scale. On a log-log chart, Bitcoin's price has traced a remarkably straight line since its inception — even through dramatic boom and bust cycles. Proponents argue this reflects Bitcoin's nature as a network where value grows as a power function of time and adoption, much like Metcalfe's Law applied to money.
               </div>
               <PowerLawChart data={powerLawData} />
               <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 8, fontSize: 12, color: COLORS.textMuted }}>
@@ -440,12 +440,12 @@ CRITICAL RULES — never break these:
                 </span>
               </div>
               <div style={{ marginTop: 10 }}>
-                <a href="https://www.bitcoinpowerlaw.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: COLORS.orange, textDecoration: "underline" }}>
-                  Learn more about the Bitcoin Power Law →
+                <a href="https://charts.bitbo.io/long-term-power-law/" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: COLORS.orange, textDecoration: "underline" }}>
+                  View the interactive Bitcoin Power Law chart →
                 </a>
               </div>
               <div style={{ fontSize: 11, color: COLORS.textMuted, marginTop: 6 }}>
-                This model is a theory, not a prediction. Past patterns do not guarantee future performance.
+                The Power Law is a theory, not a guarantee. Past mathematical patterns do not predict future performance. Always do your own research.
               </div>
             </div>
 
@@ -676,7 +676,7 @@ CRITICAL RULES — never break these:
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {cat.items.map((item, ii) => (
                     <a key={ii} href={item.url} target="_blank" rel="noopener noreferrer" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "inherit" }}>
-                      <img src={item.logo} alt="" style={{ width: 28, height: 28, borderRadius: 6, flexShrink: 0 }} onError={e => { e.target.style.display = "none"; }} />
+                      <div style={{ width: 32, height: 32, borderRadius: 8, background: item.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }}>{item.name[0]}</div>
                       <div style={{ flex: 1 }}>
                         <div style={{ fontWeight: 600, fontSize: 15, color: COLORS.textPrimary }}>{item.name}</div>
                         <div style={{ fontSize: 13, color: COLORS.textMuted, lineHeight: 1.4 }}>{item.desc}</div>
@@ -700,7 +700,7 @@ CRITICAL RULES — never break these:
       <div style={{ borderTop: `1px solid ${COLORS.cardBorder}`, padding: "28px 24px", background: COLORS.card, marginTop: 40 }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 10 }}>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTC PLANNER</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTCPLANNER.CA</span>
             <CanadaFlag size={14} />
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginBottom: 12, flexWrap: "wrap" }}>
