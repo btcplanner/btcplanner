@@ -59,7 +59,6 @@ const COLORS = {
   orangeLight: "#FFF7ED",
   green: "#10B981",
   red: "#EF4444",
-  maple: "#FF0000",
   textPrimary: "#1D1D1B",
   textMuted: "#6B7280",
   textSub: "#4B5563",
@@ -97,6 +96,23 @@ const dcaData = [
   { year: 2025, value: 71.4 },
 ];
 
+const powerLawData = [
+  { year: 2012, actual: 5, model: 3 },
+  { year: 2013, actual: 100, model: 20 },
+  { year: 2014, actual: 750, model: 80 },
+  { year: 2015, actual: 300, model: 250 },
+  { year: 2016, actual: 600, model: 700 },
+  { year: 2017, actual: 14000, model: 2000 },
+  { year: 2018, actual: 3700, model: 5000 },
+  { year: 2019, actual: 7200, model: 10000 },
+  { year: 2020, actual: 9500, model: 18000 },
+  { year: 2021, actual: 47000, model: 30000 },
+  { year: 2022, actual: 19500, model: 45000 },
+  { year: 2023, actual: 30000, model: 60000 },
+  { year: 2024, actual: 62000, model: 80000 },
+  { year: 2025, actual: 105000, model: 110000 },
+];
+
 const faqs = [
   { q: "Is Bitcoin legal in Canada?", a: "Yes. Bitcoin is fully legal in Canada. The CRA treats it as a commodity — capital gains tax applies when you sell. 50% of gains are included in your taxable income." },
   { q: "What's the safest way to store Bitcoin?", a: "Cold storage (hardware wallet like Trezor or Ledger) is the gold standard. Never leave large amounts on an exchange. 'Not your keys, not your coins.'" },
@@ -105,12 +121,8 @@ const faqs = [
   { q: "What about crypto taxes in Canada?", a: "Every sale, trade, or use of Bitcoin is a taxable event. Keep records of every transaction with date, CAD value, and amount. Tools like Koinly or CoinTracker integrate with Canadian exchanges." },
 ];
 
-function MapleLeaf({ size = 22, color = "#FF0000", opacity = 1 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill={color} opacity={opacity} style={{ display: "inline-block", verticalAlign: "middle" }}>
-      <path d="M50,5 L55,30 L80,20 L65,40 L95,45 L70,55 L80,80 L55,65 L50,95 L45,65 L20,80 L30,55 L5,45 L35,40 L20,20 L45,30 Z" />
-    </svg>
-  );
+function CanadaFlag({ size = 20 }) {
+  return <span style={{ fontSize: size, lineHeight: 1, display: "inline-block", verticalAlign: "middle" }} role="img" aria-label="Canada">🇨🇦</span>;
 }
 
 function MiniChart({ data }) {
@@ -129,6 +141,37 @@ function MiniChart({ data }) {
           <span style={{ fontSize: 9, color: COLORS.textMuted, marginTop: 2 }}>{d.year}</span>
         </div>
       ))}
+    </div>
+  );
+}
+
+function PowerLawChart({ data }) {
+  const maxVal = Math.max(...data.map(d => Math.max(d.actual, d.model)));
+  const logScale = (v) => Math.log10(Math.max(v, 1)) / Math.log10(maxVal) * 100;
+  return (
+    <div style={{ position: "relative", height: 140, padding: "8px 0" }}>
+      <svg width="100%" height="100%" viewBox="0 0 400 140" preserveAspectRatio="none">
+        <polyline
+          fill="none" stroke={COLORS.orange} strokeWidth="2" strokeDasharray="6,4" opacity="0.6"
+          points={data.map((d, i) => `${(i / (data.length - 1)) * 390 + 5},${140 - logScale(d.model) * 1.3 - 5}`).join(" ")}
+        />
+        <polyline
+          fill="none" stroke={COLORS.orange} strokeWidth="2.5"
+          points={data.map((d, i) => `${(i / (data.length - 1)) * 390 + 5},${140 - logScale(d.actual) * 1.3 - 5}`).join(" ")}
+        />
+        {data.map((d, i) => (
+          <circle key={i}
+            cx={(i / (data.length - 1)) * 390 + 5}
+            cy={140 - logScale(d.actual) * 1.3 - 5}
+            r="3" fill={COLORS.orange}
+          />
+        ))}
+      </svg>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: COLORS.textMuted, marginTop: 4, padding: "0 4px" }}>
+        {data.filter((_, i) => i % 2 === 0).map(d => (
+          <span key={d.year}>{d.year}</span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -157,6 +200,17 @@ function StatCard({ label, value, sub, color, pulse }) {
       {sub && <div style={{ fontSize: 13, color: COLORS.textMuted, marginTop: 4 }}>{sub}</div>}
     </div>
   );
+}
+
+function handleAmountInput(value, setter) {
+  if (value === "") {
+    setter("");
+    return;
+  }
+  const num = parseInt(value, 10);
+  if (!isNaN(num) && num >= 0) {
+    setter(num);
+  }
 }
 
 export default function BTCPlanner({ onNavigate }) {
@@ -202,12 +256,16 @@ export default function BTCPlanner({ onNavigate }) {
   }, []);
 
   const calcDCA = useCallback(() => {
+    const amount = Number(dcaAmount) || 0;
     const periods = dcaFreq === "weekly" ? dcaYears * 52 : dcaYears * 12;
-    const totalInvested = dcaAmount * periods;
+    const totalInvested = amount * periods;
+    if (amount === 0) {
+      return { totalInvested: "$0", projectedValue: "$0", multiplier: "0.0" };
+    }
     const growthRate = dcaFreq === "weekly" ? 1.007 : 1.03;
     let value = 0;
     for (let i = 0; i < periods; i++) {
-      value = (value + dcaAmount) * growthRate;
+      value = (value + amount) * growthRate;
     }
     return {
       totalInvested: totalInvested.toLocaleString("en-CA", { style: "currency", currency: "CAD", maximumFractionDigits: 0 }),
@@ -217,8 +275,8 @@ export default function BTCPlanner({ onNavigate }) {
   }, [dcaAmount, dcaFreq, dcaYears]);
 
   const dcaResult = calcDCA();
-  const satsValue = btcPrice ? ((satsAmount / 100_000_000) * btcPrice.cad).toFixed(2) : "—";
-  const cadToSats = btcPrice ? Math.floor((satsAmount / btcPrice.cad) * 100_000_000).toLocaleString() : "—";
+  const numSats = Number(satsAmount) || 0;
+  const cadToSats = btcPrice ? Math.floor((numSats / btcPrice.cad) * 100_000_000).toLocaleString() : "—";
 
   const chatSystemPrompt = `You are a Bitcoin education assistant on BTCPlanner.ca, a Canadian Bitcoin information site. Your role is strictly educational.
 
@@ -283,7 +341,6 @@ CRITICAL RULES — never break these:
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-        @keyframes ticker { 0% { opacity:0.7; } 50% { opacity:1; } 100% { opacity:0.7; } }
         input, select { outline: none; }
         button:hover { opacity: 0.85; cursor: pointer; }
         a:hover { opacity: 0.85; }
@@ -300,7 +357,7 @@ CRITICAL RULES — never break these:
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 20, color: COLORS.textPrimary, letterSpacing: "-0.3px" }}>
                 BTC PLANNER
               </span>
-              <MapleLeaf size={18} color={COLORS.maple} opacity={0.9} />
+              <CanadaFlag size={18} />
             </div>
             <div style={{ fontSize: 11, color: COLORS.textMuted, letterSpacing: "0.04em" }}>
               btcplanner.ca — Canada's Bitcoin guide
@@ -344,7 +401,7 @@ CRITICAL RULES — never break these:
             <div style={{ marginBottom: 24 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
                 <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, fontWeight: 700 }}>Welcome to BTC Planner</h1>
-                <MapleLeaf size={24} color={COLORS.maple} />
+                <CanadaFlag size={24} />
               </div>
               <p style={{ color: COLORS.textSub, fontSize: 14 }}>Canada's all-in-one Bitcoin starting point — buy, store, and stack BTC the smart way.</p>
             </div>
@@ -356,7 +413,7 @@ CRITICAL RULES — never break these:
               <StatCard label="1 Satoshi" value={loading ? "—" : `$${((1 / 100_000_000) * (btcPrice?.cad || 0)).toFixed(6)}`} sub="Smallest BTC unit" color={COLORS.orange} />
             </div>
 
-            <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
+            <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                 <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>Historical BTC Price (USD, approx.)</div>
                 <div style={{ fontSize: 12, color: COLORS.textMuted }}>Yearly average</div>
@@ -365,10 +422,37 @@ CRITICAL RULES — never break these:
               <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 8 }}>Past performance is not indicative of future results. Always do your own research.</div>
             </div>
 
+            <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
+                <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>Bitcoin Power Law Model</div>
+                <div style={{ fontSize: 12, color: COLORS.textMuted }}>Log scale</div>
+              </div>
+              <div style={{ fontSize: 13, color: COLORS.textSub, marginBottom: 8, lineHeight: 1.5 }}>
+                The Power Law theory suggests Bitcoin's price follows a long-term mathematical corridor based on its adoption curve and network growth.
+              </div>
+              <PowerLawChart data={powerLawData} />
+              <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 8, fontSize: 12, color: COLORS.textMuted }}>
+                <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  <span style={{ width: 16, height: 2, background: COLORS.orange, display: "inline-block", borderRadius: 1 }} /> Actual price
+                </span>
+                <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  <span style={{ width: 16, height: 2, background: COLORS.orange, opacity: 0.5, display: "inline-block", borderRadius: 1, borderTop: "1px dashed", borderBottom: "1px dashed" }} /> Power Law model
+                </span>
+              </div>
+              <div style={{ marginTop: 10 }}>
+                <a href="https://www.bitcoinpowerlaw.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: COLORS.orange, textDecoration: "underline" }}>
+                  Learn more about the Bitcoin Power Law →
+                </a>
+              </div>
+              <div style={{ fontSize: 11, color: COLORS.textMuted, marginTop: 6 }}>
+                This model is a theory, not a prediction. Past patterns do not guarantee future performance.
+              </div>
+            </div>
+
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
                 <span style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>Getting Started in 3 Steps</span>
-                <MapleLeaf size={14} color={COLORS.maple} opacity={0.7} />
+                <CanadaFlag size={16} />
               </div>
               {[
                 { step: "1", title: "Buy Bitcoin", body: <>Use a Canadian-friendly exchange like <a href="https://www.kraken.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Kraken</a> or <a href="https://www.coinbase.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Coinbase</a>. Fund via Interac e-Transfer or bank deposit and purchase your first Bitcoin.</> },
@@ -391,14 +475,14 @@ CRITICAL RULES — never break these:
         {activeTab === "dca" && (
           <div>
             <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, marginBottom: 6 }}>DCA Calculator</h2>
-            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>Dollar Cost Averaging — buy a fixed amount on a schedule and watch your stack grow.</p>
+            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>Dollar Cost Averaging — buy a fixed amount of Bitcoin on a schedule and watch your stack grow.</p>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
               <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
                 <div style={{ fontWeight: 600, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif" }}>Your DCA Plan</div>
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>Amount (CAD $)</label>
-                  <input type="number" value={dcaAmount} onChange={e => setDcaAmount(Number(e.target.value))} min={10} max={10000}
+                  <input type="text" inputMode="numeric" value={dcaAmount === "" ? "" : dcaAmount} onChange={e => handleAmountInput(e.target.value, setDcaAmount)} placeholder="Enter amount"
                     style={{ width: "100%", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
                 </div>
                 <div style={{ marginBottom: 16 }}>
@@ -444,7 +528,7 @@ CRITICAL RULES — never break these:
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
               <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700 }}>Bitcoin 101</h2>
-              <MapleLeaf size={18} color={COLORS.maple} opacity={0.8} />
+              <CanadaFlag size={20} />
             </div>
             <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>Everything a Canadian beginner needs to know before buying their first sat.</p>
 
@@ -471,7 +555,7 @@ CRITICAL RULES — never break these:
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
                 <span style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>Canadian Bitcoin Tax Basics</span>
-                <MapleLeaf size={14} color={COLORS.maple} opacity={0.7} />
+                <CanadaFlag size={16} />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 {[
@@ -505,13 +589,13 @@ CRITICAL RULES — never break these:
                   <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16 }}>Sats Converter</div>
                   <div style={{ marginBottom: 16 }}>
                     <label style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>CAD Amount ($)</label>
-                    <input type="number" value={satsAmount} onChange={e => setSatsAmount(Number(e.target.value))}
+                    <input type="text" inputMode="numeric" value={satsAmount === "" ? "" : satsAmount} onChange={e => handleAmountInput(e.target.value, setSatsAmount)} placeholder="Enter amount"
                       style={{ width: "100%", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
                   </div>
                   <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: 16, textAlign: "center" }}>
-                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 4 }}>${satsAmount} CAD =</div>
-                    <div style={{ fontSize: 28, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{cadToSats} sats</div>
-                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>satoshis</div>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 4 }}>{numSats > 0 ? `$${numSats} CAD =` : "Enter an amount above"}</div>
+                    <div style={{ fontSize: 28, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{numSats > 0 ? `${cadToSats} sats` : "—"}</div>
+                    {numSats > 0 && <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>satoshis</div>}
                   </div>
                 </div>
 
@@ -582,7 +666,7 @@ CRITICAL RULES — never break these:
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
               <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700 }}>Get Started</h2>
-              <MapleLeaf size={18} color={COLORS.maple} opacity={0.8} />
+              <CanadaFlag size={20} />
             </div>
             <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>Recommended tools and services for Canadian Bitcoin investors.</p>
 
@@ -617,7 +701,7 @@ CRITICAL RULES — never break these:
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 10 }}>
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTC PLANNER</span>
-            <MapleLeaf size={14} color={COLORS.maple} opacity={0.6} />
+            <CanadaFlag size={14} />
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginBottom: 12, flexWrap: "wrap" }}>
             {[
