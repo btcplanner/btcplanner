@@ -68,10 +68,10 @@ const affiliates = [
   {
     category: "Bitcoin Exchanges for Canadians",
     items: [
-      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://www.kraken.com", color: "#7B61FF" },
+      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://invite.kraken.com/JDNW/rvqfaxbg", color: "#7B61FF" },
       { name: "Newton", desc: "Canadian exchange with zero-commission trading and Interac funding.", url: "https://www.newton.co", color: "#00C281" },
-      { name: "Shakepay", desc: "Buy and earn Bitcoin with instant Interac deposits in Canada.", url: "https://www.shakepay.com", color: "#F7931A" },
-      { name: "Coinbase", desc: "One of the world's largest exchanges with a simple interface.", url: "https://www.coinbase.com", color: "#0052FF" },
+      { name: "Shakepay", desc: "Buy and earn Bitcoin with instant Interac deposits in Canada.", url: "https://shakepay.me/r/K0D39LJ", color: "#F7931A" },
+      { name: "Coinbase", desc: "One of the world's largest exchanges with a simple interface.", url: "https://coinbase.com/join/LJZZEMM?src=ios-link", color: "#0052FF" },
     ]
   },
   {
@@ -84,16 +84,9 @@ const affiliates = [
     category: "Cold Storage",
     items: [
       { name: "Trezor", desc: "Open-source hardware wallet for secure offline Bitcoin storage.", url: "https://www.trezor.io", color: "#00854D" },
-      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://www.ledger.com", color: "#000000" },
+      { name: "Ledger", desc: "Hardware wallet with mobile app support and broad asset coverage.", url: "https://shop.ledger.com/?r=a8b2555293e6", color: "#000000" },
     ]
   }
-];
-
-const dcaData = [
-  { year: 2019, value: 1 }, { year: 2020, value: 3.2 },
-  { year: 2021, value: 18.4 }, { year: 2022, value: 9.1 },
-  { year: 2023, value: 14.6 }, { year: 2024, value: 38.2 },
-  { year: 2025, value: 71.4 },
 ];
 
 const powerLawData = [
@@ -123,26 +116,6 @@ const faqs = [
 
 function CanadaFlag({ size = 20 }) {
   return <span style={{ fontSize: size, lineHeight: 1, display: "inline-block", verticalAlign: "middle" }} role="img" aria-label="Canada">🇨🇦</span>;
-}
-
-function MiniChart({ data }) {
-  const max = Math.max(...data.map(d => d.value));
-  return (
-    <div style={{ display: "flex", alignItems: "flex-end", gap: 4, height: 60, padding: "8px 0" }}>
-      {data.map((d, i) => (
-        <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
-          <div style={{
-            width: "100%",
-            height: `${(d.value / max) * 50}px`,
-            background: i === data.length - 1 ? COLORS.orange : `${COLORS.orange}55`,
-            borderRadius: "3px 3px 0 0",
-            transition: "height 0.5s ease",
-          }} />
-          <span style={{ fontSize: 9, color: COLORS.textMuted, marginTop: 2 }}>{d.year}</span>
-        </div>
-      ))}
-    </div>
-  );
 }
 
 function PowerLawChart({ data }) {
@@ -219,6 +192,8 @@ export default function BTCPlanner({ onNavigate }) {
   });
   const [btcPrice, setBtcPrice] = useState(null);
   const [priceChange, setPriceChange] = useState(null);
+  const [priceChanges, setPriceChanges] = useState(null);
+  const [movingAvg200, setMovingAvg200] = useState(null);
   const [fearGreed, setFearGreed] = useState(null);
   const [loading, setLoading] = useState(true);
   const [dcaAmount, setDcaAmount] = useState(100);
@@ -236,18 +211,36 @@ export default function BTCPlanner({ onNavigate }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const [priceRes, fgRes] = await Promise.all([
-          fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad,usd&include_24hr_change=true"),
-          fetch("https://api.alternative.me/fng/")
+        const [priceRes, fgRes, chartRes] = await Promise.all([
+          fetch("https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false"),
+          fetch("https://api.alternative.me/fng/"),
+          fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=cad&days=200&interval=daily")
         ]);
         const priceData = await priceRes.json();
         const fgData = await fgRes.json();
-        setBtcPrice({ cad: priceData.bitcoin.cad, usd: priceData.bitcoin.usd });
-        setPriceChange(priceData.bitcoin.cad_24h_change?.toFixed(2));
+        const md = priceData.market_data;
+        setBtcPrice({ cad: md.current_price.cad, usd: md.current_price.usd });
+        setPriceChange(md.price_change_percentage_24h?.toFixed(2));
+        setPriceChanges({
+          d1: md.price_change_percentage_24h,
+          d7: md.price_change_percentage_7d,
+          d30: md.price_change_percentage_30d,
+          y1: md.price_change_percentage_1y,
+        });
         setFearGreed({ value: fgData.data[0].value, label: fgData.data[0].value_classification });
+        try {
+          const chartData = await chartRes.json();
+          if (chartData.prices && chartData.prices.length > 0) {
+            const prices = chartData.prices.map(p => p[1]);
+            const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+            setMovingAvg200(avg);
+          }
+        } catch {}
       } catch (e) {
         setBtcPrice({ cad: 142350, usd: 104800 });
         setPriceChange(2.4);
+        setPriceChanges({ d1: 2.4, d7: 5.1, d30: 12.3, y1: 85.6 });
+        setMovingAvg200(118000);
         setFearGreed({ value: 72, label: "Greed" });
       }
       setLoading(false);
@@ -414,12 +407,70 @@ CRITICAL RULES — never break these:
             </div>
 
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>Historical BTC Price (USD, approx.)</div>
-                <div style={{ fontSize: 12, color: COLORS.textMuted }}>Yearly average</div>
+              <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16 }}>BTC Price Performance (CAD)</div>
+              {priceChanges ? (
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))", gap: 12, marginBottom: 16 }}>
+                  {[
+                    { label: "24h", val: priceChanges.d1 },
+                    { label: "7d", val: priceChanges.d7 },
+                    { label: "30d", val: priceChanges.d30 },
+                    { label: "1y", val: priceChanges.y1 },
+                  ].map(p => (
+                    <div key={p.label} style={{ background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "12px 14px", textAlign: "center" }}>
+                      <div style={{ fontSize: 11, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{p.label}</div>
+                      <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: p.val != null ? (p.val >= 0 ? COLORS.green : COLORS.red) : COLORS.textMuted }}>
+                        {p.val != null ? `${p.val >= 0 ? "+" : ""}${p.val.toFixed(1)}%` : "—"}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ fontSize: 14, color: COLORS.textMuted, marginBottom: 16 }}>Loading...</div>
+              )}
+              {movingAvg200 && (
+                <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: "12px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 13, color: COLORS.textSub }}>200-Day Moving Average</span>
+                  <span style={{ fontSize: 16, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: COLORS.orange }}>${Math.round(movingAvg200).toLocaleString()} CAD</span>
+                </div>
+              )}
+              <div style={{ fontSize: 11, color: COLORS.textMuted, marginTop: 10 }}>Past performance is not indicative of future results. Always do your own research.</div>
+            </div>
+
+            <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }}>
+              <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12 }}>Bitcoin Halving Countdown</div>
+              <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 16 }}>
+                Approximately every 4 years (every 210,000 blocks), the Bitcoin mining reward is cut in half — an event called "the halving." This reduces the rate of new Bitcoin entering circulation, making BTC scarcer over time. Historically, halvings have preceded significant price appreciation as supply shrinks while demand grows.
               </div>
-              <MiniChart data={dcaData} />
-              <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 8 }}>Past performance is not indicative of future results. Always do your own research.</div>
+              <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: 16, marginBottom: 12 }}>
+                <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.06em" }}>Next Halving (Est.)</div>
+                <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: COLORS.orange }}>
+                  ~April 2028 — Block 1,050,000
+                </div>
+                <div style={{ fontSize: 13, color: COLORS.textSub, marginTop: 6 }}>
+                  Reward drops from 3.125 BTC to 1.5625 BTC per block
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", fontSize: 13 }}>
+                <button onClick={() => { setActiveTab("learn"); window.scrollTo(0, 0); }} style={{ background: "none", border: "none", color: COLORS.orange, textDecoration: "underline", cursor: "pointer", padding: 0, fontFamily: "'Inter', sans-serif", fontSize: 13 }}>
+                  Learn more about Bitcoin →
+                </button>
+                <a href="https://www.bitcoin.org/en/how-it-works" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>
+                  How Bitcoin works (bitcoin.org) →
+                </a>
+              </div>
+            </div>
+
+            <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }}>
+              <div style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12 }}>Bitcoin Origins</div>
+              <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 12 }}>
+                Bitcoin was created in 2008 by the pseudonymous <strong style={{ color: COLORS.textPrimary }}>Satoshi Nakamoto</strong>, who published a whitepaper titled "Bitcoin: A Peer-to-Peer Electronic Cash System." On January 3, 2009, Satoshi mined the first block (the "genesis block"), embedding the headline: <em>"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."</em>
+              </div>
+              <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 16 }}>
+                Satoshi's identity remains unknown. They communicated only through email and forum posts, disappearing from public view in late 2010 — leaving behind a decentralized monetary network with no single point of control.
+              </div>
+              <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: COLORS.orange, textDecoration: "underline" }}>
+                Read the Bitcoin Whitepaper (PDF) →
+              </a>
             </div>
 
             <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -456,7 +507,7 @@ CRITICAL RULES — never break these:
               </div>
               {[
                 { step: "1", title: "Buy Bitcoin", body: <>Use a Canadian-friendly exchange like <a href="https://www.kraken.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Kraken</a> or <a href="https://www.coinbase.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Coinbase</a>. Fund via Interac e-Transfer or bank deposit and purchase your first Bitcoin.</> },
-                { step: "2", title: <>Set up <button onClick={() => setActiveTab("learn")} style={{ background: "none", border: "none", color: COLORS.orange, textDecoration: "underline", fontWeight: 600, fontSize: "inherit", fontFamily: "inherit", cursor: "pointer", padding: 0 }}>DCA (Dollar Cost Averaging)</button></>, body: "DCA means buying a fixed dollar amount of Bitcoin on a regular schedule — weekly, bi-weekly, or monthly — regardless of the current price. Over time, this averages out your purchase price, so you buy more when it's cheap and less when it's expensive." },
+                { step: "2", title: <>Set up <button onClick={() => { setActiveTab("dca"); window.scrollTo(0, 0); }} style={{ background: "none", border: "none", color: COLORS.orange, textDecoration: "underline", fontWeight: 600, fontSize: "inherit", fontFamily: "inherit", cursor: "pointer", padding: 0 }}>DCA (Dollar Cost Averaging)</button></>, body: "DCA means buying a fixed dollar amount of Bitcoin on a regular schedule — weekly, bi-weekly, or monthly — regardless of the current price. Over time, this averages out your purchase price, so you buy more when it's cheap and less when it's expensive." },
                 { step: "3", title: "Move to cold storage", body: <>Get a hardware wallet (<a href="https://www.trezor.io" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Trezor</a> or <a href="https://www.ledger.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Ledger</a>) to store your Bitcoin offline. <a href="https://bitcoin.org/en/secure-your-wallet" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Your keys, your Bitcoin</a> — keeping coins on an exchange means you don't truly own them.</> },
               ].map(s => (
                 <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "flex-start" }}>
