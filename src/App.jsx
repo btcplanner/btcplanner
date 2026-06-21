@@ -68,7 +68,7 @@ const affiliates = [
   {
     category: "Bitcoin Exchanges for Canadians",
     items: [
-      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://www.kraken.com", color: "#7B61FF" },
+      { name: "Kraken", desc: "Global exchange with advanced trading, staking, and low fees.", url: "https://invite.kraken.com/JDNW/rvqfaxbg", color: "#7B61FF" },
       { name: "Newton", desc: "Canadian exchange with zero-commission trading and Interac funding.", url: "https://www.newton.co", color: "#00C281" },
       { name: "Shakepay", desc: "Buy and earn Bitcoin with instant Interac deposits in Canada.", url: "https://shakepay.me/r/K0D39LJ", color: "#F7931A" },
       { name: "Coinbase", desc: "One of the world's largest exchanges with a simple interface.", url: "https://www.coinbase.com", color: "#0052FF" },
