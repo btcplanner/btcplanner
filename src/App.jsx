@@ -457,50 +457,71 @@ export default function BTCPlanner({ onNavigate }) {
 
   useEffect(() => {
     const controller = new AbortController();
-    async function fetchData() {
+    const CHART_CACHE_KEY = "btcplanner_chart_cache";
+    const CHART_CACHE_TTL = 24 * 60 * 60 * 1000;
+
+    function getChartCache() {
       try {
-        const [priceRes, fgRes, chartRes] = await Promise.all([
-          fetch("https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false", { signal: controller.signal }),
+        const raw = localStorage.getItem(CHART_CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (Date.now() - cached.ts < CHART_CACHE_TTL) return cached.data;
+      } catch {}
+      return null;
+    }
+
+    function setChartCache(data) {
+      try { localStorage.setItem(CHART_CACHE_KEY, JSON.stringify({ ts: Date.now(), data })); } catch {}
+    }
+
+    async function fetchData() {
+      const cached = getChartCache();
+      if (cached) {
+        setMovingAvg200(cached.ma200);
+        setPriceChanges(prev => prev ? { ...prev, y3: cached.change_3y, y5: cached.change_5y } : { d1: null, d7: null, d30: null, y1: null, y3: cached.change_3y, y5: cached.change_5y });
+      }
+
+      try {
+        const [priceRes, fgRes] = await Promise.all([
+          fetch("/api/price", { signal: controller.signal }),
           fetch("https://api.alternative.me/fng/", { signal: controller.signal }),
-          fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=cad&days=1825&interval=daily", { signal: controller.signal })
         ]);
         const priceData = await priceRes.json();
         const fgData = await fgRes.json();
-        const md = priceData.market_data;
-        setBtcPrice({ cad: md.current_price.cad, usd: md.current_price.usd });
-        setPriceChange(md.price_change_percentage_24h?.toFixed(2));
-        setPriceChanges({
-          d1: md.price_change_percentage_24h,
-          d7: md.price_change_percentage_7d,
-          d30: md.price_change_percentage_30d,
-          y1: md.price_change_percentage_1y,
-          y3: null,
-          y5: null,
-        });
-        setFearGreed({ value: fgData.data[0].value, label: fgData.data[0].value_classification });
-        try {
-          const chartData = await chartRes.json();
-          if (chartData.prices && chartData.prices.length > 0) {
-            const prices = chartData.prices.map(p => p[1]);
-            const last200 = prices.slice(-200);
-            const avg = last200.reduce((a, b) => a + b, 0) / last200.length;
-            setMovingAvg200(avg);
-            const currentPrice = prices[prices.length - 1];
-            const y3Price = prices.length > 1095 ? prices[prices.length - 1095] : null;
-            const y5Price = prices.length > 1825 ? prices[0] : null;
-            setPriceChanges(prev => ({
-              ...prev,
-              y3: y3Price ? ((currentPrice - y3Price) / y3Price) * 100 : null,
-              y5: y5Price ? ((currentPrice - y5Price) / y5Price) * 100 : null,
-            }));
-          }
-        } catch {}
-      } catch (e) {
-        if (e.name !== "AbortError") {
-          // Leave values as null — UI will show dashes
+        if (priceRes.ok) {
+          setBtcPrice({ cad: priceData.cad, usd: priceData.usd });
+          setPriceChange(priceData.change_24h?.toFixed(2));
+          setPriceChanges(prev => ({
+            ...(prev || {}),
+            d1: priceData.change_24h,
+            d7: priceData.change_7d,
+            d30: priceData.change_30d,
+            y1: priceData.change_1y,
+            y3: prev?.y3 ?? null,
+            y5: prev?.y5 ?? null,
+          }));
         }
+        setFearGreed({ value: fgData.data[0].value, label: fgData.data[0].value_classification });
+      } catch (e) {
+        if (e.name === "AbortError") return;
       }
       setLoading(false);
+
+      try {
+        const chartRes = await fetch("/api/chart", { signal: controller.signal });
+        if (chartRes.ok) {
+          const chartData = await chartRes.json();
+          setMovingAvg200(chartData.ma200);
+          setPriceChanges(prev => ({
+            ...(prev || {}),
+            y3: chartData.change_3y,
+            y5: chartData.change_5y,
+          }));
+          setChartCache(chartData);
+        }
+      } catch (e) {
+        if (e.name === "AbortError") return;
+      }
     }
     fetchData();
     return () => controller.abort();
@@ -618,22 +639,23 @@ CRITICAL RULES:
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <button onClick={toggleLang} aria-label={lang === "en" ? "Passer au français" : "Switch to English"} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "6px 12px", fontSize: 13, fontWeight: 600, color: COLORS.textPrimary, cursor: "pointer", fontFamily: "'Inter', sans-serif" }}>
-            {lang === "en" ? "FR" : "EN"}
-          </button>
-          {btcPrice && (
-            <div style={{ textAlign: "right" }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>
-                ${btcPrice.cad.toLocaleString()} CAD
-              </div>
-              <div style={{ fontSize: 12, color: priceChange > 0 ? COLORS.green : COLORS.red }}>
-                {priceChange > 0 ? "▲" : "▼"} {Math.abs(priceChange)}% (24h)
-              </div>
+        {btcPrice && (
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: 20, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>
+              ${btcPrice.cad.toLocaleString()} CAD
             </div>
-          )}
-        </div>
+            <div style={{ fontSize: 12, color: priceChange > 0 ? COLORS.green : COLORS.red }}>
+              {priceChange > 0 ? "▲" : "▼"} {Math.abs(priceChange)}% (24h)
+            </div>
+          </div>
+        )}
       </header>
+
+      <div style={{ display: "flex", justifyContent: "flex-end", padding: "6px 24px", background: "#fff", borderBottom: `1px solid ${COLORS.cardBorder}` }}>
+        <button onClick={toggleLang} aria-label={lang === "en" ? "Passer au français" : "Switch to English"} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 6, padding: "4px 10px", fontSize: 12, fontWeight: 500, color: COLORS.textSub, cursor: "pointer", fontFamily: "'Inter', sans-serif", display: "flex", alignItems: "center", gap: 6 }}>
+          <span style={{ color: COLORS.textMuted }}>Language:</span> {lang === "en" ? "Français" : "English"}
+        </button>
+      </div>
 
       <nav style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#fff" }} aria-label="Main navigation">
         {tabs.map(tab => (
