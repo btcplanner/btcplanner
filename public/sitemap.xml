@@ -51,6 +51,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://btcplanner.ca/blog/bitcoin-tfsa-rrsp-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/best-bitcoin-exchange-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/bitcoin-for-beginners-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://btcplanner.ca/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

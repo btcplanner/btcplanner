@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { marked } from "marked";
 import { blogPosts } from "./blogPosts.js";
+import { getAbTitle } from "./abtest.js";
 
 const COLORS = {
   bg: "#FFFFFF",
@@ -62,14 +63,15 @@ export default function BlogPage({ slug, onNavigate }) {
     };
 
     if (post) {
-      const title = `${post.title[lang]} | BTC Planner`;
+      const abTitle = getAbTitle(post.slug, lang) || post.title[lang];
+      const title = `${abTitle} | BTC Planner`;
       const url = `https://btcplanner.ca/blog/${post.slug}`;
       document.title = title;
       setMeta('meta[name="description"]', "content", post.description[lang]);
       setLink("canonical", url);
 
       setMeta('meta[property="og:type"]', "content", "article");
-      setMeta('meta[property="og:title"]', "content", post.title[lang]);
+      setMeta('meta[property="og:title"]', "content", abTitle);
       setMeta('meta[property="og:description"]', "content", post.description[lang]);
       setMeta('meta[property="og:url"]', "content", url);
       if (post.image) setMeta('meta[property="og:image"]', "content", post.image);
