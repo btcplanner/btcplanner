@@ -85,7 +85,10 @@ export default function BlogPage({ slug, onNavigate }) {
         </div>
       </header>
 
-      <div style={{ display: "flex", justifyContent: "flex-end", padding: "6px 24px", background: "#fff", borderBottom: `1px solid ${COLORS.cardBorder}` }}>
+      <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 10, padding: "6px 24px", background: "#fff", borderBottom: `1px solid ${COLORS.cardBorder}` }}>
+        <button onClick={() => onNavigate("home")} style={{ background: COLORS.orange, border: "none", borderRadius: 6, padding: "4px 12px", fontSize: 12, fontWeight: 600, color: "#fff", cursor: "pointer", fontFamily: "'Inter', sans-serif" }}>
+          ← {lang === "en" ? "Home" : "Accueil"}
+        </button>
         <button onClick={toggleLang} aria-label={lang === "en" ? "Passer au français" : "Switch to English"} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 6, padding: "4px 10px", fontSize: 12, fontWeight: 500, color: COLORS.textSub, cursor: "pointer", fontFamily: "'Inter', sans-serif", display: "flex", alignItems: "center", gap: 6 }}>
           <span style={{ color: COLORS.textMuted }}>Language:</span> {lang === "en" ? "Français" : "English"}
         </button>
