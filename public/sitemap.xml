@@ -66,6 +66,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://btcplanner.ca/blog/clarity-act-bitcoin-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/bitcoin-strategic-reserves-stablecoins</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://btcplanner.ca/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
