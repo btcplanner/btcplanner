@@ -110,9 +110,12 @@ export default function BlogPage({ slug, onNavigate }) {
               <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 28, color: COLORS.textPrimary, lineHeight: 1.3, marginBottom: 10 }}>
                 {post.title[lang]}
               </h1>
-              <div style={{ fontSize: 13, color: COLORS.textMuted }}>
+              <div style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 20 }}>
                 {new Date(post.date + "T00:00:00").toLocaleDateString(lang === "en" ? "en-CA" : "fr-CA", { year: "numeric", month: "long", day: "numeric" })}
               </div>
+              {post.image && (
+                <img src={post.image} alt={post.imageAlt?.[lang] || ""} style={{ width: "100%", height: 320, objectFit: "cover", borderRadius: 12, display: "block" }} />
+              )}
             </header>
 
             <div
@@ -144,21 +147,28 @@ export default function BlogPage({ slug, onNavigate }) {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {blogPosts.map(p => (
-                <article key={p.slug} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: "24px 28px", transition: "border-color 0.2s" }}>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 8 }}>
-                    {new Date(p.date + "T00:00:00").toLocaleDateString(lang === "en" ? "en-CA" : "fr-CA", { year: "numeric", month: "long", day: "numeric" })}
-                  </div>
-                  <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 18, color: COLORS.textPrimary, marginBottom: 8, lineHeight: 1.3 }}>
-                    <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", fontFamily: "inherit", fontWeight: "inherit", fontSize: "inherit", padding: 0, textAlign: "left", lineHeight: "inherit" }}>
-                      {p.title[lang]}
+                <article key={p.slug} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, overflow: "hidden", transition: "border-color 0.2s" }}>
+                  {p.image && (
+                    <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+                      <img src={p.image} alt={p.imageAlt?.[lang] || ""} loading="lazy" style={{ width: "100%", height: 200, objectFit: "cover", display: "block" }} />
                     </button>
-                  </h2>
-                  <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.6, marginBottom: 12 }}>
-                    {p.description[lang]}
-                  </p>
-                  <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 13, fontWeight: 500, fontFamily: "'Inter', sans-serif", padding: 0, textDecoration: "underline" }}>
-                    {lang === "en" ? "Read article" : "Lire l'article"} →
-                  </button>
+                  )}
+                  <div style={{ padding: "20px 28px 24px" }}>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 8 }}>
+                      {new Date(p.date + "T00:00:00").toLocaleDateString(lang === "en" ? "en-CA" : "fr-CA", { year: "numeric", month: "long", day: "numeric" })}
+                    </div>
+                    <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 18, color: COLORS.textPrimary, marginBottom: 8, lineHeight: 1.3 }}>
+                      <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", fontFamily: "inherit", fontWeight: "inherit", fontSize: "inherit", padding: 0, textAlign: "left", lineHeight: "inherit" }}>
+                        {p.title[lang]}
+                      </button>
+                    </h2>
+                    <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.6, marginBottom: 12 }}>
+                      {p.description[lang]}
+                    </p>
+                    <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 13, fontWeight: 500, fontFamily: "'Inter', sans-serif", padding: 0, textDecoration: "underline" }}>
+                      {lang === "en" ? "Read article" : "Lire l'article"} →
+                    </button>
+                  </div>
                 </article>
               ))}
             </div>
