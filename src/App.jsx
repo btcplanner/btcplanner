@@ -463,6 +463,10 @@ export default function BTCPlanner({ onNavigate }) {
     const CHART_CACHE_KEY = "btcplanner_chart_cache";
     const CHART_CACHE_TTL = 24 * 60 * 60 * 1000;
 
+    // Free APIs block historical data beyond 1 year.
+    // These are approximate BTC/CAD prices on the reference dates — historical facts that don't change.
+    const HISTORICAL_CAD = { y3: 40200, y5: 43500 };
+
     function getChartCache() {
       try {
         const raw = localStorage.getItem(CHART_CACHE_KEY);
@@ -477,11 +481,17 @@ export default function BTCPlanner({ onNavigate }) {
       try { localStorage.setItem(CHART_CACHE_KEY, JSON.stringify({ ts: Date.now(), data })); } catch {}
     }
 
+    function calcHistorical(currentCad) {
+      return {
+        y3: ((currentCad - HISTORICAL_CAD.y3) / HISTORICAL_CAD.y3) * 100,
+        y5: ((currentCad - HISTORICAL_CAD.y5) / HISTORICAL_CAD.y5) * 100,
+      };
+    }
+
     async function fetchData() {
       const cached = getChartCache();
       if (cached) {
         setMovingAvg200(cached.ma200);
-        setPriceChanges(prev => prev ? { ...prev, y3: cached.change_3y, y5: cached.change_5y } : { d1: null, d7: null, d30: null, y1: null, y3: cached.change_3y, y5: cached.change_5y });
       }
 
       try {
@@ -494,15 +504,15 @@ export default function BTCPlanner({ onNavigate }) {
         if (priceRes.ok) {
           setBtcPrice({ cad: priceData.cad, usd: priceData.usd });
           setPriceChange(priceData.change_24h?.toFixed(2));
-          setPriceChanges(prev => ({
-            ...(prev || {}),
+          const hist = calcHistorical(priceData.cad);
+          setPriceChanges({
             d1: priceData.change_24h,
             d7: priceData.change_7d,
             d30: priceData.change_30d,
             y1: priceData.change_1y,
-            y3: prev?.y3 ?? null,
-            y5: prev?.y5 ?? null,
-          }));
+            y3: hist.y3,
+            y5: hist.y5,
+          });
         }
         setFearGreed({ value: fgData.data[0].value, label: fgData.data[0].value_classification });
       } catch (e) {
@@ -515,11 +525,6 @@ export default function BTCPlanner({ onNavigate }) {
         if (chartRes.ok) {
           const chartData = await chartRes.json();
           setMovingAvg200(chartData.ma200);
-          setPriceChanges(prev => ({
-            ...(prev || {}),
-            y3: chartData.change_3y,
-            y5: chartData.change_5y,
-          }));
           setChartCache(chartData);
         }
       } catch (e) {
