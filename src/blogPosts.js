@@ -64,6 +64,13 @@ After purchasing, consider moving your Bitcoin to a hardware wallet (cold storag
 ### Tax Considerations
 
 The Canada Revenue Agency (CRA) treats Bitcoin as a commodity. Every sale, trade, or use of Bitcoin is a taxable event. Capital gains tax applies: 50% of your gains are included in your taxable income. Keep records of every transaction including the date, amount in CAD, and the quantity of BTC.
+
+### Related Articles
+
+- [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
 `,
       fr: `## Comment acheter du Bitcoin au Canada
 
@@ -109,6 +116,13 @@ Après l'achat, envisagez de transférer votre Bitcoin vers un portefeuille mat�
 ### Considérations fiscales
 
 L'Agence du revenu du Canada (ARC) traite le Bitcoin comme une marchandise. Chaque vente, échange ou utilisation de Bitcoin est un événement imposable. L'impôt sur les gains en capital s'applique : 50 % de vos gains sont inclus dans votre revenu imposable.
+
+### Articles connexes
+
+- [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
+- [Guide du stockage à froid Bitcoin pour les Canadiens](/blog/bitcoin-cold-storage-guide-canada)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
 `,
     },
   },
@@ -168,6 +182,13 @@ Each individual purchase creates a separate tax lot with its own cost basis. Whe
 - Transaction fees can add up with frequent small purchases — check your exchange's fee structure
 - Bitcoin is volatile and can decrease in value regardless of your purchase strategy
 - DCA is a mechanical strategy, not financial advice — consult a qualified advisor for your personal situation
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin vs. GICs in Canada: Comparing Your Options](/blog/bitcoin-vs-gics-canada)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [What Is the Bitcoin Halving? Next Halving in 2028](/blog/what-is-bitcoin-halving)
 `,
       fr: `## Qu'est-ce que l'investissement progressif (DCA) ?
 
@@ -201,6 +222,13 @@ Chaque achat individuel crée un lot fiscal distinct avec sa propre base de coû
 - Les frais de transaction peuvent s'accumuler avec de petits achats fréquents
 - Le Bitcoin est volatil et peut diminuer en valeur quelle que soit votre stratégie d'achat
 - Le DCA est une stratégie mécanique, pas un conseil financier
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin vs CPG au Canada : comparer vos options](/blog/bitcoin-vs-gics-canada)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+- [Qu'est-ce que le halving Bitcoin ?](/blog/what-is-bitcoin-halving)
 `,
     },
   },
@@ -282,6 +310,13 @@ Your seed phrase is the master backup of your wallet. Anyone who has your seed p
 - Hardware wallets can be shipped to Canadian addresses from both [Trezor](https://www.trezor.io) and [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
 - Customs duties may apply on imported electronics
 - The CRA does not require you to report Bitcoin holdings, only dispositions (sales, trades, or use as payment)
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
+- [What Is the Bitcoin Halving? Next Halving in 2028](/blog/what-is-bitcoin-halving)
 `,
       fr: `## Qu'est-ce que le stockage à froid ?
 
@@ -321,6 +356,13 @@ Votre phrase de récupération est la sauvegarde maîtresse de votre portefeuill
 4. Notez votre phrase de récupération
 5. Transférez d'abord un petit montant test de Bitcoin
 6. Vérifiez que la transaction test est arrivée, puis transférez le reste
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
+- [Qu'est-ce que le halving Bitcoin ?](/blog/what-is-bitcoin-halving)
 `,
     },
   },
@@ -410,6 +452,13 @@ Report cryptocurrency capital gains on **Schedule 3 (Capital Gains or Losses)** 
 - Tax rules can change. The information above reflects current CRA guidance as of 2026.
 - This is educational information, not tax advice. Consult a qualified Canadian tax professional for your specific situation.
 - The CRA has stated it is actively monitoring cryptocurrency transactions and exchanges.
+
+### Related Articles
+
+- [How to Report Bitcoin on TurboTax in Canada](/blog/how-to-report-bitcoin-turbotax-canada)
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
+- [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
 `,
       fr: `## Comment le Bitcoin est imposé au Canada
 
@@ -450,6 +499,13 @@ Les événements suivants ne sont **pas** imposables :
 
 - Les règles fiscales peuvent changer. Consultez un fiscaliste canadien qualifié pour votre situation spécifique.
 - L'ARC a déclaré surveiller activement les transactions de cryptomonnaie.
+
+### Articles connexes
+
+- [Comment déclarer le Bitcoin sur TurboTax au Canada](/blog/how-to-report-bitcoin-turbotax-canada)
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
+- [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
 `,
     },
   },
@@ -512,6 +568,13 @@ Canadian exchanges where you can purchase Bitcoin:
 - [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — Beginner-friendly global exchange
 
 After purchasing, consider securing your Bitcoin with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+- [Bitcoin vs. GICs in Canada: Comparing Your Options](/blog/bitcoin-vs-gics-canada)
 `,
       fr: `## Qu'est-ce que le halving Bitcoin ?
 
@@ -544,6 +607,441 @@ Plateformes canadiennes où vous pouvez acheter du Bitcoin :
 - [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — Plateforme mondiale adaptée aux débutants
 
 Après l'achat, envisagez de sécuriser votre Bitcoin avec un portefeuille matériel comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
+- [Guide du stockage à froid Bitcoin pour les Canadiens](/blog/bitcoin-cold-storage-guide-canada)
+- [Bitcoin vs CPG au Canada](/blog/bitcoin-vs-gics-canada)
+`,
+    },
+  },
+  {
+    slug: "bitcoin-etfs-canada",
+    date: "2026-06-09",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80",
+    imageAlt: { en: "Stock market trading screen with financial data", fr: "Écran de trading boursier avec données financières" },
+    title: {
+      en: "Bitcoin ETFs in Canada: Complete Guide for 2026",
+      fr: "FNB Bitcoin au Canada : guide complet pour 2026",
+    },
+    description: {
+      en: "A guide to Bitcoin ETFs available in Canada — how they work, the top funds on TSX, fees, tax treatment, and how they compare to buying Bitcoin directly.",
+      fr: "Un guide sur les FNB Bitcoin disponibles au Canada — fonctionnement, principaux fonds au TSX, frais, traitement fiscal et comparaison avec l'achat direct.",
+    },
+    content: {
+      en: `## Bitcoin ETFs in Canada
+
+Canada was one of the first countries in the world to approve a Bitcoin exchange-traded fund (ETF). Since February 2021, Canadian investors have had access to spot Bitcoin ETFs on the Toronto Stock Exchange (TSX).
+
+### What Is a Bitcoin ETF?
+
+A Bitcoin ETF is a fund that holds Bitcoin on behalf of investors and trades on a traditional stock exchange. Instead of buying and storing Bitcoin yourself, you buy shares of the ETF through your brokerage account — the same way you would buy shares of a stock or index fund.
+
+The ETF provider handles custody, security, and storage of the underlying Bitcoin.
+
+### Top Bitcoin ETFs on the TSX
+
+| ETF | Ticker | MER | Type |
+|-----|--------|-----|------|
+| Purpose Bitcoin ETF | BTCC | 1.00% | Spot BTC |
+| CI Galaxy Bitcoin ETF | BTCX | 0.40% | Spot BTC |
+| Fidelity Advantage Bitcoin ETF | FBTC | 0.39% | Spot BTC |
+| 3iQ CoinShares Bitcoin ETF | BTCQ | 1.00% | Spot BTC |
+| Evolve Bitcoin ETF | EBIT | 0.75% | Spot BTC |
+
+MER = Management Expense Ratio (annual fee deducted from the fund).
+
+### Bitcoin ETF vs. Buying Bitcoin Directly
+
+| Factor | Bitcoin ETF | Buying Directly |
+|--------|-------------|----------------|
+| Custody | Fund manages keys | You manage keys |
+| Storage | No wallet needed | Wallet required |
+| Available in TFSA/RRSP | Yes | No |
+| Trading hours | Market hours only | 24/7 |
+| Fees | MER + trading commission | Exchange fees + network fees |
+| Ownership | Shares of a fund | Actual Bitcoin |
+| Self-custody possible | No | Yes |
+
+### Tax Advantages: TFSA and RRSP
+
+One major advantage of Bitcoin ETFs in Canada is that you can hold them in registered accounts:
+
+- **TFSA (Tax-Free Savings Account):** All gains within the account are completely tax-free. No capital gains tax when you sell.
+- **RRSP (Registered Retirement Savings Plan):** Contributions are tax-deductible. Gains grow tax-deferred until withdrawal.
+
+Buying Bitcoin directly on an exchange like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) or [Shakepay](https://shakepay.me/r/K0D39LJ) does not qualify for registered accounts. This makes ETFs attractive for tax-advantaged Bitcoin exposure.
+
+### Who Should Consider a Bitcoin ETF?
+
+Bitcoin ETFs may be suitable if you:
+
+- Want Bitcoin exposure in a TFSA or RRSP
+- Prefer not to manage your own keys or wallet
+- Already have a brokerage account (Wealthsimple, Questrade, TD Direct Investing)
+- Want the simplicity of buying through a familiar stock trading interface
+
+### Who Should Consider Buying Directly?
+
+Buying Bitcoin directly may be preferable if you:
+
+- Want to actually own and hold your Bitcoin
+- Value self-custody and sovereignty over your assets
+- Plan to use Bitcoin for transactions or transfers
+- Want to avoid ongoing MER fees
+
+You can buy Bitcoin directly on Canadian exchanges like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link), and secure it with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [Bitcoin vs. GICs in Canada: Comparing Your Options](/blog/bitcoin-vs-gics-canada)
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+`,
+      fr: `## FNB Bitcoin au Canada
+
+Le Canada a été l'un des premiers pays au monde à approuver un fonds négocié en bourse (FNB) Bitcoin. Depuis février 2021, les investisseurs canadiens ont accès à des FNB Bitcoin au comptant sur la Bourse de Toronto (TSX).
+
+### Qu'est-ce qu'un FNB Bitcoin ?
+
+Un FNB Bitcoin est un fonds qui détient du Bitcoin pour le compte des investisseurs et se négocie sur une bourse traditionnelle. Au lieu d'acheter et de stocker du Bitcoin vous-même, vous achetez des parts du FNB via votre compte de courtage.
+
+### Principaux FNB Bitcoin au TSX
+
+| FNB | Symbole | RFG | Type |
+|-----|---------|-----|------|
+| Purpose Bitcoin ETF | BTCC | 1,00 % | BTC au comptant |
+| CI Galaxy Bitcoin ETF | BTCX | 0,40 % | BTC au comptant |
+| Fidelity Advantage Bitcoin ETF | FBTC | 0,39 % | BTC au comptant |
+| 3iQ CoinShares Bitcoin ETF | BTCQ | 1,00 % | BTC au comptant |
+| Evolve Bitcoin ETF | EBIT | 0,75 % | BTC au comptant |
+
+### FNB Bitcoin vs. achat direct
+
+| Facteur | FNB Bitcoin | Achat direct |
+|---------|-------------|-------------|
+| Conservation | Le fonds gère les clés | Vous gérez les clés |
+| Stockage | Pas de portefeuille nécessaire | Portefeuille requis |
+| Disponible dans CELI/REER | Oui | Non |
+| Heures de trading | Heures de marché seulement | 24/7 |
+| Propriété | Parts d'un fonds | Bitcoin réel |
+
+### Avantages fiscaux : CELI et REER
+
+Un avantage majeur des FNB Bitcoin au Canada est que vous pouvez les détenir dans des comptes enregistrés :
+
+- **CELI (Compte d'épargne libre d'impôt) :** Tous les gains dans le compte sont entièrement libres d'impôt.
+- **REER (Régime enregistré d'épargne-retraite) :** Les cotisations sont déductibles d'impôt. Les gains croissent à l'abri de l'impôt jusqu'au retrait.
+
+L'achat direct de Bitcoin sur une plateforme comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) ou [Shakepay](https://shakepay.me/r/K0D39LJ) ne permet pas de bénéficier des comptes enregistrés.
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+- [Bitcoin vs CPG au Canada](/blog/bitcoin-vs-gics-canada)
+- [Guide du stockage à froid Bitcoin](/blog/bitcoin-cold-storage-guide-canada)
+`,
+    },
+  },
+  {
+    slug: "bitcoin-vs-gics-canada",
+    date: "2026-06-07",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+    imageAlt: { en: "Canadian money and financial comparison concept", fr: "Argent canadien et concept de comparaison financière" },
+    title: {
+      en: "Bitcoin vs. GICs in Canada: Comparing Your Options",
+      fr: "Bitcoin vs CPG au Canada : comparer vos options",
+    },
+    description: {
+      en: "A comparison of Bitcoin and GICs for Canadian investors — risk, returns, tax treatment, and how each fits into a diversified portfolio.",
+      fr: "Une comparaison du Bitcoin et des CPG pour les investisseurs canadiens — risque, rendements, traitement fiscal et diversification.",
+    },
+    content: {
+      en: `## Bitcoin vs. GICs in Canada
+
+Guaranteed Investment Certificates (GICs) and Bitcoin represent opposite ends of the risk spectrum. Understanding how each works helps Canadian investors make informed decisions about their savings and investments.
+
+### What Is a GIC?
+
+A GIC is a fixed-income investment offered by Canadian banks and credit unions. You deposit money for a set term (typically 1-5 years) and receive a guaranteed interest rate. Your principal is protected, and deposits up to $100,000 are insured by CDIC (Canada Deposit Insurance Corporation) at member institutions.
+
+### Comparison at a Glance
+
+| Factor | GIC | Bitcoin |
+|--------|-----|---------|
+| Returns | Fixed (3%-5% in 2026) | Volatile (historically high long-term) |
+| Risk | Very low (CDIC insured) | Very high (can lose value) |
+| Principal protection | Yes | No |
+| Liquidity | Low (locked until maturity) | High (sell anytime, 24/7) |
+| TFSA/RRSP eligible | Yes | Only via ETFs |
+| Tax on gains | Interest taxed at full rate | Capital gains (50% inclusion) |
+| Inflation hedge | Limited | Debated |
+
+### Historical Returns
+
+**GICs:** In recent years, GIC rates have ranged from 1% to 5% depending on the term and the interest rate environment. A 1-year GIC in Canada currently offers roughly 3.5%-4.5%.
+
+**Bitcoin:** Bitcoin's annualized return since inception has been substantially higher, but with extreme volatility. There have been calendar years where Bitcoin lost over 50% of its value, and others where it gained over 100%. Past performance does not predict future results.
+
+### Tax Treatment
+
+**GIC interest** is taxed as regular income — 100% of the interest earned is added to your taxable income for the year.
+
+**Bitcoin capital gains** receive preferential tax treatment — only 50% of the gain is included in your taxable income. However, if you hold Bitcoin in a non-registered account, each sale is a taxable event.
+
+Holding either GICs or Bitcoin ETFs in a **TFSA** eliminates tax entirely. Learn more in our [Bitcoin Taxes in Canada](/blog/bitcoin-taxes-canada-cra) guide.
+
+### Risk Profile
+
+**GICs** are appropriate for:
+- Emergency funds or money needed at a specific date
+- Conservative investors with low risk tolerance
+- Short-term savings goals (1-5 years)
+
+**Bitcoin** may be considered by:
+- Investors with long time horizons and high risk tolerance
+- Those seeking diversification beyond traditional assets
+- People who understand and accept the volatility
+
+### Can You Hold Both?
+
+Many Canadian investors use GICs for stable, guaranteed portions of their portfolio and allocate a smaller percentage to Bitcoin for potential growth. This is sometimes called a "barbell strategy" — combining very safe assets with higher-risk, higher-potential-return assets.
+
+### How to Get Started
+
+**For GICs:** Contact your bank or credit union, or use a comparison site like Ratehub.ca to find the best GIC rates in Canada.
+
+**For Bitcoin:** You can buy directly on Canadian exchanges like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link). For tax-advantaged exposure, consider a [Bitcoin ETF in your TFSA or RRSP](/blog/bitcoin-etfs-canada). Secure direct holdings with a [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6) hardware wallet.
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
+- [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+`,
+      fr: `## Bitcoin vs CPG au Canada
+
+Les certificats de placement garanti (CPG) et le Bitcoin représentent les extrêmes opposés du spectre du risque. Comprendre le fonctionnement de chacun aide les investisseurs canadiens à prendre des décisions éclairées.
+
+### Qu'est-ce qu'un CPG ?
+
+Un CPG est un placement à revenu fixe offert par les banques et les caisses populaires canadiennes. Vous déposez de l'argent pour une durée déterminée (généralement 1 à 5 ans) et recevez un taux d'intérêt garanti. Votre capital est protégé et les dépôts jusqu'à 100 000 $ sont assurés par la SADC.
+
+### Comparaison rapide
+
+| Facteur | CPG | Bitcoin |
+|---------|-----|---------|
+| Rendements | Fixes (3 %-5 % en 2026) | Volatils (historiquement élevés à long terme) |
+| Risque | Très faible (assuré SADC) | Très élevé (peut perdre de la valeur) |
+| Protection du capital | Oui | Non |
+| Liquidité | Faible (verrouillé jusqu'à l'échéance) | Élevée (vendre à tout moment, 24/7) |
+| Admissible CELI/REER | Oui | Uniquement via FNB |
+| Impôt | Intérêts imposés au taux plein | Gains en capital (inclusion de 50 %) |
+
+### Traitement fiscal
+
+Les **intérêts des CPG** sont imposés comme un revenu ordinaire — 100 % des intérêts gagnés sont ajoutés à votre revenu imposable.
+
+Les **gains en capital du Bitcoin** bénéficient d'un traitement fiscal préférentiel — seuls 50 % du gain sont inclus dans votre revenu imposable. En savoir plus dans notre guide [Impôts sur le Bitcoin au Canada](/blog/bitcoin-taxes-canada-cra).
+
+### Comment commencer
+
+**Pour les CPG :** Contactez votre banque ou utilisez un site de comparaison comme Ratehub.ca.
+
+**Pour le Bitcoin :** Achetez directement sur des plateformes canadiennes comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) ou [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link). Pour une exposition fiscalement avantageuse, envisagez un [FNB Bitcoin dans votre CELI ou REER](/blog/bitcoin-etfs-canada). Sécurisez vos avoirs directs avec un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
+- [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+`,
+    },
+  },
+  {
+    slug: "how-to-report-bitcoin-turbotax-canada",
+    date: "2026-06-05",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80",
+    imageAlt: { en: "Person preparing tax returns on a laptop", fr: "Personne préparant une déclaration de revenus sur un ordinateur portable" },
+    title: {
+      en: "How to Report Bitcoin on TurboTax in Canada",
+      fr: "Comment déclarer le Bitcoin sur TurboTax au Canada",
+    },
+    description: {
+      en: "Step-by-step instructions for reporting Bitcoin capital gains and losses on TurboTax in Canada, including adjusted cost base calculations and Schedule 3.",
+      fr: "Instructions étape par étape pour déclarer les gains et pertes en capital Bitcoin sur TurboTax au Canada.",
+    },
+    content: {
+      en: `## How to Report Bitcoin on TurboTax in Canada
+
+If you sold, traded, or used Bitcoin during the tax year, you need to report it on your Canadian tax return. TurboTax is one of the most popular tax filing tools in Canada, and it supports cryptocurrency reporting through its capital gains section.
+
+### Before You Start: Gather Your Records
+
+You will need the following information for each Bitcoin transaction:
+
+- **Date of purchase** and **date of sale/trade**
+- **Amount in CAD** at the time of each transaction
+- **Quantity of BTC** bought and sold
+- **Exchange or platform** used (e.g., [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link))
+- **Transaction fees** paid
+
+Most Canadian exchanges provide transaction history downloads in CSV format.
+
+### Step 1: Calculate Your Adjusted Cost Base (ACB)
+
+The CRA requires you to use the adjusted cost base method. If you made multiple purchases at different prices, your ACB is the weighted average cost of all your Bitcoin at the time of sale.
+
+**Example:**
+- Purchase 1: 0.05 BTC at $80,000/BTC = $4,000
+- Purchase 2: 0.05 BTC at $100,000/BTC = $5,000
+- Total holdings: 0.1 BTC, total cost: $9,000
+- ACB per BTC: $90,000
+
+If you sell 0.05 BTC at $120,000/BTC:
+- Proceeds: $6,000
+- Cost (0.05 × $90,000): $4,500
+- Capital gain: $1,500
+- Taxable amount (50%): $750
+
+### Step 2: Open TurboTax and Navigate to Investments
+
+1. Open TurboTax and start or continue your return
+2. Go to the **"Income"** section
+3. Select **"Investments and capital gains"**
+4. Choose **"Capital gains or losses"**
+
+### Step 3: Enter Your Bitcoin Transactions
+
+For each disposition (sale, trade, or use):
+
+1. Select **"Cryptocurrency"** or **"Other property"** as the type
+2. Enter the **description** (e.g., "Bitcoin (BTC)")
+3. Enter the **date of sale** and **date of acquisition**
+4. Enter the **proceeds of disposition** (sale amount in CAD)
+5. Enter the **adjusted cost base** (your average cost for the BTC sold)
+6. Enter any **outlays and expenses** (transaction fees)
+
+TurboTax will calculate the capital gain or loss automatically.
+
+### Step 4: Review Schedule 3
+
+TurboTax generates **Schedule 3 (Capital Gains or Losses)** based on your entries. Review it to confirm:
+
+- All transactions are listed
+- The total capital gains/losses are correct
+- The taxable amount (50% of net gains) is properly calculated
+
+### Using Tax Software Tools
+
+If you have many transactions, consider using a crypto tax tool to generate your report:
+
+- **Koinly** — Imports from all major Canadian exchanges, generates a CRA-compatible capital gains report you can use in TurboTax
+- **CoinTracker** — Portfolio tracking and tax reports
+- **Adjusted Cost Base (adjustedcostbase.ca)** — Free Canadian ACB calculator
+
+These tools export data in formats compatible with TurboTax's import feature.
+
+### Common Mistakes to Avoid
+
+- **Forgetting crypto-to-crypto trades:** Trading BTC for ETH is a taxable event — you must report the CAD value at the time of the trade
+- **Not tracking transfers between wallets:** Transfers between your own wallets are not taxable, but you need records to prove they are not sales
+- **Using FIFO instead of ACB:** Canada uses the adjusted cost base (weighted average) method, not first-in-first-out
+- **Missing airdrops or rewards:** Received Bitcoin from staking, airdrops, or referral bonuses may be taxable as income at the time received
+
+### Important Notes
+
+- This guide reflects current CRA guidance and TurboTax features as of 2026
+- Tax rules can change — verify with the CRA website or a qualified tax professional
+- This is educational information, not tax advice
+
+### Related Articles
+
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
+`,
+      fr: `## Comment déclarer le Bitcoin sur TurboTax au Canada
+
+Si vous avez vendu, échangé ou utilisé du Bitcoin pendant l'année fiscale, vous devez le déclarer dans votre déclaration de revenus canadienne. TurboTax est l'un des logiciels de déclaration les plus populaires au Canada et prend en charge la déclaration des cryptomonnaies via sa section des gains en capital.
+
+### Avant de commencer : rassemblez vos documents
+
+Vous aurez besoin des informations suivantes pour chaque transaction Bitcoin :
+
+- **Date d'achat** et **date de vente/échange**
+- **Montant en CAD** au moment de chaque transaction
+- **Quantité de BTC** achetée et vendue
+- **Plateforme utilisée** (ex. : [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link))
+- **Frais de transaction** payés
+
+### Étape 1 : Calculer votre prix de base rajusté (PBR)
+
+L'ARC exige l'utilisation de la méthode du prix de base rajusté. Si vous avez effectué plusieurs achats à des prix différents, votre PBR est le coût moyen pondéré de tous vos Bitcoin au moment de la vente.
+
+**Exemple :**
+- Achat 1 : 0,05 BTC à 80 000 $/BTC = 4 000 $
+- Achat 2 : 0,05 BTC à 100 000 $/BTC = 5 000 $
+- Total : 0,1 BTC, coût total : 9 000 $
+- PBR par BTC : 90 000 $
+
+Si vous vendez 0,05 BTC à 120 000 $/BTC :
+- Produit : 6 000 $
+- Coût (0,05 × 90 000 $) : 4 500 $
+- Gain en capital : 1 500 $
+- Montant imposable (50 %) : 750 $
+
+### Étape 2 : Ouvrir TurboTax
+
+1. Ouvrez TurboTax et commencez ou continuez votre déclaration
+2. Allez à la section **« Revenus »**
+3. Sélectionnez **« Placements et gains en capital »**
+4. Choisissez **« Gains ou pertes en capital »**
+
+### Étape 3 : Entrer vos transactions Bitcoin
+
+Pour chaque disposition (vente, échange ou utilisation) :
+
+1. Sélectionnez **« Cryptomonnaie »** ou **« Autre bien »**
+2. Entrez la **description** (ex. : « Bitcoin (BTC) »)
+3. Entrez la **date de vente** et la **date d'acquisition**
+4. Entrez le **produit de disposition** (montant de vente en CAD)
+5. Entrez le **prix de base rajusté**
+6. Entrez les **dépenses** (frais de transaction)
+
+### Étape 4 : Vérifier l'annexe 3
+
+TurboTax génère l'**Annexe 3 (Gains ou pertes en capital)** basée sur vos entrées. Vérifiez que :
+
+- Toutes les transactions sont listées
+- Les gains/pertes totaux sont corrects
+- Le montant imposable (50 % des gains nets) est correctement calculé
+
+### Outils fiscaux utiles
+
+- **Koinly** — Importe depuis toutes les plateformes canadiennes majeures, génère un rapport compatible avec l'ARC
+- **CoinTracker** — Suivi de portefeuille et rapports fiscaux
+- **Adjusted Cost Base (adjustedcostbase.ca)** — Calculateur de PBR gratuit
+
+### Erreurs courantes à éviter
+
+- **Oublier les échanges crypto-crypto :** Échanger du BTC contre de l'ETH est un événement imposable
+- **Ne pas suivre les transferts entre portefeuilles :** Les transferts entre vos propres portefeuilles ne sont pas imposables, mais vous avez besoin de preuves
+- **Utiliser FIFO au lieu du PBR :** Le Canada utilise la méthode du prix de base rajusté (moyenne pondérée)
+
+### Articles connexes
+
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+- [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
 `,
     },
   },
