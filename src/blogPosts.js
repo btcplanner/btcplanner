@@ -1,10 +1,12 @@
 export const blogPosts = [
   {
-    slug: "how-to-buy-bitcoin-in-canada-2025",
-    date: "2025-06-15",
+    slug: "how-to-buy-bitcoin-in-canada-2026",
+    date: "2026-06-22",
+    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&q=80",
+    imageAlt: { en: "Bitcoin coin on Canadian currency", fr: "Pièce Bitcoin sur de la monnaie canadienne" },
     title: {
-      en: "How to Buy Bitcoin in Canada (2025 Guide)",
-      fr: "Comment acheter du Bitcoin au Canada (Guide 2025)",
+      en: "How to Buy Bitcoin in Canada (2026 Guide)",
+      fr: "Comment acheter du Bitcoin au Canada (Guide 2026)",
     },
     description: {
       en: "A step-by-step guide to buying Bitcoin in Canada using Interac e-Transfer, bank deposits, and Canadian exchanges like Kraken, Newton, and Shakepay.",
@@ -19,10 +21,10 @@ Buying Bitcoin in Canada is straightforward. Canadian residents have access to s
 
 The most common options for Canadians:
 
-- **Kraken** — Global exchange with advanced trading features and low fees. Supports CAD deposits via bank transfer.
+- [**Kraken**](https://invite.kraken.com/JDNW/rvqfaxbg) — Global exchange with advanced trading features and low fees. Supports CAD deposits via bank transfer.
 - **Newton** — Canadian-founded exchange with zero-commission trading. Supports Interac e-Transfer for instant funding.
-- **Shakepay** — Canadian app that allows you to buy Bitcoin with Interac e-Transfer. Known for its simplicity.
-- **Coinbase** — One of the world's largest exchanges. Supports Canadian users with bank deposits and Interac.
+- [**Shakepay**](https://shakepay.me/r/K0D39LJ) — Canadian app that allows you to buy Bitcoin with Interac e-Transfer. Known for its simplicity.
+- [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — One of the world's largest exchanges. Supports Canadian users with bank deposits and Interac.
 
 ### Step 2: Verify Your Identity
 
@@ -44,13 +46,13 @@ Most Canadian exchanges accept:
 
 ### Step 4: Buy Bitcoin
 
-Once your account is funded, you can place a market order (buy at the current price) or a limit order (set your own price). Most beginners start with a market order.
+Once your account is funded, you can place a market order (buy at the current price) or a limit order (set your own price).
 
-There is no minimum amount of Bitcoin you need to buy. Bitcoin is divisible to 8 decimal places (the smallest unit is called a "satoshi," equal to 0.00000001 BTC). You can start with as little as $10-$20 CAD.
+Bitcoin is divisible to 8 decimal places. The smallest unit is called a "satoshi," equal to 0.00000001 BTC. There is no required minimum beyond what your exchange sets.
 
 ### Step 5: Secure Your Bitcoin
 
-After purchasing, consider moving your Bitcoin to a hardware wallet (cold storage) for long-term security. Popular hardware wallets include Trezor and Ledger. Keeping Bitcoin on an exchange means the exchange controls your private keys.
+After purchasing, consider moving your Bitcoin to a hardware wallet (cold storage) for long-term security. Popular hardware wallets include [Trezor](https://www.trezor.io) and [Ledger](https://shop.ledger.com/?r=a8b2555293e6). Keeping Bitcoin on an exchange means the exchange controls your private keys.
 
 ### Fees to Be Aware Of
 
@@ -71,10 +73,10 @@ Acheter du Bitcoin au Canada est simple. Les résidents canadiens ont accès à 
 
 Les options les plus courantes pour les Canadiens :
 
-- **Kraken** — Plateforme mondiale avec des fonctionnalités de trading avancées et des frais réduits. Accepte les dépôts en CAD par virement bancaire.
+- [**Kraken**](https://invite.kraken.com/JDNW/rvqfaxbg) — Plateforme mondiale avec des fonctionnalités de trading avancées et des frais réduits. Accepte les dépôts en CAD par virement bancaire.
 - **Newton** — Plateforme fondée au Canada avec des transactions sans commission. Supporte le virement Interac pour un financement instantané.
-- **Shakepay** — Application canadienne qui permet d'acheter du Bitcoin par virement Interac. Connue pour sa simplicité.
-- **Coinbase** — L'une des plus grandes plateformes au monde. Supporte les utilisateurs canadiens avec des dépôts bancaires et Interac.
+- [**Shakepay**](https://shakepay.me/r/K0D39LJ) — Application canadienne qui permet d'acheter du Bitcoin par virement Interac. Connue pour sa simplicité.
+- [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — L'une des plus grandes plateformes au monde. Supporte les utilisateurs canadiens avec des dépôts bancaires et Interac.
 
 ### Étape 2 : Vérifier votre identité
 
@@ -98,11 +100,11 @@ La plupart des plateformes canadiennes acceptent :
 
 Une fois votre compte alimenté, vous pouvez passer un ordre au marché (acheter au prix actuel) ou un ordre limite (fixer votre propre prix).
 
-Il n'y a pas de montant minimum de Bitcoin à acheter. Le Bitcoin est divisible jusqu'à 8 décimales (la plus petite unité s'appelle un « satoshi », soit 0,00000001 BTC). Vous pouvez commencer avec aussi peu que 10-20 $ CAD.
+Le Bitcoin est divisible jusqu'à 8 décimales. La plus petite unité s'appelle un « satoshi », soit 0,00000001 BTC. Il n'y a pas de minimum requis au-delà de ce que votre plateforme exige.
 
 ### Étape 5 : Sécuriser votre Bitcoin
 
-Après l'achat, envisagez de transférer votre Bitcoin vers un portefeuille matériel (stockage à froid) pour une sécurité à long terme. Les portefeuilles matériels populaires incluent Trezor et Ledger.
+Après l'achat, envisagez de transférer votre Bitcoin vers un portefeuille matériel (stockage à froid) pour une sécurité à long terme. Les portefeuilles matériels populaires incluent [Trezor](https://www.trezor.io) et [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 
 ### Considérations fiscales
 
@@ -112,7 +114,9 @@ L'Agence du revenu du Canada (ARC) traite le Bitcoin comme une marchandise. Chaq
   },
   {
     slug: "bitcoin-dca-strategy-canada",
-    date: "2025-06-10",
+    date: "2026-06-20",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+    imageAlt: { en: "Financial chart showing investment growth over time", fr: "Graphique financier montrant la croissance d'un investissement" },
     title: {
       en: "Dollar Cost Averaging (DCA) Bitcoin in Canada",
       fr: "L'investissement progressif (DCA) en Bitcoin au Canada",
@@ -150,9 +154,9 @@ Neither approach is guaranteed to outperform the other. DCA reduces the risk of 
 
 Several Canadian exchanges support automatic recurring purchases:
 
-- **Shakepay** — Set up recurring buys with Interac e-Transfer
+- [**Shakepay**](https://shakepay.me/r/K0D39LJ) — Set up recurring buys with Interac e-Transfer
 - **Newton** — Supports scheduled purchases
-- **Coinbase** — Recurring buy feature with bank account or card
+- [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — Recurring buy feature with bank account or card
 
 ### Tax Implications of DCA in Canada
 
@@ -183,9 +187,9 @@ Cette approche élimine le besoin de synchroniser le marché.
 
 Plusieurs plateformes canadiennes supportent les achats récurrents automatiques :
 
-- **Shakepay** — Configurez des achats récurrents avec le virement Interac
+- [**Shakepay**](https://shakepay.me/r/K0D39LJ) — Configurez des achats récurrents avec le virement Interac
 - **Newton** — Supporte les achats programmés
-- **Coinbase** — Fonction d'achat récurrent avec compte bancaire ou carte
+- [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — Fonction d'achat récurrent avec compte bancaire ou carte
 
 ### Implications fiscales du DCA au Canada
 
@@ -202,7 +206,9 @@ Chaque achat individuel crée un lot fiscal distinct avec sa propre base de coû
   },
   {
     slug: "bitcoin-cold-storage-guide-canada",
-    date: "2025-06-05",
+    date: "2026-06-17",
+    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=800&q=80",
+    imageAlt: { en: "Hardware wallet device for cryptocurrency storage", fr: "Appareil de portefeuille matériel pour le stockage de cryptomonnaie" },
     title: {
       en: "Bitcoin Cold Storage Guide for Canadians",
       fr: "Guide du stockage à froid Bitcoin pour les Canadiens",
@@ -222,13 +228,13 @@ The principle is simple: if your private keys never touch the internet, they can
 
 The two most widely used hardware wallet manufacturers are:
 
-**Trezor**
+**[Trezor](https://www.trezor.io)**
 - Open-source firmware and hardware
 - Models: Trezor One, Trezor Model T, Trezor Safe 3
 - Supports Bitcoin and other cryptocurrencies
 - Company based in Prague, Czech Republic
 
-**Ledger**
+**[Ledger](https://shop.ledger.com/?r=a8b2555293e6)**
 - Secure element chip (similar to chip in credit cards)
 - Models: Ledger Nano S Plus, Ledger Nano X, Ledger Stax
 - Companion mobile app (Ledger Live)
@@ -263,7 +269,7 @@ Your seed phrase is the master backup of your wallet. Anyone who has your seed p
 
 ### Setting Up a Hardware Wallet
 
-1. Purchase directly from the manufacturer's website (Trezor.io or Ledger.com) — avoid third-party sellers
+1. Purchase directly from the manufacturer's website ([Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6)) — avoid third-party sellers
 2. Verify the device is sealed and untampered when it arrives
 3. Follow the manufacturer's setup guide
 4. Write down your seed phrase on the provided card
@@ -273,7 +279,7 @@ Your seed phrase is the master backup of your wallet. Anyone who has your seed p
 
 ### Canadian Considerations
 
-- Hardware wallets can be shipped to Canadian addresses from both Trezor and Ledger
+- Hardware wallets can be shipped to Canadian addresses from both [Trezor](https://www.trezor.io) and [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
 - Customs duties may apply on imported electronics
 - The CRA does not require you to report Bitcoin holdings, only dispositions (sales, trades, or use as payment)
 `,
@@ -287,12 +293,12 @@ Le principe est simple : si vos clés privées ne touchent jamais Internet, elle
 
 Les deux fabricants de portefeuilles matériels les plus utilisés sont :
 
-**Trezor**
+**[Trezor](https://www.trezor.io)**
 - Firmware et matériel open-source
 - Modèles : Trezor One, Trezor Model T, Trezor Safe 3
 - Supporte le Bitcoin et d'autres cryptomonnaies
 
-**Ledger**
+**[Ledger](https://shop.ledger.com/?r=a8b2555293e6)**
 - Puce d'élément sécurisé (similaire à la puce des cartes de crédit)
 - Modèles : Ledger Nano S Plus, Ledger Nano X, Ledger Stax
 - Application mobile compagnon (Ledger Live)
@@ -309,7 +315,7 @@ Votre phrase de récupération est la sauvegarde maîtresse de votre portefeuill
 
 ### Configuration d'un portefeuille matériel
 
-1. Achetez directement sur le site du fabricant (Trezor.io ou Ledger.com)
+1. Achetez directement sur le site du fabricant ([Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6))
 2. Vérifiez que l'appareil est scellé et non altéré
 3. Suivez le guide de configuration du fabricant
 4. Notez votre phrase de récupération
@@ -320,7 +326,9 @@ Votre phrase de récupération est la sauvegarde maîtresse de votre portefeuill
   },
   {
     slug: "bitcoin-taxes-canada-cra",
-    date: "2025-05-28",
+    date: "2026-06-14",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    imageAlt: { en: "Tax documents and calculator on a desk", fr: "Documents fiscaux et calculatrice sur un bureau" },
     title: {
       en: "Bitcoin Taxes in Canada: CRA Rules Explained",
       fr: "Impôts sur le Bitcoin au Canada : règles de l'ARC expliquées",
@@ -399,7 +407,7 @@ Report cryptocurrency capital gains on **Schedule 3 (Capital Gains or Losses)** 
 
 ### Important Notes
 
-- Tax rules can change. The information above reflects current CRA guidance as of 2025.
+- Tax rules can change. The information above reflects current CRA guidance as of 2026.
 - This is educational information, not tax advice. Consult a qualified Canadian tax professional for your specific situation.
 - The CRA has stated it is actively monitoring cryptocurrency transactions and exchanges.
 `,
@@ -447,7 +455,9 @@ Les événements suivants ne sont **pas** imposables :
   },
   {
     slug: "what-is-bitcoin-halving",
-    date: "2025-05-20",
+    date: "2026-06-11",
+    image: "https://images.unsplash.com/photo-1516245834210-c4c142787335?w=800&q=80",
+    imageAlt: { en: "Gold Bitcoin coins representing the halving concept", fr: "Pièces Bitcoin dorées représentant le concept du halving" },
     title: {
       en: "What Is the Bitcoin Halving? Next Halving in 2028",
       fr: "Qu'est-ce que le halving Bitcoin ? Prochain halving en 2028",
@@ -492,6 +502,16 @@ Historically, Bitcoin's price has increased in the 12-18 months following each h
 The next Bitcoin halving is estimated to occur around **April 2028** at block 1,050,000. The exact date depends on how quickly blocks are mined (the target is one block every 10 minutes on average).
 
 The block reward will decrease from 3.125 BTC to 1.5625 BTC per block.
+
+### Where to Buy Bitcoin Before the Next Halving
+
+Canadian exchanges where you can purchase Bitcoin:
+
+- [**Kraken**](https://invite.kraken.com/JDNW/rvqfaxbg) — Low fees with advanced trading features
+- [**Shakepay**](https://shakepay.me/r/K0D39LJ) — Simple Canadian app with Interac e-Transfer
+- [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — Beginner-friendly global exchange
+
+After purchasing, consider securing your Bitcoin with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 `,
       fr: `## Qu'est-ce que le halving Bitcoin ?
 
@@ -514,6 +534,16 @@ Le créateur du Bitcoin, Satoshi Nakamoto, a conçu le halving pour contrôler l
 ### Quand est le prochain halving ?
 
 Le prochain halving Bitcoin est estimé vers **avril 2028** au bloc 1 050 000. La récompense de bloc diminuera de 3,125 BTC à 1,5625 BTC par bloc.
+
+### Où acheter du Bitcoin avant le prochain halving
+
+Plateformes canadiennes où vous pouvez acheter du Bitcoin :
+
+- [**Kraken**](https://invite.kraken.com/JDNW/rvqfaxbg) — Frais réduits avec des fonctionnalités de trading avancées
+- [**Shakepay**](https://shakepay.me/r/K0D39LJ) — Application canadienne simple avec virement Interac
+- [**Coinbase**](https://coinbase.com/join/LJZZEMM?src=ios-link) — Plateforme mondiale adaptée aux débutants
+
+Après l'achat, envisagez de sécuriser votre Bitcoin avec un portefeuille matériel comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 `,
     },
   },

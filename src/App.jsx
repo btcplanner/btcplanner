@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { blogPosts } from "./blogPosts.js";
 
 const translations = {
   en: {
@@ -13,6 +14,7 @@ const translations = {
     },
     header: { slogan: "Canada's Bitcoin guide" },
     tabs: { dashboard: "Home", dca: "DCA", learn: "Learn", tools: "Tools", affiliates: "Start", blog: "Blog" },
+    blog: { sectionTitle: "Latest from the Blog", readMore: "Read article", viewAll: "View all articles" },
     dashboard: {
       welcome: "Welcome to BTC Planner",
       subtitle: "Canada's all-in-one Bitcoin starting point — learn about buying, storing, and stacking BTC.",
@@ -136,6 +138,7 @@ const translations = {
     },
     header: { slogan: "Le guide Bitcoin du Canada" },
     tabs: { dashboard: "Accueil", dca: "DCA", learn: "Apprendre", tools: "Outils", affiliates: "Commencer", blog: "Blog" },
+    blog: { sectionTitle: "Derniers articles du blog", readMore: "Lire l'article", viewAll: "Voir tous les articles" },
     dashboard: {
       welcome: "Bienvenue sur BTC Planner",
       subtitle: "Le point de départ Bitcoin tout-en-un du Canada — apprenez à acheter, stocker et accumuler du BTC.",
@@ -803,6 +806,37 @@ CRITICAL RULES:
                   </div>
                 </div>
               ))}
+            </section>
+
+            <section style={{ marginTop: 16 }} aria-label={t.blog.sectionTitle}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
+                <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>{t.blog.sectionTitle}</h2>
+                <button onClick={() => onNavigate("blog")} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 13, fontWeight: 500, fontFamily: "'Inter', sans-serif", padding: 0, textDecoration: "underline" }}>
+                  {t.blog.viewAll} →
+                </button>
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 16 }}>
+                {blogPosts.slice(0, 3).map(p => (
+                  <article key={p.slug} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, overflow: "hidden" }}>
+                    {p.image && (
+                      <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+                        <img src={p.image} alt={p.imageAlt?.[lang] || ""} loading="lazy" style={{ width: "100%", height: 140, objectFit: "cover", display: "block" }} />
+                      </button>
+                    )}
+                    <div style={{ padding: "14px 16px 16px" }}>
+                      <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 6 }}>
+                        {new Date(p.date + "T00:00:00").toLocaleDateString(lang === "en" ? "en-CA" : "fr-CA", { year: "numeric", month: "short", day: "numeric" })}
+                      </div>
+                      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 14, color: COLORS.textPrimary, marginBottom: 8, lineHeight: 1.3 }}>
+                        {p.title[lang]}
+                      </h3>
+                      <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 12, fontWeight: 500, fontFamily: "'Inter', sans-serif", padding: 0, textDecoration: "underline" }}>
+                        {t.blog.readMore} →
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </section>
           </div>
         )}
