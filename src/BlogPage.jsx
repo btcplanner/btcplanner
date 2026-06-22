@@ -36,16 +36,91 @@ export default function BlogPage({ slug, onNavigate }) {
   const post = slug ? blogPosts.find(p => p.slug === slug) : null;
 
   useEffect(() => {
+    const cleanupFns = [];
+
+    const setMeta = (selector, attr, value) => {
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement("meta");
+        const [key, val] = selector.match(/\[([^=]+)="([^"]+)"\]/).slice(1, 3) || [];
+        if (key && val) el.setAttribute(key, val);
+        document.head.appendChild(el);
+        cleanupFns.push(() => el.remove());
+      }
+      el.setAttribute(attr, value);
+    };
+
+    const setLink = (rel, href) => {
+      let el = document.querySelector(`link[rel="${rel}"]`);
+      if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", rel);
+        document.head.appendChild(el);
+        cleanupFns.push(() => el.remove());
+      }
+      el.setAttribute("href", href);
+    };
+
     if (post) {
-      document.title = `${post.title[lang]} | BTC Planner`;
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", post.description[lang]);
+      const title = `${post.title[lang]} | BTC Planner`;
+      const url = `https://btcplanner.ca/blog/${post.slug}`;
+      document.title = title;
+      setMeta('meta[name="description"]', "content", post.description[lang]);
+      setLink("canonical", url);
+
+      setMeta('meta[property="og:type"]', "content", "article");
+      setMeta('meta[property="og:title"]', "content", post.title[lang]);
+      setMeta('meta[property="og:description"]', "content", post.description[lang]);
+      setMeta('meta[property="og:url"]', "content", url);
+      if (post.image) setMeta('meta[property="og:image"]', "content", post.image);
+      setMeta('meta[property="og:site_name"]', "content", "BTC Planner");
+      setMeta('meta[property="og:locale"]', "content", lang === "en" ? "en_CA" : "fr_CA");
+
+      setMeta('meta[name="twitter:card"]', "content", "summary_large_image");
+      setMeta('meta[name="twitter:title"]', "content", post.title[lang]);
+      setMeta('meta[name="twitter:description"]', "content", post.description[lang]);
+      if (post.image) setMeta('meta[name="twitter:image"]', "content", post.image);
+
+      let ldScript = document.querySelector('script[data-blog-ld]');
+      if (!ldScript) {
+        ldScript = document.createElement("script");
+        ldScript.type = "application/ld+json";
+        ldScript.setAttribute("data-blog-ld", "true");
+        document.head.appendChild(ldScript);
+        cleanupFns.push(() => ldScript.remove());
+      }
+      ldScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title[lang],
+        "description": post.description[lang],
+        "image": post.image || "",
+        "datePublished": post.date,
+        "dateModified": post.date,
+        "author": { "@type": "Organization", "name": "BTC Planner", "url": "https://btcplanner.ca" },
+        "publisher": { "@type": "Organization", "name": "BTC Planner", "url": "https://btcplanner.ca" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+        "inLanguage": lang === "en" ? "en-CA" : "fr-CA",
+      });
     } else {
-      document.title = lang === "en"
+      const blogTitle = lang === "en"
         ? "Bitcoin Blog for Canadians | BTC Planner"
         : "Blog Bitcoin pour les Canadiens | BTC Planner";
+      document.title = blogTitle;
+      setMeta('meta[name="description"]', "content", lang === "en"
+        ? "Educational articles about buying, storing, and understanding Bitcoin in Canada."
+        : "Articles éducatifs sur l'achat, le stockage et la compréhension du Bitcoin au Canada.");
+      setLink("canonical", "https://btcplanner.ca/blog");
+
+      setMeta('meta[property="og:type"]', "content", "website");
+      setMeta('meta[property="og:title"]', "content", blogTitle);
+      setMeta('meta[property="og:url"]', "content", "https://btcplanner.ca/blog");
     }
-    return () => { document.title = "BTC Planner — Canada's Bitcoin Guide"; };
+
+    return () => {
+      document.title = "BTC Planner — Canada's Bitcoin Guide";
+      cleanupFns.forEach(fn => fn());
+    };
   }, [post, lang]);
 
   return (
