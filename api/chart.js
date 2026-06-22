@@ -9,53 +9,21 @@ export default async function handler(req, res) {
   const apiKey = process.env.COINGECKO_API_KEY;
   const keyParam = apiKey ? `&x_cg_demo_api_key=${apiKey}` : '';
 
-  function formatDate(d) {
-    const dd = String(d.getDate()).padStart(2, '0');
-    const mm = String(d.getMonth() + 1).padStart(2, '0');
-    const yyyy = d.getFullYear();
-    return `${dd}-${mm}-${yyyy}`;
-  }
-
-  const now = new Date();
-  const y3Date = new Date(now);
-  y3Date.setFullYear(y3Date.getFullYear() - 3);
-  const y5Date = new Date(now);
-  y5Date.setFullYear(y5Date.getFullYear() - 5);
-
   try {
-    const [maRes, y3Res, y5Res] = await Promise.allSettled([
-      fetch(
-        `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=cad&days=200${keyParam}`
-      ).then(r => r.ok ? r.json() : null),
-      fetch(
-        `https://api.coingecko.com/api/v3/coins/bitcoin/history?id=bitcoin&date=${formatDate(y3Date)}&localization=false${keyParam}`
-      ).then(r => r.ok ? r.json() : null),
-      fetch(
-        `https://api.coingecko.com/api/v3/coins/bitcoin/history?id=bitcoin&date=${formatDate(y5Date)}&localization=false${keyParam}`
-      ).then(r => r.ok ? r.json() : null),
-    ]);
+    const response = await fetch(
+      `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=cad&days=200${keyParam}`
+    );
+    const data = await response.json();
 
-    const maData = maRes.status === 'fulfilled' ? maRes.value : null;
-    const y3Data = y3Res.status === 'fulfilled' ? y3Res.value : null;
-    const y5Data = y5Res.status === 'fulfilled' ? y5Res.value : null;
-
-    let ma200 = null;
-    let currentPrice = null;
-    if (maData?.prices?.length) {
-      const prices = maData.prices.map(p => p[1]);
-      currentPrice = prices[prices.length - 1];
-      const last200 = prices.slice(-200);
-      ma200 = Math.round(last200.reduce((a, b) => a + b, 0) / last200.length);
+    if (!response.ok) {
+      return res.status(response.status).json({ error: 'CoinGecko API error' });
     }
 
-    const y3Price = y3Data?.market_data?.current_price?.cad ?? null;
-    const y5Price = y5Data?.market_data?.current_price?.cad ?? null;
+    const prices = data.prices.map(p => p[1]);
+    const last200 = prices.slice(-200);
+    const ma200 = Math.round(last200.reduce((a, b) => a + b, 0) / last200.length);
 
-    return res.status(200).json({
-      ma200,
-      change_3y: (currentPrice && y3Price) ? ((currentPrice - y3Price) / y3Price) * 100 : null,
-      change_5y: (currentPrice && y5Price) ? ((currentPrice - y5Price) / y5Price) * 100 : null,
-    });
+    return res.status(200).json({ ma200 });
   } catch (error) {
     return res.status(500).json({ error: 'Failed to fetch chart data' });
   }
