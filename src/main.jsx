@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import TermsPage from './TermsPage.jsx'
 import PrivacyPage from './PrivacyPage.jsx'
+import BlogPage from './BlogPage.jsx'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -32,22 +33,39 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+function getPageFromPath(pathname) {
+  if (pathname === '/blog') return 'blog';
+  if (pathname.startsWith('/blog/')) return pathname.slice(1);
+  if (pathname === '/terms') return 'terms';
+  if (pathname === '/privacy') return 'privacy';
+  return 'home';
+}
+
 function Router() {
-  const [page, setPage] = React.useState('home')
+  const [page, setPage] = React.useState(() => getPageFromPath(window.location.pathname))
 
   React.useEffect(() => {
-    const handlePop = () => setPage('home')
+    const handlePop = () => {
+      setPage(getPageFromPath(window.location.pathname))
+    }
     window.addEventListener('popstate', handlePop)
     return () => window.removeEventListener('popstate', handlePop)
   }, [])
 
   const navigate = (to) => {
     window.scrollTo(0, 0)
+    const path = to === 'home' ? '/' : `/${to}`
+    window.history.pushState(null, '', path)
     setPage(to)
   }
 
   if (page === 'terms') return <TermsPage onBack={() => navigate('home')} />
   if (page === 'privacy') return <PrivacyPage onBack={() => navigate('home')} />
+  if (page === 'blog') return <BlogPage slug={null} onNavigate={navigate} />
+  if (page.startsWith('blog/')) {
+    const slug = page.slice(5)
+    return <BlogPage slug={slug} onNavigate={navigate} />
+  }
   return <App onNavigate={navigate} />
 }
 

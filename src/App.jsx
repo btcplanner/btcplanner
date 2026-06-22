@@ -12,7 +12,7 @@ const translations = {
       text: "Crypto assets are volatile. You may lose your entire investment. This site is for educational purposes only.",
     },
     header: { slogan: "Canada's Bitcoin guide" },
-    tabs: { dashboard: "Home", dca: "DCA", learn: "Learn", tools: "Tools", affiliates: "Start" },
+    tabs: { dashboard: "Home", dca: "DCA", learn: "Learn", tools: "Tools", affiliates: "Start", blog: "Blog" },
     dashboard: {
       welcome: "Welcome to BTC Planner",
       subtitle: "Canada's all-in-one Bitcoin starting point — learn about buying, storing, and stacking BTC.",
@@ -135,7 +135,7 @@ const translations = {
       text: "Les cryptoactifs sont volatils. Vous pourriez perdre la totalité de votre investissement. Ce site est à des fins éducatives uniquement.",
     },
     header: { slogan: "Le guide Bitcoin du Canada" },
-    tabs: { dashboard: "Accueil", dca: "DCA", learn: "Apprendre", tools: "Outils", affiliates: "Commencer" },
+    tabs: { dashboard: "Accueil", dca: "DCA", learn: "Apprendre", tools: "Outils", affiliates: "Commencer", blog: "Blog" },
     dashboard: {
       welcome: "Bienvenue sur BTC Planner",
       subtitle: "Le point de départ Bitcoin tout-en-un du Canada — apprenez à acheter, stocker et accumuler du BTC.",
@@ -600,6 +600,7 @@ CRITICAL RULES:
     { id: "learn", label: t.tabs.learn },
     { id: "tools", label: t.tabs.tools },
     { id: "affiliates", label: t.tabs.affiliates },
+    { id: "blog", label: t.tabs.blog, href: "blog" },
   ];
 
   const faqs = t.faqs;
@@ -659,7 +660,7 @@ CRITICAL RULES:
 
       <nav style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#fff" }} aria-label="Main navigation">
         {tabs.map(tab => (
-          <button key={tab.id} onClick={() => setActiveTab(tab.id)} aria-current={activeTab === tab.id ? "page" : undefined} style={{
+          <button key={tab.id} onClick={() => tab.href ? onNavigate(tab.href) : setActiveTab(tab.id)} aria-current={activeTab === tab.id ? "page" : undefined} style={{
             flex: 1, padding: "12px 0", background: "none", border: "none",
             color: activeTab === tab.id ? COLORS.orange : COLORS.textMuted,
             borderBottom: activeTab === tab.id ? `2px solid ${COLORS.orange}` : "2px solid transparent",
