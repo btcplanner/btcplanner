@@ -1045,4 +1045,370 @@ TurboTax génère l'**Annexe 3 (Gains ou pertes en capital)** basée sur vos ent
 `,
     },
   },
+  {
+    slug: "bitcoin-tfsa-rrsp-canada",
+    date: "2026-06-03",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6e?w=800&q=80",
+    imageAlt: { en: "Canadian savings and investment planning concept", fr: "Concept d'épargne et de planification d'investissement canadien" },
+    title: {
+      en: "Bitcoin in Your TFSA or RRSP: How It Works in Canada",
+      fr: "Bitcoin dans votre CELI ou REER : comment ça fonctionne au Canada",
+    },
+    description: {
+      en: "How to get Bitcoin exposure inside a TFSA or RRSP using Canadian Bitcoin ETFs. Tax-free and tax-deferred Bitcoin investing for Canadians.",
+      fr: "Comment obtenir une exposition au Bitcoin dans un CELI ou REER à l'aide de FNB Bitcoin canadiens. Investissement Bitcoin libre d'impôt pour les Canadiens.",
+    },
+    content: {
+      en: `## Bitcoin in Your TFSA or RRSP
+
+One of the most common questions Canadian investors ask is whether they can hold Bitcoin in their Tax-Free Savings Account (TFSA) or Registered Retirement Savings Plan (RRSP). The short answer: not directly, but you can through Bitcoin ETFs.
+
+### Can You Hold Bitcoin Directly in a TFSA or RRSP?
+
+No. The CRA does not consider cryptocurrency to be a "qualified investment" for registered accounts. You cannot transfer Bitcoin from an exchange like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) or [Shakepay](https://shakepay.me/r/K0D39LJ) into your TFSA or RRSP.
+
+If you hold Bitcoin directly, any gains are subject to capital gains tax when you sell.
+
+### The ETF Solution
+
+Canada approved spot Bitcoin ETFs in 2021 — among the first in the world. These ETFs trade on the Toronto Stock Exchange (TSX) and are eligible for registered accounts.
+
+By holding a Bitcoin ETF inside your TFSA or RRSP, you get Bitcoin price exposure with significant tax advantages:
+
+**TFSA Benefits:**
+- All gains are 100% tax-free — no capital gains tax ever
+- No impact on your marginal tax rate
+- Withdrawals can be re-contributed the following year
+- 2026 contribution limit: check CRA for your available room
+
+**RRSP Benefits:**
+- Contributions are tax-deductible (reduce your taxable income this year)
+- All gains grow tax-deferred until withdrawal
+- Ideal if you expect to be in a lower tax bracket at retirement
+
+### Best Bitcoin ETFs for Registered Accounts
+
+| ETF | Ticker | MER | Notes |
+|-----|--------|-----|-------|
+| Purpose Bitcoin ETF | BTCC | 1.00% | First Bitcoin ETF in North America |
+| CI Galaxy Bitcoin ETF | BTCX | 0.40% | Lower fee option |
+| Fidelity Advantage Bitcoin ETF | FBTC | 0.39% | Lowest MER |
+
+All are available through major Canadian brokerages: Wealthsimple, Questrade, TD Direct Investing, RBC Direct Investing, and others.
+
+### TFSA vs. RRSP for Bitcoin: Which Is Better?
+
+| Factor | TFSA | RRSP |
+|--------|------|------|
+| Tax on gains | None | Deferred (taxed on withdrawal) |
+| Contribution deductible | No | Yes |
+| Best for | High-growth assets | Tax deferral until retirement |
+| Withdrawal flexibility | Anytime, tax-free | Taxed as income on withdrawal |
+
+For a volatile, potentially high-growth asset like Bitcoin, a TFSA is often preferred because all gains — no matter how large — are completely tax-free. With an RRSP, large gains are eventually taxed as income.
+
+### Important Considerations
+
+- ETFs have management fees (MER) that reduce returns compared to holding Bitcoin directly
+- You don't own actual Bitcoin — you own shares of a fund
+- You cannot withdraw Bitcoin from an ETF to a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
+- TFSA over-contributions incur a 1% per month penalty — know your room
+
+### Related Articles
+
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [Bitcoin vs. GICs in Canada: Comparing Your Options](/blog/bitcoin-vs-gics-canada)
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+`,
+      fr: `## Bitcoin dans votre CELI ou REER
+
+L'une des questions les plus fréquentes des investisseurs canadiens est de savoir s'ils peuvent détenir du Bitcoin dans leur Compte d'épargne libre d'impôt (CELI) ou leur Régime enregistré d'épargne-retraite (REER). La réponse courte : pas directement, mais vous pouvez le faire via des FNB Bitcoin.
+
+### Pouvez-vous détenir du Bitcoin directement dans un CELI ou REER ?
+
+Non. L'ARC ne considère pas la cryptomonnaie comme un « placement admissible » pour les comptes enregistrés. Vous ne pouvez pas transférer du Bitcoin d'une plateforme comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) ou [Shakepay](https://shakepay.me/r/K0D39LJ) dans votre CELI ou REER.
+
+### La solution FNB
+
+Le Canada a approuvé les FNB Bitcoin au comptant en 2021. Ces FNB se négocient au TSX et sont admissibles aux comptes enregistrés.
+
+**Avantages du CELI :**
+- Tous les gains sont 100 % libres d'impôt
+- Aucun impact sur votre taux marginal d'imposition
+- Les retraits peuvent être recotisés l'année suivante
+
+**Avantages du REER :**
+- Les cotisations sont déductibles d'impôt
+- Les gains croissent à l'abri de l'impôt jusqu'au retrait
+- Idéal si vous serez dans une tranche d'imposition inférieure à la retraite
+
+### Meilleurs FNB Bitcoin pour comptes enregistrés
+
+| FNB | Symbole | RFG | Notes |
+|-----|---------|-----|-------|
+| Purpose Bitcoin ETF | BTCC | 1,00 % | Premier FNB Bitcoin en Amérique du Nord |
+| CI Galaxy Bitcoin ETF | BTCX | 0,40 % | Option à frais réduits |
+| Fidelity Advantage Bitcoin ETF | FBTC | 0,39 % | RFG le plus bas |
+
+### Considérations importantes
+
+- Les FNB ont des frais de gestion (RFG) qui réduisent les rendements
+- Vous ne possédez pas réellement du Bitcoin — vous possédez des parts d'un fonds
+- Vous ne pouvez pas retirer du Bitcoin vers un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
+
+### Articles connexes
+
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+- [Bitcoin vs CPG au Canada : comparer vos options](/blog/bitcoin-vs-gics-canada)
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+`,
+    },
+  },
+  {
+    slug: "best-bitcoin-exchange-canada",
+    date: "2026-06-01",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    imageAlt: { en: "Comparison of cryptocurrency exchange platforms", fr: "Comparaison des plateformes d'échange de cryptomonnaie" },
+    title: {
+      en: "Best Bitcoin Exchanges in Canada (2026 Comparison)",
+      fr: "Meilleures plateformes Bitcoin au Canada (Comparaison 2026)",
+    },
+    description: {
+      en: "A detailed comparison of Canada's top Bitcoin exchanges — Kraken, Shakepay, Newton, and Coinbase. Fees, features, deposit methods, and which is best for you.",
+      fr: "Une comparaison détaillée des meilleures plateformes Bitcoin au Canada — Kraken, Shakepay, Newton et Coinbase. Frais, fonctionnalités et méthodes de dépôt.",
+    },
+    content: {
+      en: `## Best Bitcoin Exchanges in Canada
+
+Choosing the right exchange is one of the first decisions a Canadian Bitcoin buyer makes. Each platform has different fees, features, and funding methods. Here is a detailed comparison of the top options available to Canadians in 2026.
+
+### Exchange Comparison Table
+
+| Feature | [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) | [Shakepay](https://shakepay.me/r/K0D39LJ) | Newton | [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link) |
+|---------|--------|----------|--------|----------|
+| Trading fees | 0.16%-0.26% | Spread (~1.5%) | Spread (~0.5-1%) | 0.5%-1.5% |
+| Interac e-Transfer | Yes | Yes | Yes | Yes |
+| Bank wire | Yes | No | Yes | Yes |
+| Credit/debit card | Yes | No | No | Yes |
+| Advanced trading | Yes | No | No | Yes |
+| Mobile app | Yes | Yes | Yes | Yes |
+| Recurring buys | Yes | Yes | Yes | Yes |
+| Coins available | 200+ | BTC, ETH | 70+ | 200+ |
+| Canadian company | No (global) | Yes | Yes | No (global) |
+
+### Kraken
+
+[Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) is one of the oldest and most trusted exchanges globally. For Canadian users, it offers CAD deposits via bank transfer and competitive maker/taker fees starting at 0.16%/0.26%.
+
+**Best for:** Active traders who want low fees and advanced features like limit orders, stop losses, and margin trading.
+
+### Shakepay
+
+[Shakepay](https://shakepay.me/r/K0D39LJ) is a Canadian company focused on making Bitcoin buying as simple as possible. Funding is done exclusively through Interac e-Transfer.
+
+**Best for:** Beginners who want a simple app to buy Bitcoin with Interac e-Transfer.
+
+### Newton
+
+Newton is a Canadian exchange offering zero-commission trading (costs are in the spread). It supports a wider range of cryptocurrencies than Shakepay.
+
+**Best for:** Canadians who want a low-cost, Canadian-founded exchange with more coin options.
+
+### Coinbase
+
+[Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link) is the world's largest publicly traded exchange. It supports Canadian users with Interac, bank deposits, and credit card funding.
+
+**Best for:** Users who want a large, publicly traded platform with a strong mobile app.
+
+### Which Exchange Should You Choose?
+
+- **Lowest fees:** [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) (maker/taker model)
+- **Simplest for beginners:** [Shakepay](https://shakepay.me/r/K0D39LJ)
+- **Canadian with good variety:** Newton
+- **Largest global platform:** [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
+
+After purchasing, secure your Bitcoin with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+- [Bitcoin in Your TFSA or RRSP](/blog/bitcoin-tfsa-rrsp-canada)
+`,
+      fr: `## Meilleures plateformes Bitcoin au Canada
+
+Choisir la bonne plateforme est l'une des premières décisions d'un acheteur de Bitcoin canadien. Chaque plateforme a des frais, des fonctionnalités et des méthodes de financement différents.
+
+### Tableau comparatif
+
+| Caractéristique | [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) | [Shakepay](https://shakepay.me/r/K0D39LJ) | Newton | [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link) |
+|----------------|--------|----------|--------|----------|
+| Frais | 0,16 %-0,26 % | Écart (~1,5 %) | Écart (~0,5-1 %) | 0,5 %-1,5 % |
+| Virement Interac | Oui | Oui | Oui | Oui |
+| Virement bancaire | Oui | Non | Oui | Oui |
+| Trading avancé | Oui | Non | Non | Oui |
+| App mobile | Oui | Oui | Oui | Oui |
+| Entreprise canadienne | Non (mondiale) | Oui | Oui | Non (mondiale) |
+
+### Kraken
+
+[Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) est l'une des plateformes les plus anciennes et les plus fiables. Des frais compétitifs et des fonctionnalités avancées.
+
+### Shakepay
+
+[Shakepay](https://shakepay.me/r/K0D39LJ) est une entreprise canadienne qui rend l'achat simple avec virement Interac.
+
+### Newton
+
+Newton offre du trading sans commission avec un bon choix de cryptomonnaies.
+
+### Coinbase
+
+[Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link) est la plus grande plateforme cotée en bourse.
+
+### Quelle plateforme choisir ?
+
+- **Frais les plus bas :** [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg)
+- **Plus simple :** [Shakepay](https://shakepay.me/r/K0D39LJ)
+- **Canadienne :** Newton
+- **Plus grande :** [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
+
+Sécurisez votre Bitcoin avec un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
+- [Guide du stockage à froid Bitcoin pour les Canadiens](/blog/bitcoin-cold-storage-guide-canada)
+- [Bitcoin dans votre CELI ou REER](/blog/bitcoin-tfsa-rrsp-canada)
+`,
+    },
+  },
+  {
+    slug: "bitcoin-for-beginners-canada",
+    date: "2026-05-29",
+    image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&q=80",
+    imageAlt: { en: "Bitcoin coin on a simple background for beginners", fr: "Pièce Bitcoin sur un fond simple pour débutants" },
+    title: {
+      en: "Bitcoin for Beginners: A Canadian's Complete Guide",
+      fr: "Bitcoin pour débutants : le guide complet pour les Canadiens",
+    },
+    description: {
+      en: "New to Bitcoin? This beginner-friendly guide explains what Bitcoin is, how it works, and how to get started buying and storing BTC in Canada.",
+      fr: "Nouveau au Bitcoin ? Ce guide pour débutants explique ce qu'est le Bitcoin, comment il fonctionne et comment commencer au Canada.",
+    },
+    content: {
+      en: `## Bitcoin for Beginners
+
+If you have heard about Bitcoin but are not sure where to start, this guide covers the fundamentals. No technical background required.
+
+### What Is Bitcoin?
+
+Bitcoin is a digital currency that operates without a central bank or single administrator. It was created in 2009 by an anonymous person or group known as Satoshi Nakamoto. Transactions are verified by a network of computers (called "miners") and recorded on a public ledger called the blockchain.
+
+Key properties:
+- **Decentralized:** No government or company controls Bitcoin
+- **Limited supply:** There will only ever be 21 million Bitcoin
+- **Divisible:** You can buy fractions of a Bitcoin (the smallest unit, a "satoshi," is 0.00000001 BTC)
+- **Borderless:** You can send Bitcoin anywhere in the world
+- **Transparent:** All transactions are recorded on a public blockchain
+
+### Is Bitcoin Legal in Canada?
+
+Yes. Bitcoin is fully legal in Canada. The Canada Revenue Agency (CRA) treats it as a commodity. Canadian exchanges are registered with FINTRAC (Financial Transactions and Reports Analysis Centre of Canada) and follow anti-money laundering regulations.
+
+### How to Buy Bitcoin in Canada
+
+1. **Choose an exchange** — Popular options for Canadians include [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), and [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
+2. **Verify your identity** — All Canadian exchanges require government ID
+3. **Fund your account** — Most accept Interac e-Transfer (instant, free)
+4. **Buy Bitcoin** — You can buy any amount — there is no minimum beyond what the exchange sets
+5. **Secure your Bitcoin** — Consider a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6) for long-term storage
+
+### Common Beginner Mistakes
+
+- **Investing more than you can afford to lose** — Bitcoin is volatile. Only invest money you would not need in the short term.
+- **Keeping all Bitcoin on an exchange** — Exchanges can be hacked or go bankrupt. Move significant amounts to cold storage.
+- **Trying to time the market** — Most people fail at this. Dollar cost averaging (DCA) is a simpler approach.
+- **Sharing your seed phrase** — Your hardware wallet's recovery phrase is the key to your Bitcoin. Never share it.
+- **Not keeping tax records** — Every sale or trade is a taxable event in Canada. Track everything.
+
+### Frequently Asked Questions
+
+**Can I buy less than one Bitcoin?**
+Yes. Bitcoin is divisible to 8 decimal places. You can buy as little as your exchange allows.
+
+**Do I have to pay taxes on Bitcoin?**
+Yes. When you sell, trade, or use Bitcoin, you must report it to the CRA. Learn more in our [Bitcoin Taxes in Canada](/blog/bitcoin-taxes-canada-cra) guide.
+
+**What is a wallet?**
+A Bitcoin wallet is software or hardware that stores the cryptographic keys needed to send and receive Bitcoin. Learn more in our [Cold Storage Guide](/blog/bitcoin-cold-storage-guide-canada).
+
+**What is DCA?**
+Dollar Cost Averaging means buying a fixed amount of Bitcoin at regular intervals. It removes the stress of trying to time the market. Learn more in our [DCA Guide](/blog/bitcoin-dca-strategy-canada).
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Best Bitcoin Exchanges in Canada (2026 Comparison)](/blog/best-bitcoin-exchange-canada)
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+`,
+      fr: `## Bitcoin pour débutants
+
+Si vous avez entendu parler du Bitcoin mais ne savez pas par où commencer, ce guide couvre les fondamentaux. Aucune connaissance technique requise.
+
+### Qu'est-ce que le Bitcoin ?
+
+Le Bitcoin est une monnaie numérique qui fonctionne sans banque centrale. Il a été créé en 2009 par une personne ou un groupe anonyme connu sous le nom de Satoshi Nakamoto. Les transactions sont vérifiées par un réseau d'ordinateurs (appelés « mineurs ») et enregistrées sur un registre public appelé la blockchain.
+
+Propriétés clés :
+- **Décentralisé :** Aucun gouvernement ou entreprise ne contrôle le Bitcoin
+- **Offre limitée :** Il n'y aura jamais que 21 millions de Bitcoin
+- **Divisible :** Vous pouvez acheter des fractions de Bitcoin
+- **Sans frontières :** Vous pouvez envoyer du Bitcoin partout dans le monde
+
+### Le Bitcoin est-il légal au Canada ?
+
+Oui. Le Bitcoin est entièrement légal au Canada. L'ARC le traite comme une marchandise. Les plateformes canadiennes sont enregistrées auprès du CANAFE.
+
+### Comment acheter du Bitcoin au Canada
+
+1. **Choisir une plateforme** — [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) et [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
+2. **Vérifier votre identité** — Toutes les plateformes canadiennes exigent une pièce d'identité
+3. **Alimenter votre compte** — La plupart acceptent le virement Interac
+4. **Acheter du Bitcoin** — Vous pouvez acheter n'importe quel montant
+5. **Sécuriser votre Bitcoin** — Envisagez un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
+
+### Erreurs courantes des débutants
+
+- Investir plus que ce que vous pouvez vous permettre de perdre
+- Garder tout votre Bitcoin sur une plateforme
+- Essayer de synchroniser le marché — le DCA est plus simple
+- Partager votre phrase de récupération
+- Ne pas garder de relevés fiscaux
+
+### Questions fréquentes
+
+**Puis-je acheter moins d'un Bitcoin ?**
+Oui. Le Bitcoin est divisible jusqu'à 8 décimales.
+
+**Dois-je payer des impôts sur le Bitcoin ?**
+Oui. Consultez notre guide [Impôts sur le Bitcoin au Canada](/blog/bitcoin-taxes-canada-cra).
+
+**Qu'est-ce que le DCA ?**
+L'investissement progressif consiste à acheter un montant fixe à intervalles réguliers. En savoir plus dans notre [Guide DCA](/blog/bitcoin-dca-strategy-canada).
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Meilleures plateformes Bitcoin au Canada (Comparaison 2026)](/blog/best-bitcoin-exchange-canada)
+- [Guide du stockage à froid Bitcoin pour les Canadiens](/blog/bitcoin-cold-storage-guide-canada)
+- [Impôts sur le Bitcoin au Canada : règles de l'ARC](/blog/bitcoin-taxes-canada-cra)
+`,
+    },
+  },
 ];
