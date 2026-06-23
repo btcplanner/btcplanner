@@ -63,7 +63,13 @@ After purchasing, consider moving your Bitcoin to a hardware wallet (cold storag
 
 ### Tax Considerations
 
-The Canada Revenue Agency (CRA) treats Bitcoin as a commodity. Every sale, trade, or use of Bitcoin is a taxable event. Capital gains tax applies: 50% of your gains are included in your taxable income. Keep records of every transaction including the date, amount in CAD, and the quantity of BTC.
+The Canada Revenue Agency (CRA) treats Bitcoin as a commodity. Every sale, trade, or use of Bitcoin is a taxable event. Capital gains tax applies: the first $250,000 in annual capital gains is included at 50%, and any gains above $250,000 are included at 66.67% (as of June 25, 2024). Keep records of every transaction including the date, amount in CAD, and the quantity of BTC.
+
+### Sources
+
+- [CRA — Guide for cryptocurrency users](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [FINTRAC — Money services businesses](https://www.fintrac-canafe.gc.ca/msb-esm/intro-eng)
+- [Canada 2024 Budget — Capital gains inclusion rate changes](https://www.budget.canada.ca/2024/home-accueil-en.html)
 
 ### Related Articles
 
@@ -115,7 +121,12 @@ Après l'achat, envisagez de transférer votre Bitcoin vers un portefeuille mat�
 
 ### Considérations fiscales
 
-L'Agence du revenu du Canada (ARC) traite le Bitcoin comme une marchandise. Chaque vente, échange ou utilisation de Bitcoin est un événement imposable. L'impôt sur les gains en capital s'applique : 50 % de vos gains sont inclus dans votre revenu imposable.
+L'Agence du revenu du Canada (ARC) traite le Bitcoin comme une marchandise. Chaque vente, échange ou utilisation de Bitcoin est un événement imposable. L'impôt sur les gains en capital s'applique : les premiers 250 000 $ de gains annuels sont inclus à 50 %, et tout gain au-delà de 250 000 $ est inclus à 66,67 % (depuis le 25 juin 2024).
+
+### Sources
+
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
+- [CANAFE — Entreprises de services monétaires](https://www.fintrac-canafe.gc.ca/msb-esm/intro-fra)
 
 ### Articles connexes
 
@@ -183,6 +194,11 @@ Each individual purchase creates a separate tax lot with its own cost basis. Whe
 - Bitcoin is volatile and can decrease in value regardless of your purchase strategy
 - DCA is a mechanical strategy, not financial advice — consult a qualified advisor for your personal situation
 
+### Sources
+
+- [CRA — Guide for cryptocurrency users](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [Vanguard Research — Dollar-cost averaging vs. lump sum investing](https://investor.vanguard.com/investor-resources-education/online-trading/dollar-cost-averaging-vs-lump-sum)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -222,6 +238,10 @@ Chaque achat individuel crée un lot fiscal distinct avec sa propre base de coû
 - Les frais de transaction peuvent s'accumuler avec de petits achats fréquents
 - Le Bitcoin est volatil et peut diminuer en valeur quelle que soit votre stratégie d'achat
 - Le DCA est une stratégie mécanique, pas un conseil financier
+
+### Sources
+
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
 
 ### Articles connexes
 
@@ -311,6 +331,12 @@ Your seed phrase is the master backup of your wallet. Anyone who has your seed p
 - Customs duties may apply on imported electronics
 - The CRA does not require you to report Bitcoin holdings, only dispositions (sales, trades, or use as payment)
 
+### Sources
+
+- [Trezor — Official hardware wallet](https://www.trezor.io)
+- [Ledger — Official hardware wallet](https://www.ledger.com)
+- [Bitcoin.org — Securing your wallet](https://bitcoin.org/en/secure-your-wallet)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -357,6 +383,12 @@ Votre phrase de récupération est la sauvegarde maîtresse de votre portefeuill
 5. Transférez d'abord un petit montant test de Bitcoin
 6. Vérifiez que la transaction test est arrivée, puis transférez le reste
 
+### Sources
+
+- [Trezor — Portefeuille matériel officiel](https://www.trezor.io)
+- [Ledger — Portefeuille matériel officiel](https://www.ledger.com)
+- [Bitcoin.org — Sécuriser votre portefeuille](https://bitcoin.org/fr/securiser-portefeuille)
+
 ### Articles connexes
 
 - [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -390,8 +422,8 @@ The CRA distinguishes between two types of crypto activity:
 
 **Capital gains (most individual investors):**
 - You bought Bitcoin as an investment and sold it later
-- 50% of the gain is included in your taxable income
-- Example: You bought 0.1 BTC for $5,000 and sold it for $8,000. Your capital gain is $3,000. You include $1,500 (50%) in your taxable income.
+- The first $250,000 in annual capital gains is included at 50% in your taxable income. Any gains above $250,000 in a year are included at 66.67% (effective June 25, 2024).
+- Example: You bought 0.1 BTC for $5,000 and sold it for $8,000. Your capital gain is $3,000. Since this is under $250,000, you include $1,500 (50%) in your taxable income.
 
 **Business income (frequent traders, miners):**
 - If the CRA determines your crypto activity constitutes a business, 100% of profits are taxable
@@ -453,6 +485,13 @@ Report cryptocurrency capital gains on **Schedule 3 (Capital Gains or Losses)** 
 - This is educational information, not tax advice. Consult a qualified Canadian tax professional for your specific situation.
 - The CRA has stated it is actively monitoring cryptocurrency transactions and exchanges.
 
+### Sources
+
+- [CRA — Guide for cryptocurrency users and tax obligations](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [CRA — Capital gains and the adjusted cost base method](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-12700-capital-gains.html)
+- [2024 Federal Budget — Capital gains inclusion rate changes](https://www.budget.canada.ca/2024/home-accueil-en.html)
+- [Schedule 3 — Capital Gains (or Losses)](https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/5000-s3.html)
+
 ### Related Articles
 
 - [How to Report Bitcoin on TurboTax in Canada](/blog/how-to-report-bitcoin-turbotax-canada)
@@ -468,8 +507,8 @@ L'Agence du revenu du Canada (ARC) traite le Bitcoin et les autres cryptomonnaie
 
 **Gains en capital (la plupart des investisseurs individuels) :**
 - Vous avez acheté du Bitcoin comme investissement et l'avez vendu plus tard
-- 50 % du gain est inclus dans votre revenu imposable
-- Exemple : Vous avez acheté 0,1 BTC pour 5 000 $ et vendu pour 8 000 $. Votre gain en capital est de 3 000 $. Vous incluez 1 500 $ (50 %) dans votre revenu imposable.
+- Les premiers 250 000 $ de gains en capital annuels sont inclus à 50 % dans votre revenu imposable. Tout gain au-delà de 250 000 $ est inclus à 66,67 % (depuis le 25 juin 2024).
+- Exemple : Vous avez acheté 0,1 BTC pour 5 000 $ et vendu pour 8 000 $. Votre gain en capital est de 3 000 $. Puisque c'est sous 250 000 $, vous incluez 1 500 $ (50 %) dans votre revenu imposable.
 
 **Revenu d'entreprise (traders fréquents, mineurs) :**
 - Si l'ARC détermine que votre activité crypto constitue une entreprise, 100 % des profits sont imposables
@@ -499,6 +538,11 @@ Les événements suivants ne sont **pas** imposables :
 
 - Les règles fiscales peuvent changer. Consultez un fiscaliste canadien qualifié pour votre situation spécifique.
 - L'ARC a déclaré surveiller activement les transactions de cryptomonnaie.
+
+### Sources
+
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
+- [Budget fédéral 2024 — Modifications au taux d'inclusion des gains en capital](https://www.budget.canada.ca/2024/home-accueil-fr.html)
 
 ### Articles connexes
 
@@ -569,6 +613,12 @@ Canadian exchanges where you can purchase Bitcoin:
 
 After purchasing, consider securing your Bitcoin with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 
+### Sources
+
+- [Bitcoin.org — How does Bitcoin work?](https://bitcoin.org/en/how-it-works)
+- [Blockchain.com — Bitcoin halving countdown](https://www.blockchain.com/explorer/assets/btc)
+- [CoinDesk — What is the Bitcoin halving?](https://www.coindesk.com/learn/bitcoin-halving-explained/)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -608,6 +658,11 @@ Plateformes canadiennes où vous pouvez acheter du Bitcoin :
 
 Après l'achat, envisagez de sécuriser votre Bitcoin avec un portefeuille matériel comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 
+### Sources
+
+- [Bitcoin.org — Comment fonctionne Bitcoin ?](https://bitcoin.org/fr/comment-ca-marche)
+- [CoinDesk — Qu'est-ce que le halving Bitcoin ?](https://www.coindesk.com/learn/bitcoin-halving-explained/)
+
 ### Articles connexes
 
 - [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -633,7 +688,7 @@ Après l'achat, envisagez de sécuriser votre Bitcoin avec un portefeuille maté
     content: {
       en: `## Bitcoin ETFs in Canada
 
-Canada was one of the first countries in the world to approve a Bitcoin exchange-traded fund (ETF). Since February 2021, Canadian investors have had access to spot Bitcoin ETFs on the Toronto Stock Exchange (TSX).
+Canada was the first country in the world to approve a spot Bitcoin exchange-traded fund (ETF). The Purpose Bitcoin ETF (BTCC) began trading on the Toronto Stock Exchange (TSX) on February 18, 2021 — nearly three years before the United States approved its first spot Bitcoin ETFs in January 2024. Since then, Canadian investors have had access to multiple Bitcoin ETFs on the TSX.
 
 ### What Is a Bitcoin ETF?
 
@@ -694,6 +749,12 @@ Buying Bitcoin directly may be preferable if you:
 
 You can buy Bitcoin directly on Canadian exchanges like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link), and secure it with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 
+### Sources
+
+- [Purpose Investments — BTCC Bitcoin ETF](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
+- [TMX — Toronto Stock Exchange ETF listings](https://www.tsx.com/trading/etf-trading)
+- [CRA — Tax-Free Savings Account (TFSA)](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4466/tax-free-savings-account-tfsa-guide-individuals.html)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -703,7 +764,7 @@ You can buy Bitcoin directly on Canadian exchanges like [Kraken](https://invite.
 `,
       fr: `## FNB Bitcoin au Canada
 
-Le Canada a été l'un des premiers pays au monde à approuver un fonds négocié en bourse (FNB) Bitcoin. Depuis février 2021, les investisseurs canadiens ont accès à des FNB Bitcoin au comptant sur la Bourse de Toronto (TSX).
+Le Canada a été le premier pays au monde à approuver un FNB Bitcoin au comptant. Le Purpose Bitcoin ETF (BTCC) a commencé à se négocier sur la Bourse de Toronto (TSX) le 18 février 2021 — près de trois ans avant que les États-Unis n'approuvent leurs premiers FNB Bitcoin au comptant en janvier 2024. Depuis, les investisseurs canadiens ont accès à plusieurs FNB Bitcoin sur le TSX.
 
 ### Qu'est-ce qu'un FNB Bitcoin ?
 
@@ -737,6 +798,12 @@ Un avantage majeur des FNB Bitcoin au Canada est que vous pouvez les détenir da
 - **REER (Régime enregistré d'épargne-retraite) :** Les cotisations sont déductibles d'impôt. Les gains croissent à l'abri de l'impôt jusqu'au retrait.
 
 L'achat direct de Bitcoin sur une plateforme comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) ou [Shakepay](https://shakepay.me/r/K0D39LJ) ne permet pas de bénéficier des comptes enregistrés.
+
+### Sources
+
+- [Purpose Investments — FNB Bitcoin BTCC](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
+- [TMX — Cotations FNB à la Bourse de Toronto](https://www.tsx.com/trading/etf-trading)
+- [ARC — Compte d'épargne libre d'impôt (CELI)](https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/publications/rc4466/compte-epargne-libre-impot-celi-guide-particuliers.html)
 
 ### Articles connexes
 
@@ -778,7 +845,7 @@ A GIC is a fixed-income investment offered by Canadian banks and credit unions. 
 | Principal protection | Yes | No |
 | Liquidity | Low (locked until maturity) | High (sell anytime, 24/7) |
 | TFSA/RRSP eligible | Yes | Only via ETFs |
-| Tax on gains | Interest taxed at full rate | Capital gains (50% inclusion) |
+| Tax on gains | Interest taxed at full rate | Capital gains (50% inclusion up to $250K/yr; 66.67% above) |
 | Inflation hedge | Limited | Debated |
 
 ### Historical Returns
@@ -791,7 +858,7 @@ A GIC is a fixed-income investment offered by Canadian banks and credit unions. 
 
 **GIC interest** is taxed as regular income — 100% of the interest earned is added to your taxable income for the year.
 
-**Bitcoin capital gains** receive preferential tax treatment — only 50% of the gain is included in your taxable income. However, if you hold Bitcoin in a non-registered account, each sale is a taxable event.
+**Bitcoin capital gains** receive preferential tax treatment — the first $250,000 in annual gains is included at 50% in your taxable income, with gains above that threshold included at 66.67% (since June 2024). However, if you hold Bitcoin in a non-registered account, each sale is a taxable event.
 
 Holding either GICs or Bitcoin ETFs in a **TFSA** eliminates tax entirely. Learn more in our [Bitcoin Taxes in Canada](/blog/bitcoin-taxes-canada-cra) guide.
 
@@ -817,6 +884,13 @@ Many Canadian investors use GICs for stable, guaranteed portions of their portfo
 
 **For Bitcoin:** You can buy directly on Canadian exchanges like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link). For tax-advantaged exposure, consider a [Bitcoin ETF in your TFSA or RRSP](/blog/bitcoin-etfs-canada). Secure direct holdings with a [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6) hardware wallet.
 
+### Sources
+
+- [CDIC — Deposit protection coverage](https://www.cdic.ca/your-coverage/)
+- [CRA — Capital gains tax on cryptocurrency](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [2024 Federal Budget — Capital gains inclusion rate changes](https://www.budget.canada.ca/2024/home-accueil-en.html)
+- [Bank of Canada — Interest rate decisions](https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -841,19 +915,25 @@ Un CPG est un placement à revenu fixe offert par les banques et les caisses pop
 | Protection du capital | Oui | Non |
 | Liquidité | Faible (verrouillé jusqu'à l'échéance) | Élevée (vendre à tout moment, 24/7) |
 | Admissible CELI/REER | Oui | Uniquement via FNB |
-| Impôt | Intérêts imposés au taux plein | Gains en capital (inclusion de 50 %) |
+| Impôt | Intérêts imposés au taux plein | Gains en capital (50 % jusqu'à 250 000 $/an; 66,67 % au-delà) |
 
 ### Traitement fiscal
 
 Les **intérêts des CPG** sont imposés comme un revenu ordinaire — 100 % des intérêts gagnés sont ajoutés à votre revenu imposable.
 
-Les **gains en capital du Bitcoin** bénéficient d'un traitement fiscal préférentiel — seuls 50 % du gain sont inclus dans votre revenu imposable. En savoir plus dans notre guide [Impôts sur le Bitcoin au Canada](/blog/bitcoin-taxes-canada-cra).
+Les **gains en capital du Bitcoin** bénéficient d'un traitement fiscal préférentiel — les premiers 250 000 $ de gains annuels sont inclus à 50 % dans votre revenu imposable, et les gains au-delà de 250 000 $ sont inclus à 66,67 % (depuis juin 2024). En savoir plus dans notre guide [Impôts sur le Bitcoin au Canada](/blog/bitcoin-taxes-canada-cra).
 
 ### Comment commencer
 
 **Pour les CPG :** Contactez votre banque ou utilisez un site de comparaison comme Ratehub.ca.
 
 **Pour le Bitcoin :** Achetez directement sur des plateformes canadiennes comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) ou [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link). Pour une exposition fiscalement avantageuse, envisagez un [FNB Bitcoin dans votre CELI ou REER](/blog/bitcoin-etfs-canada). Sécurisez vos avoirs directs avec un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Sources
+
+- [SADC — Couverture de la protection des dépôts](https://www.cdic.ca/fr/votre-couverture/)
+- [ARC — Impôt sur les gains en capital pour les cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
+- [Banque du Canada — Décisions sur les taux d'intérêt](https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/)
 
 ### Articles connexes
 
@@ -908,7 +988,7 @@ If you sell 0.05 BTC at $120,000/BTC:
 - Proceeds: $6,000
 - Cost (0.05 × $90,000): $4,500
 - Capital gain: $1,500
-- Taxable amount (50%): $750
+- Taxable amount (50% inclusion for gains under $250,000/year): $750
 
 ### Step 2: Open TurboTax and Navigate to Investments
 
@@ -961,6 +1041,12 @@ These tools export data in formats compatible with TurboTax's import feature.
 - Tax rules can change — verify with the CRA website or a qualified tax professional
 - This is educational information, not tax advice
 
+### Sources
+
+- [CRA — Guide for cryptocurrency users](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [CRA — Schedule 3 Capital Gains (or Losses)](https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/5000-s3.html)
+- [TurboTax Canada — Reporting cryptocurrency](https://turbotax.intuit.ca/tips/cryptocurrency-tax-canada-14638)
+
 ### Related Articles
 
 - [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
@@ -996,7 +1082,7 @@ Si vous vendez 0,05 BTC à 120 000 $/BTC :
 - Produit : 6 000 $
 - Coût (0,05 × 90 000 $) : 4 500 $
 - Gain en capital : 1 500 $
-- Montant imposable (50 %) : 750 $
+- Montant imposable (inclusion de 50 % pour gains sous 250 000 $/an) : 750 $
 
 ### Étape 2 : Ouvrir TurboTax
 
@@ -1035,6 +1121,11 @@ TurboTax génère l'**Annexe 3 (Gains ou pertes en capital)** basée sur vos ent
 - **Oublier les échanges crypto-crypto :** Échanger du BTC contre de l'ETH est un événement imposable
 - **Ne pas suivre les transferts entre portefeuilles :** Les transferts entre vos propres portefeuilles ne sont pas imposables, mais vous avez besoin de preuves
 - **Utiliser FIFO au lieu du PBR :** Le Canada utilise la méthode du prix de base rajusté (moyenne pondérée)
+
+### Sources
+
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
+- [ARC — Annexe 3 Gains (ou pertes) en capital](https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-years/trousse-generale-impot-prestations/5000-s3.html)
 
 ### Articles connexes
 
@@ -1114,6 +1205,13 @@ For a volatile, potentially high-growth asset like Bitcoin, a TFSA is often pref
 - You cannot withdraw Bitcoin from an ETF to a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
 - TFSA over-contributions incur a 1% per month penalty — know your room
 
+### Sources
+
+- [CRA — Tax-Free Savings Account (TFSA) guide](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4466/tax-free-savings-account-tfsa-guide-individuals.html)
+- [CRA — RRSPs and related plans](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans.html)
+- [CRA — Qualified investments for registered plans](https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-3-property-investments-savings-plans/series-3-property-investments-savings-plans-folio-10-registered-plans-individuals/income-tax-folio-s3-f10-c1-qualified-investments-rrsps-resps-rrifs-rdsps-tfsas.html)
+- [Purpose Investments — BTCC Bitcoin ETF](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
+
 ### Related Articles
 
 - [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
@@ -1156,6 +1254,12 @@ Le Canada a approuvé les FNB Bitcoin au comptant en 2021. Ces FNB se négocient
 - Les FNB ont des frais de gestion (RFG) qui réduisent les rendements
 - Vous ne possédez pas réellement du Bitcoin — vous possédez des parts d'un fonds
 - Vous ne pouvez pas retirer du Bitcoin vers un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
+
+### Sources
+
+- [ARC — Guide du CELI pour les particuliers](https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/publications/rc4466/compte-epargne-libre-impot-celi-guide-particuliers.html)
+- [ARC — REER et régimes connexes](https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/reer-regimes-connexes.html)
+- [Purpose Investments — FNB Bitcoin BTCC](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
 
 ### Articles connexes
 
@@ -1231,6 +1335,12 @@ Newton is a Canadian exchange offering zero-commission trading (costs are in the
 
 After purchasing, secure your Bitcoin with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
 
+### Sources
+
+- [CSA — Registered crypto asset trading platforms](https://www.securities-administrators.ca/resources/registered-crypto-asset-trading-platforms/)
+- [FINTRAC — Money services businesses registry](https://www.fintrac-canafe.gc.ca/msb-esm/intro-eng)
+- [OSC — Crypto Asset Trading Platforms](https://www.osc.ca/en/industry/registration-and-compliance/crypto-asset-trading-platforms)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -1277,6 +1387,11 @@ Newton offre du trading sans commission avec un bon choix de cryptomonnaies.
 - **Plus grande :** [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
 
 Sécurisez votre Bitcoin avec un portefeuille [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6).
+
+### Sources
+
+- [ACVM — Plateformes de négociation de cryptoactifs enregistrées](https://www.securities-administrators.ca/resources/registered-crypto-asset-trading-platforms/)
+- [CANAFE — Registre des entreprises de services monétaires](https://www.fintrac-canafe.gc.ca/msb-esm/intro-fra)
 
 ### Articles connexes
 
@@ -1350,6 +1465,12 @@ A Bitcoin wallet is software or hardware that stores the cryptographic keys need
 **What is DCA?**
 Dollar Cost Averaging means buying a fixed amount of Bitcoin at regular intervals. It removes the stress of trying to time the market. Learn more in our [DCA Guide](/blog/bitcoin-dca-strategy-canada).
 
+### Sources
+
+- [Bitcoin.org — Getting started with Bitcoin](https://bitcoin.org/en/getting-started)
+- [CRA — Guide for cryptocurrency users](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [FINTRAC — Money services businesses](https://www.fintrac-canafe.gc.ca/msb-esm/intro-eng)
+
 ### Related Articles
 
 - [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -1402,6 +1523,12 @@ Oui. Consultez notre guide [Impôts sur le Bitcoin au Canada](/blog/bitcoin-taxe
 **Qu'est-ce que le DCA ?**
 L'investissement progressif consiste à acheter un montant fixe à intervalles réguliers. En savoir plus dans notre [Guide DCA](/blog/bitcoin-dca-strategy-canada).
 
+### Sources
+
+- [Bitcoin.org — Débuter avec Bitcoin](https://bitcoin.org/fr/debuter)
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
+- [CANAFE — Entreprises de services monétaires](https://www.fintrac-canafe.gc.ca/msb-esm/intro-fra)
+
 ### Articles connexes
 
 - [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
@@ -1412,117 +1539,100 @@ L'investissement progressif consiste à acheter un montant fixe à intervalles r
     },
   },
   {
-    slug: "clarity-act-bitcoin-canada",
+    slug: "crypto-regulation-canada",
     date: "2026-05-27",
     image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
     imageAlt: { en: "Legal gavel and scales of justice with financial documents", fr: "Marteau juridique et balance de la justice avec des documents financiers" },
     title: {
-      en: "The Clarity Act and What It Means for Bitcoin in Canada",
-      fr: "La Loi sur la clarté et ce qu'elle signifie pour le Bitcoin au Canada",
+      en: "Crypto Regulation in Canada: What Bitcoin Investors Need to Know",
+      fr: "La réglementation crypto au Canada : ce que les investisseurs Bitcoin doivent savoir",
     },
     description: {
-      en: "An overview of Canada's proposed digital asset regulatory framework — what the Clarity Act could mean for exchanges, investors, FINTRAC registration, and Bitcoin adoption.",
-      fr: "Un aperçu du cadre réglementaire proposé pour les actifs numériques au Canada — ce que la Loi sur la clarté pourrait signifier pour les plateformes, les investisseurs et l'adoption du Bitcoin.",
+      en: "An overview of how cryptocurrency is regulated in Canada — CSA rules for trading platforms, FINTRAC registration, tax obligations, and what it means for Bitcoin investors.",
+      fr: "Un aperçu de la réglementation des cryptomonnaies au Canada — règles de l'ACVM, enregistrement CANAFE, obligations fiscales et ce que cela signifie pour les investisseurs Bitcoin.",
     },
     content: {
-      en: `## The Clarity Act and What It Means for Bitcoin in Canada
+      en: `## Crypto Regulation in Canada: What Bitcoin Investors Need to Know
 
-Canada has long been considered a progressive jurisdiction for cryptocurrency. The country approved the world's first spot Bitcoin ETF in 2021, and Canadian exchanges operate under FINTRAC registration. Now, proposed legislation commonly referred to as the "Clarity Act" aims to create a comprehensive regulatory framework for digital assets in Canada.
+Canada has one of the more developed regulatory frameworks for cryptocurrency in the world. The country approved the world's first spot Bitcoin ETF in February 2021, and crypto trading platforms operate under both FINTRAC registration and Canadian Securities Administrators (CSA) oversight. Here is how crypto regulation works in Canada today and what it means for Bitcoin investors.
 
-**Note:** This article discusses proposed legislation and regulatory trends. The details may change as the legislative process unfolds. This is educational speculation, not legal or financial advice.
+### Who Regulates Crypto in Canada?
 
-### What Is the Clarity Act?
+Unlike some countries with a single regulator, Canada's crypto oversight involves multiple bodies:
 
-The Clarity Act is the informal name given to a proposed Canadian regulatory framework that would establish clear rules for how digital assets — including Bitcoin, stablecoins, and other cryptocurrencies — are classified, traded, and regulated in Canada. The goal is to replace the current patchwork of securities guidance, FINTRAC registration requirements, and provincial regulations with a unified national framework.
+**FINTRAC (Financial Transactions and Reports Analysis Centre of Canada):** All businesses dealing in virtual currencies must register with FINTRAC as Money Services Businesses (MSBs). This means crypto exchanges operating in Canada must comply with anti-money laundering (AML) and know-your-customer (KYC) requirements — verifying user identities, reporting suspicious transactions, and keeping transaction records.
 
-The proposed legislation draws inspiration from frameworks being developed in other jurisdictions, including the EU's Markets in Crypto-Assets (MiCA) regulation and ongoing regulatory efforts in the United States.
+**Canadian Securities Administrators (CSA):** The CSA is the umbrella organization of Canada's provincial and territorial securities regulators. In 2021-2022, the CSA established that most crypto trading platforms must register as restricted dealers or investment dealers under securities law. This was a major step that brought exchanges under formal securities regulation.
 
-### Key Areas the Clarity Act Could Address
+**Provincial securities commissions:** The Ontario Securities Commission (OSC), Autorité des marchés financiers (AMF) in Quebec, and other provincial regulators enforce CSA rules within their jurisdictions. Platforms must register in each province where they operate.
 
-#### 1. Exchange Registration and Licensing
+**Canada Revenue Agency (CRA):** The CRA treats cryptocurrency as a commodity for tax purposes and requires Canadians to report all crypto dispositions (sales, trades, and spending).
 
-Currently, Canadian crypto exchanges register with FINTRAC as Money Services Businesses (MSBs) and may also need to register with provincial securities regulators. The Clarity Act could introduce a dedicated federal licensing regime for digital asset trading platforms, including:
+### CSA Rules for Crypto Trading Platforms
 
-- Standardized capital reserve requirements
-- Mandatory proof-of-reserves audits
-- Segregation of customer funds from operational funds
-- Clear rules for which tokens can be listed for trading
-- Uniform cybersecurity and custody standards
+The CSA's regulatory framework, implemented through Staff Notice 21-327 and subsequent guidance, requires crypto trading platforms operating in Canada to:
 
-For Canadian investors using platforms like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link), a dedicated licensing framework could mean stronger consumer protections and greater confidence in exchange solvency.
+- **Register** as restricted dealers or investment dealers with provincial securities regulators
+- **Segregate customer assets** from the platform's own funds
+- **Provide risk disclosure** to users before they begin trading
+- **Limit leverage and margin trading** for retail investors
+- **Restrict access to certain tokens** — platforms must assess whether tokens are securities before listing them
+- **Submit to regulatory audits** and ongoing compliance requirements
 
-#### 2. FINTRAC and Anti-Money Laundering (AML) Updates
+Several international exchanges that did not register with the CSA have exited the Canadian market or restricted access for Canadian users. Platforms like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), and [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link) have registered and continue to serve Canadians.
 
-FINTRAC already requires crypto exchanges to register and comply with AML/KYC rules. The Clarity Act could expand these requirements to cover:
+### FINTRAC Registration and AML Rules
 
-- Decentralized finance (DeFi) platforms and protocols
-- Peer-to-peer trading above certain thresholds
-- Cross-border crypto transfers (the "travel rule" for virtual assets)
-- Enhanced reporting requirements for large transactions
+Since June 2020, FINTRAC has required virtual currency dealers and exchangers to register as MSBs. Key requirements include:
 
-These measures aim to bring crypto regulation in line with traditional financial reporting standards while maintaining Canada's commitment to preventing money laundering and terrorist financing.
+- **KYC verification** of all users (government ID, proof of address)
+- **Reporting** of suspicious transactions and large cash transactions ($10,000+)
+- **Record-keeping** for at least five years
+- **Travel rule compliance** — sharing sender/receiver information for transfers above $1,000 CAD
 
-#### 3. Stablecoin Regulation
+These rules mirror the requirements placed on traditional financial institutions and are designed to prevent money laundering and terrorist financing through crypto.
 
-One of the most significant aspects of the proposed framework is how it would handle stablecoins — digital tokens pegged to fiat currencies like the Canadian dollar or US dollar. Proposed rules could include:
+### How Bitcoin Is Classified
 
-- Requirements for stablecoin issuers to hold full reserves in cash or cash equivalents
-- Regular audits of reserve holdings
-- Restrictions on who can issue stablecoins in Canada
-- Rules for CAD-pegged stablecoins specifically
+The CRA classifies Bitcoin as a commodity. This means:
 
-Clear stablecoin rules could open the door for Canadian financial institutions to issue regulated CAD-pegged stablecoins, potentially creating more efficient on-ramps between traditional finance and the crypto ecosystem.
+- **Capital gains tax** applies when you sell, trade, or spend Bitcoin at a profit. The first $250,000 in annual capital gains is included at 50% in your taxable income; gains above $250,000 are included at 66.67% (since June 2024).
+- Bitcoin is **not legal tender** in Canada — it cannot be used to settle debts the way Canadian dollars can.
+- Bitcoin held in a personal wallet is **not a security** — the CSA has generally recognized that truly decentralized assets like Bitcoin are not securities, though many altcoins and tokens may be.
 
-#### 4. Token Classification
+### Canada's Bitcoin ETF Advantage
 
-A critical challenge in crypto regulation is determining whether a digital asset is a security, a commodity, a currency, or something else entirely. The Clarity Act could provide:
+Canada approved the world's first spot Bitcoin ETF — Purpose Bitcoin ETF (BTCC) — on February 18, 2021. This was nearly three years before the United States approved its first spot Bitcoin ETFs in January 2024. Canadian investors can hold Bitcoin ETFs in registered accounts (TFSA, RRSP) for tax-advantaged exposure.
 
-- A clear taxonomy for different types of digital assets
-- Specific criteria for when a token constitutes a security
-- Exemptions for truly decentralized assets like Bitcoin
-- Guidelines for utility tokens and governance tokens
+### What Canadian Bitcoin Investors Should Do
 
-Bitcoin, as a decentralized asset with no central issuer, would likely be classified as a digital commodity — consistent with how the CRA already treats it for tax purposes.
+1. **Use registered platforms** — Buy Bitcoin on exchanges that are registered with the CSA and FINTRAC, such as [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
+2. **Keep detailed records** — Track every transaction (date, amount in CAD, quantity of BTC) for CRA reporting. Records must be kept for at least 6 years.
+3. **Consider self-custody** — For significant holdings, store Bitcoin on a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6). Exchanges are regulated, but self-custody eliminates counterparty risk entirely.
+4. **Stay informed** — Follow updates from the CSA, FINTRAC, and the Department of Finance Canada. Crypto regulation continues to evolve.
+5. **Consult professionals** — For significant holdings, work with a tax professional familiar with Canadian crypto rules.
 
-### How Clearer Regulation Benefits Bitcoin Adoption
+### Looking Ahead
 
-While regulation is sometimes viewed negatively in the crypto community, clear and reasonable rules can significantly benefit Bitcoin adoption in Canada:
+Canada's regulatory approach continues to develop. Areas under active discussion include:
 
-**Institutional confidence:** Canadian pension funds, banks, and institutional investors often cannot invest in assets without regulatory clarity. A clear framework could unlock significant institutional capital flowing into Bitcoin.
+- **Stablecoin oversight** — How to regulate CAD- and USD-pegged stablecoins issued or used in Canada
+- **DeFi regulation** — Whether and how decentralized finance protocols should be brought under existing frameworks
+- **Central Bank Digital Currency (CBDC)** — The Bank of Canada has been researching a digital Canadian dollar, though no launch date has been set
+- **International coordination** — Aligning Canadian rules with frameworks like the EU's Markets in Crypto-Assets (MiCA) regulation
 
-**Consumer protection:** Rules around exchange solvency, fund segregation, and proof-of-reserves protect everyday Canadians from exchange failures — a lesson reinforced by past industry collapses.
+For Canadian Bitcoin holders, the regulatory direction is toward more oversight, not less. Well-designed regulation should make it safer and easier to buy, hold, and use Bitcoin in Canada.
 
-**Innovation enablement:** Paradoxically, clear rules can encourage innovation by giving entrepreneurs a defined set of requirements to build within, rather than navigating regulatory uncertainty.
+*This article is for educational purposes only and does not constitute legal, tax, or financial advice. Regulatory details may change. Consult qualified professionals for advice on your specific situation.*
 
-**Banking relationships:** Canadian exchanges have sometimes struggled to maintain banking relationships due to regulatory ambiguity. Clear licensing could stabilize these relationships and make it easier for Canadians to move money between their banks and crypto platforms.
+### Sources
 
-### What This Means for Canadian Bitcoin Investors
-
-If the Clarity Act or similar legislation passes, Canadian Bitcoin investors could see:
-
-- **Stronger exchange protections:** More stringent requirements for exchanges holding your funds
-- **Easier access:** Clearer rules could encourage more financial institutions to offer crypto services
-- **Stable tax treatment:** Codified rules around how Bitcoin is taxed, reducing uncertainty
-- **ETF expansion:** Clearer regulation could lead to more Bitcoin-related financial products in registered accounts (TFSA, RRSP)
-- **Self-custody rights:** Potential explicit protections for Canadians' right to hold their own Bitcoin in hardware wallets like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
-
-### How to Prepare
-
-Regardless of how regulation evolves, the fundamentals of responsible Bitcoin ownership remain the same:
-
-1. **Use registered exchanges** — Buy Bitcoin on regulated Canadian platforms like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ), or [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
-2. **Keep records** — Track every transaction for CRA reporting. Regulation may increase reporting requirements.
-3. **Consider self-custody** — Store significant amounts on a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6) so you are not dependent on any single exchange
-4. **Stay informed** — Follow updates from the Department of Finance Canada and the Canadian Securities Administrators (CSA)
-5. **Consult professionals** — For significant holdings, work with a tax professional and legal advisor familiar with Canadian crypto regulations
-
-### The Bigger Picture
-
-Canada is positioned to be a global leader in crypto regulation. The country already has a head start with its Bitcoin ETF approvals, FINTRAC registration framework, and relatively progressive approach to digital assets. A comprehensive Clarity Act could solidify Canada's position and attract crypto businesses and investment to the country.
-
-For Canadian Bitcoin holders, the direction of travel is clear: more regulation is coming, and well-designed rules should make it safer and easier to buy, hold, and use Bitcoin in Canada.
-
-*This article is for educational purposes only and does not constitute legal, tax, or financial advice. Proposed legislation may change significantly before passage. Consult qualified professionals for advice on your specific situation.*
+- [CSA Staff Notice 21-327 — Guidance on the Application of Securities Legislation to Entities Facilitating the Trading of Crypto Assets](https://www.securities-administrators.ca/resources/notices/)
+- [FINTRAC — Registration of Money Services Businesses](https://www.fintrac-canafe.gc.ca/msb-esm/intro-eng)
+- [CRA — Guide for cryptocurrency users](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [OSC — Crypto Asset Trading Platforms](https://www.osc.ca/en/industry/registration-and-compliance/crypto-asset-trading-platforms)
+- [Bank of Canada — Digital Canadian Dollar](https://www.bankofcanada.ca/digitaldollar/)
+- [Purpose Investments — BTCC Bitcoin ETF](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
 
 ### Related Articles
 
@@ -1531,104 +1641,87 @@ For Canadian Bitcoin holders, the direction of travel is clear: more regulation 
 - [Best Bitcoin Exchanges in Canada (2026 Comparison)](/blog/best-bitcoin-exchange-canada)
 - [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
 `,
-      fr: `## La Loi sur la clarté et ce qu'elle signifie pour le Bitcoin au Canada
+      fr: `## Réglementation crypto au Canada : ce que les investisseurs Bitcoin doivent savoir
 
-Le Canada est depuis longtemps considéré comme une juridiction progressive en matière de cryptomonnaie. Le pays a approuvé le premier FNB Bitcoin au comptant au monde en 2021, et les plateformes canadiennes opèrent sous l'enregistrement du CANAFE. Maintenant, une législation proposée communément appelée la « Loi sur la clarté » vise à créer un cadre réglementaire complet pour les actifs numériques au Canada.
+Le Canada possède l'un des cadres réglementaires les plus développés au monde pour les cryptomonnaies. Le pays a approuvé le premier FNB Bitcoin au comptant au monde en février 2021, et les plateformes de trading crypto opèrent sous l'enregistrement du CANAFE et la surveillance des Autorités canadiennes en valeurs mobilières (ACVM). Voici comment la réglementation crypto fonctionne au Canada aujourd'hui et ce que cela signifie pour les investisseurs Bitcoin.
 
-**Note :** Cet article traite de la législation proposée et des tendances réglementaires. Les détails peuvent changer au fur et à mesure du processus législatif. Il s'agit de spéculation éducative, pas de conseils juridiques ou financiers.
+### Qui réglemente les cryptomonnaies au Canada ?
 
-### Qu'est-ce que la Loi sur la clarté ?
+Contrairement à certains pays ayant un seul régulateur, la surveillance crypto au Canada implique plusieurs organismes :
 
-La Loi sur la clarté est le nom informel donné à un cadre réglementaire canadien proposé qui établirait des règles claires pour la classification, la négociation et la réglementation des actifs numériques — incluant le Bitcoin, les stablecoins et d'autres cryptomonnaies — au Canada. L'objectif est de remplacer l'ensemble disparate de directives en matière de valeurs mobilières, d'exigences d'enregistrement auprès du CANAFE et de réglementations provinciales par un cadre national unifié.
+**CANAFE (Centre d'analyse des opérations et déclarations financières du Canada) :** Toutes les entreprises traitant des monnaies virtuelles doivent s'enregistrer auprès du CANAFE en tant qu'entreprises de services monétaires (ESM). Les plateformes d'échange crypto opérant au Canada doivent se conformer aux exigences de lutte contre le blanchiment d'argent (LBA) et de connaissance du client (KYC) — vérification de l'identité des utilisateurs, signalement des transactions suspectes et conservation des registres de transactions.
 
-La législation proposée s'inspire des cadres développés dans d'autres juridictions, notamment le règlement européen MiCA (Markets in Crypto-Assets) et les efforts réglementaires en cours aux États-Unis.
+**Autorités canadiennes en valeurs mobilières (ACVM) :** Les ACVM sont l'organisme-cadre des organismes provinciaux et territoriaux de réglementation des valeurs mobilières du Canada. En 2021-2022, les ACVM ont établi que la plupart des plateformes de trading crypto doivent s'inscrire comme courtiers à exercice restreint ou courtiers en placement en vertu du droit des valeurs mobilières. C'était une étape majeure qui a soumis les plateformes à la réglementation formelle des valeurs mobilières.
 
-### Domaines clés que la Loi sur la clarté pourrait aborder
+**Commissions provinciales des valeurs mobilières :** La Commission des valeurs mobilières de l'Ontario (CVMO), l'Autorité des marchés financiers (AMF) au Québec, et les autres régulateurs provinciaux appliquent les règles des ACVM dans leurs juridictions. Les plateformes doivent s'inscrire dans chaque province où elles opèrent.
 
-#### 1. Enregistrement et licence des plateformes d'échange
+**Agence du revenu du Canada (ARC) :** L'ARC traite les cryptomonnaies comme une marchandise à des fins fiscales et exige que les Canadiens déclarent toutes les dispositions crypto (ventes, échanges et dépenses).
 
-Actuellement, les plateformes d'échange crypto canadiennes s'enregistrent auprès du CANAFE en tant qu'entreprises de services monétaires (ESM) et peuvent également devoir s'inscrire auprès des organismes provinciaux de réglementation des valeurs mobilières. La Loi sur la clarté pourrait introduire un régime fédéral de licence dédié aux plateformes de négociation d'actifs numériques, incluant :
+### Règles des ACVM pour les plateformes de trading crypto
 
-- Des exigences standardisées de réserves de capital
-- Des audits obligatoires de preuve de réserves
-- La ségrégation des fonds des clients des fonds opérationnels
-- Des règles claires sur les jetons pouvant être listés
-- Des normes uniformes de cybersécurité et de conservation
+Le cadre réglementaire des ACVM, mis en œuvre par l'Avis 21-327 du personnel et les directives subséquentes, exige que les plateformes de trading crypto opérant au Canada :
 
-Pour les investisseurs canadiens utilisant des plateformes comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) ou [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link), un cadre de licence dédié pourrait signifier des protections plus fortes pour les consommateurs et une plus grande confiance dans la solvabilité des plateformes.
+- **S'inscrivent** comme courtiers à exercice restreint ou courtiers en placement auprès des régulateurs provinciaux des valeurs mobilières
+- **Séparent les actifs des clients** des fonds propres de la plateforme
+- **Fournissent une divulgation des risques** aux utilisateurs avant qu'ils ne commencent à trader
+- **Limitent l'effet de levier et le trading sur marge** pour les investisseurs particuliers
+- **Restreignent l'accès à certains jetons** — les plateformes doivent évaluer si les jetons sont des valeurs mobilières avant de les lister
+- **Se soumettent à des audits réglementaires** et à des exigences de conformité continues
 
-#### 2. CANAFE et mises à jour de la lutte contre le blanchiment d'argent (LBA)
+Plusieurs plateformes internationales qui ne se sont pas inscrites auprès des ACVM ont quitté le marché canadien ou restreint l'accès pour les utilisateurs canadiens. Des plateformes comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) et [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link) se sont inscrites et continuent de servir les Canadiens.
 
-Le CANAFE exige déjà que les plateformes crypto s'enregistrent et se conforment aux règles LBA/KYC. La Loi sur la clarté pourrait élargir ces exigences pour couvrir :
+### Enregistrement CANAFE et règles LBA
 
-- Les plateformes et protocoles de finance décentralisée (DeFi)
-- Le trading pair-à-pair au-dessus de certains seuils
-- Les transferts crypto transfrontaliers (la « règle de voyage » pour les actifs virtuels)
-- Des exigences de déclaration renforcées pour les transactions importantes
+Depuis juin 2020, le CANAFE exige que les négociants et échangeurs de monnaies virtuelles s'enregistrent comme ESM. Les exigences clés comprennent :
 
-Ces mesures visent à aligner la réglementation crypto avec les normes de déclaration financière traditionnelles tout en maintenant l'engagement du Canada dans la prévention du blanchiment d'argent et du financement du terrorisme.
+- **Vérification KYC** de tous les utilisateurs (pièce d'identité gouvernementale, preuve d'adresse)
+- **Signalement** des transactions suspectes et des transactions en espèces importantes (10 000 $+)
+- **Conservation des registres** pendant au moins cinq ans
+- **Conformité à la règle de voyage** — partage des informations expéditeur/destinataire pour les transferts supérieurs à 1 000 $ CAD
 
-#### 3. Réglementation des stablecoins
+Ces règles reflètent les exigences imposées aux institutions financières traditionnelles et visent à prévenir le blanchiment d'argent et le financement du terrorisme par les cryptomonnaies.
 
-L'un des aspects les plus significatifs du cadre proposé est la manière dont il traiterait les stablecoins — des jetons numériques indexés sur des monnaies fiduciaires comme le dollar canadien ou le dollar américain. Les règles proposées pourraient inclure :
+### Comment le Bitcoin est classifié
 
-- L'obligation pour les émetteurs de stablecoins de détenir des réserves complètes en espèces ou équivalents
-- Des audits réguliers des réserves détenues
-- Des restrictions sur qui peut émettre des stablecoins au Canada
-- Des règles spécifiques pour les stablecoins indexés sur le CAD
+L'ARC classe le Bitcoin comme une marchandise. Cela signifie :
 
-Des règles claires sur les stablecoins pourraient ouvrir la voie aux institutions financières canadiennes pour émettre des stablecoins réglementés indexés sur le CAD, créant potentiellement des passerelles plus efficaces entre la finance traditionnelle et l'écosystème crypto.
+- **L'impôt sur les gains en capital** s'applique lorsque vous vendez, échangez ou dépensez du Bitcoin à profit. Les premiers 250 000 $ de gains en capital annuels sont inclus à 50 % dans votre revenu imposable; les gains au-delà de 250 000 $ sont inclus à 66,67 % (depuis juin 2024).
+- Le Bitcoin **n'est pas une monnaie légale** au Canada — il ne peut pas être utilisé pour régler des dettes comme le dollar canadien.
+- Le Bitcoin détenu dans un portefeuille personnel **n'est pas une valeur mobilière** — les ACVM ont généralement reconnu que les actifs véritablement décentralisés comme le Bitcoin ne sont pas des valeurs mobilières, bien que de nombreux altcoins et jetons puissent l'être.
 
-#### 4. Classification des jetons
+### L'avantage canadien des FNB Bitcoin
 
-Un défi critique de la réglementation crypto est de déterminer si un actif numérique est un titre, une marchandise, une devise ou quelque chose d'entièrement différent. La Loi sur la clarté pourrait fournir :
+Le Canada a approuvé le premier FNB Bitcoin au comptant au monde — Purpose Bitcoin ETF (BTCC) — le 18 février 2021. C'était près de trois ans avant que les États-Unis n'approuvent leurs premiers FNB Bitcoin au comptant en janvier 2024. Les investisseurs canadiens peuvent détenir des FNB Bitcoin dans des comptes enregistrés (CELI, REER) pour une exposition fiscalement avantageuse.
 
-- Une taxonomie claire pour les différents types d'actifs numériques
-- Des critères spécifiques pour déterminer quand un jeton constitue un titre
-- Des exemptions pour les actifs véritablement décentralisés comme le Bitcoin
-- Des lignes directrices pour les jetons utilitaires et de gouvernance
+### Ce que les investisseurs canadiens en Bitcoin devraient faire
 
-Le Bitcoin, en tant qu'actif décentralisé sans émetteur central, serait probablement classé comme une marchandise numérique — en accord avec le traitement actuel de l'ARC à des fins fiscales.
+1. **Utilisez des plateformes enregistrées** — Achetez du Bitcoin sur des plateformes inscrites auprès des ACVM et du CANAFE, comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) ou [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
+2. **Conservez des registres détaillés** — Suivez chaque transaction (date, montant en CAD, quantité de BTC) pour la déclaration à l'ARC. Les registres doivent être conservés pendant au moins 6 ans.
+3. **Envisagez l'auto-conservation** — Pour des avoirs importants, stockez votre Bitcoin sur un portefeuille matériel comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6). Les plateformes sont réglementées, mais l'auto-conservation élimine entièrement le risque de contrepartie.
+4. **Restez informé** — Suivez les mises à jour des ACVM, du CANAFE et du ministère des Finances du Canada. La réglementation crypto continue d'évoluer.
+5. **Consultez des professionnels** — Pour des avoirs importants, travaillez avec un fiscaliste familier avec les règles crypto canadiennes.
 
-### Comment une réglementation plus claire profite à l'adoption du Bitcoin
+### Perspectives d'avenir
 
-Bien que la réglementation soit parfois perçue négativement dans la communauté crypto, des règles claires et raisonnables peuvent bénéficier significativement à l'adoption du Bitcoin au Canada :
+L'approche réglementaire du Canada continue de se développer. Les domaines en discussion active comprennent :
 
-**Confiance institutionnelle :** Les caisses de retraite, banques et investisseurs institutionnels canadiens ne peuvent souvent pas investir dans des actifs sans clarté réglementaire. Un cadre clair pourrait débloquer des capitaux institutionnels importants vers le Bitcoin.
+- **Surveillance des stablecoins** — Comment réglementer les stablecoins indexés sur le CAD et le USD émis ou utilisés au Canada
+- **Réglementation de la DeFi** — Si et comment les protocoles de finance décentralisée devraient être soumis aux cadres existants
+- **Monnaie numérique de banque centrale (MNBC)** — La Banque du Canada a étudié un dollar canadien numérique, mais aucune date de lancement n'a été fixée
+- **Coordination internationale** — Aligner les règles canadiennes avec des cadres comme le règlement européen MiCA (Markets in Crypto-Assets)
 
-**Protection des consommateurs :** Les règles sur la solvabilité des plateformes, la ségrégation des fonds et la preuve de réserves protègent les Canadiens ordinaires contre les faillites de plateformes.
+Pour les détenteurs canadiens de Bitcoin, la direction réglementaire est vers plus de surveillance, pas moins. Une réglementation bien conçue devrait rendre plus sûr et plus facile d'acheter, de détenir et d'utiliser le Bitcoin au Canada.
 
-**Facilitation de l'innovation :** Paradoxalement, des règles claires peuvent encourager l'innovation en donnant aux entrepreneurs un ensemble défini d'exigences, plutôt que de naviguer dans l'incertitude réglementaire.
+*Cet article est à des fins éducatives uniquement et ne constitue pas un conseil juridique, fiscal ou financier. Les détails réglementaires peuvent changer. Consultez des professionnels qualifiés pour des conseils sur votre situation spécifique.*
 
-**Relations bancaires :** Les plateformes canadiennes ont parfois eu du mal à maintenir des relations bancaires en raison de l'ambiguïté réglementaire. Une licence claire pourrait stabiliser ces relations.
+### Sources
 
-### Ce que cela signifie pour les investisseurs canadiens en Bitcoin
-
-Si la Loi sur la clarté ou une législation similaire est adoptée, les investisseurs canadiens en Bitcoin pourraient voir :
-
-- **Protections renforcées des plateformes :** Des exigences plus strictes pour les plateformes détenant vos fonds
-- **Accès facilité :** Des règles plus claires pourraient encourager plus d'institutions financières à offrir des services crypto
-- **Traitement fiscal stable :** Des règles codifiées sur l'imposition du Bitcoin, réduisant l'incertitude
-- **Expansion des FNB :** Une réglementation plus claire pourrait mener à plus de produits financiers liés au Bitcoin dans les comptes enregistrés (CELI, REER)
-- **Droits d'auto-conservation :** Des protections potentiellement explicites du droit des Canadiens à détenir leur propre Bitcoin dans des portefeuilles matériels comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6)
-
-### Comment se préparer
-
-Peu importe l'évolution de la réglementation, les fondamentaux de la possession responsable de Bitcoin restent les mêmes :
-
-1. **Utilisez des plateformes enregistrées** — Achetez du Bitcoin sur des plateformes canadiennes réglementées comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), [Shakepay](https://shakepay.me/r/K0D39LJ) ou [Coinbase](https://coinbase.com/join/LJZZEMM?src=ios-link)
-2. **Conservez des registres** — Suivez chaque transaction pour la déclaration à l'ARC. La réglementation pourrait augmenter les exigences de déclaration.
-3. **Envisagez l'auto-conservation** — Stockez des montants importants sur un portefeuille matériel comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6) pour ne pas dépendre d'une seule plateforme
-4. **Restez informé** — Suivez les mises à jour du ministère des Finances du Canada et des Autorités canadiennes en valeurs mobilières (ACVM)
-5. **Consultez des professionnels** — Pour des avoirs importants, travaillez avec un fiscaliste et un conseiller juridique familiers avec la réglementation crypto canadienne
-
-### La vue d'ensemble
-
-Le Canada est positionné pour être un leader mondial en réglementation crypto. Le pays a déjà une longueur d'avance avec ses approbations de FNB Bitcoin, son cadre d'enregistrement CANAFE et son approche relativement progressive des actifs numériques. Une Loi sur la clarté complète pourrait solidifier la position du Canada et attirer les entreprises crypto et les investissements au pays.
-
-Pour les détenteurs canadiens de Bitcoin, la direction est claire : plus de réglementation arrive, et des règles bien conçues devraient rendre plus sûr et plus facile d'acheter, de détenir et d'utiliser le Bitcoin au Canada.
-
-*Cet article est à des fins éducatives uniquement et ne constitue pas un conseil juridique, fiscal ou financier. La législation proposée peut changer considérablement avant son adoption. Consultez des professionnels qualifiés pour des conseils sur votre situation spécifique.*
+- [ACVM — Avis 21-327 du personnel sur les plateformes de négociation de cryptoactifs](https://www.securities-administrators.ca/resources/notices/)
+- [CANAFE — Enregistrement des entreprises de services monétaires](https://www.fintrac-canafe.gc.ca/msb-esm/intro-fra)
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/observation/monnaie-numerique/guide-cryptomonnaies.html)
+- [CVMO — Plateformes de négociation de cryptoactifs](https://www.osc.ca/fr/industrie/inscription-et-conformite/plateformes-de-negociation-de-cryptoactifs)
+- [Banque du Canada — Dollar canadien numérique](https://www.bankofcanada.ca/digitaldollar/)
+- [Purpose Investments — FNB Bitcoin BTCC](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
 
 ### Articles connexes
 
@@ -1722,7 +1815,7 @@ Governments worldwide are moving to regulate stablecoins, which paradoxically is
 
 - The US is developing comprehensive stablecoin legislation requiring full reserve backing and regular audits
 - The EU's MiCA regulation establishes a framework for stablecoin issuers in Europe
-- Canada's proposed regulatory framework (sometimes called the Clarity Act) includes provisions for stablecoin oversight
+- Canada's CSA and FINTRAC framework continues to evolve, with discussions around stablecoin oversight
 
 Regulation gives stablecoins credibility. When banks, payment processors, and traditional financial institutions know that stablecoins are regulated and audited, they are more willing to integrate them — creating more on-ramps between traditional finance and the crypto ecosystem.
 
@@ -1759,7 +1852,7 @@ Canadian investors are well-positioned to benefit from these global trends:
 
 **Self-custody:** For long-term holdings, secure your Bitcoin with a hardware wallet like [Trezor](https://www.trezor.io) or [Ledger](https://shop.ledger.com/?r=a8b2555293e6). Government reserves and stablecoin growth do not eliminate the importance of holding your own keys.
 
-**Stay informed:** Follow developments in both Canadian regulation (the proposed Clarity Act) and global trends (US strategic reserve discussions, stablecoin legislation). These macro forces will influence Bitcoin markets for years to come.
+**Stay informed:** Follow developments in both Canadian regulation (CSA and FINTRAC updates) and global trends (US strategic reserve discussions, stablecoin legislation). These macro forces will influence Bitcoin markets for years to come.
 
 ### Risks and Considerations
 
@@ -1777,9 +1870,16 @@ The world is moving toward a future where Bitcoin is held by nations as a strate
 
 The macro environment is shifting in Bitcoin's favour, but disciplined investing — buying through regulated Canadian platforms, maintaining good tax records, securing your holdings, and investing only what you can afford to risk — remains the foundation.
 
+### Sources
+
+- [White House — Executive Order on Digital Assets (2022)](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/03/09/executive-order-on-ensuring-responsible-development-of-digital-assets/)
+- [El Salvador — Bitcoin Legal Tender Law (2021)](https://www.imf.org/en/News/Articles/2022/01/25/pr2213-el-salvador-imf-executive-board-concludes-2021-article-iv-consultation)
+- [CoinDesk — What are stablecoins?](https://www.coindesk.com/learn/what-are-stablecoins/)
+- [EU — Markets in Crypto-Assets Regulation (MiCA)](https://www.europarl.europa.eu/topics/en/article/20220309STO25162/cryptocurrencies-in-the-eu-new-rules-to-boost-benefits-and-curb-threats)
+
 ### Related Articles
 
-- [The Clarity Act and What It Means for Bitcoin in Canada](/blog/clarity-act-bitcoin-canada)
+- [Crypto Regulation in Canada: What Bitcoin Investors Need to Know](/blog/crypto-regulation-canada)
 - [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
 - [Dollar Cost Averaging (DCA) Bitcoin in Canada](/blog/bitcoin-dca-strategy-canada)
 - [Bitcoin in Your TFSA or RRSP: How It Works in Canada](/blog/bitcoin-tfsa-rrsp-canada)
@@ -1853,7 +1953,7 @@ Les gouvernements du monde entier s'efforcent de réglementer les stablecoins, c
 
 - Les États-Unis développent une législation complète sur les stablecoins exigeant une couverture totale des réserves et des audits réguliers
 - Le règlement MiCA de l'UE établit un cadre pour les émetteurs de stablecoins en Europe
-- Le cadre réglementaire proposé par le Canada (parfois appelé la Loi sur la clarté) inclut des dispositions pour la surveillance des stablecoins
+- Le cadre réglementaire du Canada (ACVM et CANAFE) continue d'évoluer, avec des discussions sur la surveillance des stablecoins
 
 La réglementation donne de la crédibilité aux stablecoins. Lorsque les banques, les processeurs de paiement et les institutions financières traditionnelles savent que les stablecoins sont réglementés et audités, ils sont plus disposés à les intégrer — créant plus de passerelles entre la finance traditionnelle et l'écosystème crypto.
 
@@ -1890,7 +1990,7 @@ Les investisseurs canadiens sont bien positionnés pour bénéficier de ces tend
 
 **Auto-conservation :** Pour les avoirs à long terme, sécurisez votre Bitcoin avec un portefeuille matériel comme [Trezor](https://www.trezor.io) ou [Ledger](https://shop.ledger.com/?r=a8b2555293e6). Les réserves gouvernementales et la croissance des stablecoins n'éliminent pas l'importance de détenir vos propres clés.
 
-**Restez informé :** Suivez les développements de la réglementation canadienne (la Loi sur la clarté proposée) et les tendances mondiales (discussions sur les réserves stratégiques américaines, législation sur les stablecoins). Ces forces macro influenceront les marchés du Bitcoin pendant des années.
+**Restez informé :** Suivez les développements de la réglementation canadienne (mises à jour des ACVM et du CANAFE) et les tendances mondiales (discussions sur les réserves stratégiques américaines, législation sur les stablecoins). Ces forces macro influenceront les marchés du Bitcoin pendant des années.
 
 ### Risques et considérations
 
@@ -1908,9 +2008,15 @@ Le monde évolue vers un avenir où le Bitcoin est détenu par les nations comme
 
 L'environnement macro évolue en faveur du Bitcoin, mais un investissement discipliné — acheter via des plateformes canadiennes réglementées, maintenir de bons registres fiscaux, sécuriser vos avoirs et n'investir que ce que vous pouvez vous permettre de risquer — reste le fondement.
 
+### Sources
+
+- [Maison-Blanche — Décret sur les actifs numériques (2022)](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/03/09/executive-order-on-ensuring-responsible-development-of-digital-assets/)
+- [FMI — El Salvador et le Bitcoin comme monnaie légale (2021)](https://www.imf.org/en/News/Articles/2022/01/25/pr2213-el-salvador-imf-executive-board-concludes-2021-article-iv-consultation)
+- [UE — Règlement MiCA sur les marchés de cryptoactifs](https://www.europarl.europa.eu/topics/en/article/20220309STO25162/cryptocurrencies-in-the-eu-new-rules-to-boost-benefits-and-curb-threats)
+
 ### Articles connexes
 
-- [La Loi sur la clarté et ce qu'elle signifie pour le Bitcoin au Canada](/blog/clarity-act-bitcoin-canada)
+- [Réglementation crypto au Canada](/blog/crypto-regulation-canada)
 - [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
 - [L'investissement progressif (DCA) en Bitcoin au Canada](/blog/bitcoin-dca-strategy-canada)
 - [Bitcoin dans votre CELI ou REER : comment ça fonctionne au Canada](/blog/bitcoin-tfsa-rrsp-canada)
