@@ -107,8 +107,8 @@ const translations = {
       chatError: "Connection issue — try again in a moment!",
     },
     start: {
-      title: "Get Started",
-      subtitle: "Tools and services available to Canadian Bitcoin users.",
+      title: "Your Bitcoin Toolkit",
+      subtitle: "Everything you need to buy, secure, and grow your Bitcoin in Canada — trusted exchanges, hardware wallets, and Bitcoin-backed lending.",
       disclosure: "Some links on btcplanner.ca are affiliate links. If you sign up through our link, we may receive a commission at no extra cost to you.",
     },
     footer: {
@@ -231,8 +231,8 @@ const translations = {
       chatError: "Problème de connexion — réessayez dans un moment !",
     },
     start: {
-      title: "Commencer",
-      subtitle: "Outils et services disponibles pour les utilisateurs Bitcoin canadiens.",
+      title: "Votre boîte à outils Bitcoin",
+      subtitle: "Tout ce dont vous avez besoin pour acheter, sécuriser et faire croître votre Bitcoin au Canada — plateformes de confiance, portefeuilles matériels et prêts adossés au Bitcoin.",
       disclosure: "Certains liens sur btcplanner.ca sont des liens d'affiliation. Si vous vous inscrivez via notre lien, nous pouvons recevoir une commission sans frais supplémentaires pour vous.",
     },
     footer: {
@@ -493,19 +493,12 @@ export default function BTCPlanner({ onNavigate }) {
   const [priceChange, setPriceChange] = useState(null);
   const [priceChanges, setPriceChanges] = useState(null);
   const [movingAvg200, setMovingAvg200] = useState(null);
-  const [fearGreed, setFearGreed] = useState(null);
   const [loading, setLoading] = useState(true);
   const [dcaAmount, setDcaAmount] = useState(100);
   const [dcaFreq, setDcaFreq] = useState("weekly");
   const [dcaYears, setDcaYears] = useState(3);
   const [activeTab, setActiveTab] = useState("dashboard");
   const [openFaq, setOpenFaq] = useState(null);
-  const [chatInput, setChatInput] = useState("");
-  const [chatMessages, setChatMessages] = useState([
-    { role: "assistant", text: t.tools.chatWelcome }
-  ]);
-  const [chatLoading, setChatLoading] = useState(false);
-  const [satsAmount, setSatsAmount] = useState(100);
 
   const toggleLang = () => {
     const next = lang === "en" ? "fr" : "en";
@@ -550,12 +543,8 @@ export default function BTCPlanner({ onNavigate }) {
       }
 
       try {
-        const [priceRes, fgRes] = await Promise.all([
-          fetch("/api/price", { signal: controller.signal }),
-          fetch("https://api.alternative.me/fng/", { signal: controller.signal }),
-        ]);
+        const priceRes = await fetch("/api/price", { signal: controller.signal });
         const priceData = await priceRes.json();
-        const fgData = await fgRes.json();
         if (priceRes.ok) {
           setBtcPrice({ cad: priceData.cad, usd: priceData.usd });
           setPriceChange(priceData.change_24h?.toFixed(2));
@@ -569,7 +558,6 @@ export default function BTCPlanner({ onNavigate }) {
             y5: hist.y5,
           });
         }
-        setFearGreed({ value: fgData.data[0].value, label: fgData.data[0].value_classification });
       } catch (e) {
         if (e.name === "AbortError") return;
       }
@@ -610,58 +598,10 @@ export default function BTCPlanner({ onNavigate }) {
   }, [dcaAmount, dcaFreq, dcaYears]);
 
   const dcaResult = calcDCA();
-  const numSats = Number(satsAmount) || 0;
-  const cadToSats = btcPrice ? Math.floor((numSats / btcPrice.cad) * 100_000_000).toLocaleString() : "—";
-
-  const chatSystemPrompt = `You are a Bitcoin education assistant on BTCPlanner.ca, a Canadian Bitcoin information site. Your role is strictly educational.${lang === "fr" ? " Respond in French." : ""}
-
-CRITICAL RULES:
-1. NEVER tell anyone to buy, sell, or hold Bitcoin or any asset. You are NOT a financial advisor.
-2. NEVER predict prices or say Bitcoin will go up or down.
-3. NEVER recommend specific investment amounts or portfolio allocations.
-4. If anyone asks "should I buy Bitcoin?" — explain what Bitcoin is and how it works, then say: "I cannot give investment advice. Please consult a licensed financial advisor."
-5. End any response touching on investment decisions with: "This is educational information only — not financial advice."
-6. Mention Canadian context (CRA taxes, CAD, Canadian exchanges) where relevant.
-7. Keep answers concise (2-4 sentences) and factual.
-8. You can explain HOW things work (DCA, cold storage, wallets, exchanges). Never advise WHETHER someone should do them.`;
-
-  async function sendChat() {
-    if (!chatInput.trim()) return;
-    const userMsg = chatInput.trim();
-    setChatMessages(prev => [...prev, { role: "user", text: userMsg }]);
-    setChatInput("");
-    setChatLoading(true);
-    try {
-      const history = chatMessages
-        .filter((_, idx) => idx > 0)
-        .map(m => ({ role: m.role === "assistant" ? "assistant" : "user", content: m.text }));
-
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          system: chatSystemPrompt,
-          messages: [...history, { role: "user", content: userMsg }]
-        })
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || "API error");
-      }
-      const reply = data.content?.[0]?.text || (lang === "fr" ? "Désolé, je n'ai pas pu obtenir de réponse. Réessayez !" : "Sorry, I couldn't get a response. Try again!");
-      setChatMessages(prev => [...prev, { role: "assistant", text: reply }]);
-    } catch {
-      setChatMessages(prev => [...prev, { role: "assistant", text: t.tools.chatError }]);
-    }
-    setChatLoading(false);
-  }
-
-  const fgColor = fearGreed ? (fearGreed.value > 60 ? COLORS.green : fearGreed.value > 40 ? COLORS.orange : COLORS.red) : COLORS.textMuted;
   const tabs = [
     { id: "dashboard", label: t.tabs.dashboard },
     { id: "dca", label: t.tabs.dca },
     { id: "learn", label: t.tabs.learn },
-    { id: "tools", label: t.tabs.tools },
     { id: "affiliates", label: t.tabs.affiliates },
     { id: "blog", label: t.tabs.blog, href: "blog" },
   ];
@@ -765,8 +705,6 @@ CRITICAL RULES:
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 24 }}>
               <StatCard label={t.dashboard.priceLabel} value={loading ? t.dashboard.loading : btcPrice ? `$${btcPrice.cad.toLocaleString()}` : "—"} sub={btcPrice ? `$${btcPrice.usd.toLocaleString()} USD` : ""} color={COLORS.orange} pulse={!!btcPrice} />
               <StatCard label={t.dashboard.change24} value={loading ? "—" : priceChange != null ? `${priceChange > 0 ? "+" : ""}${priceChange}%` : "—"} sub={t.dashboard.vsYesterday} color={priceChange != null ? (Number(priceChange) > 0 ? COLORS.green : COLORS.red) : COLORS.textMuted} />
-              <StatCard label={t.dashboard.fearGreed} value={loading ? "—" : fearGreed ? `${fearGreed.value} — ${fearGreed.label}` : "—"} sub={t.dashboard.sentiment} color={fgColor} />
-              <StatCard label={t.dashboard.satoshi} value={loading ? "—" : btcPrice ? `$${((1 / 100_000_000) * btcPrice.cad).toFixed(6)}` : "—"} sub={t.dashboard.satUnit} color={COLORS.orange} />
             </div>
 
             <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 16, boxShadow: COLORS.shadow }} aria-label={t.dashboard.perfTitle}>
@@ -799,30 +737,6 @@ CRITICAL RULES:
                 </div>
               )}
               <div style={{ fontSize: 11, color: COLORS.textMuted, marginTop: 10 }}>{t.dashboard.perfDisclaimer}</div>
-            </section>
-
-            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 16, boxShadow: COLORS.shadow }} aria-label={t.dashboard.halvingTitle}>
-              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 17 }}>{t.dashboard.halvingTitle}</h2>
-              <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 16 }}>
-                {t.dashboard.halvingDesc}
-              </p>
-              <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: 16, marginBottom: 12 }}>
-                <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.06em" }}>{t.dashboard.halvingNext}</div>
-                <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: COLORS.orange }}>
-                  {t.dashboard.halvingBlock}
-                </div>
-                <div style={{ fontSize: 13, color: COLORS.textSub, marginTop: 6 }}>
-                  {t.dashboard.halvingReward}
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", fontSize: 13 }}>
-                <button onClick={() => { setActiveTab("learn"); window.scrollTo(0, 0); }} style={{ background: "none", border: "none", color: COLORS.orange, textDecoration: "underline", cursor: "pointer", padding: 0, fontFamily: "'Inter', sans-serif", fontSize: 13 }}>
-                  {t.dashboard.halvingLearn} →
-                </button>
-                <a href="https://www.bitcoin.org/en/how-it-works" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>
-                  {t.dashboard.halvingLink} →
-                </a>
-              </div>
             </section>
 
             <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 16, boxShadow: COLORS.shadow }} aria-label={t.dashboard.originsTitle}>
@@ -881,6 +795,33 @@ CRITICAL RULES:
                   </div>
                 </div>
               ))}
+            </section>
+
+            <section className="card-hover" style={{ background: `linear-gradient(135deg, ${COLORS.orangeLight} 0%, #fff 100%)`, border: `1px solid ${COLORS.orange}33`, borderRadius: 14, padding: "28px 24px", marginTop: 20, marginBottom: 20, textAlign: "center", boxShadow: COLORS.shadow }} aria-label={lang === "fr" ? "Prêt à commencer ?" : "Ready to start?"}>
+              <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: COLORS.textPrimary, marginBottom: 8 }}>
+                {lang === "fr" ? "Prêt à commencer votre parcours Bitcoin ?" : "Ready to Start Your Bitcoin Journey?"}
+              </h2>
+              <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.6, marginBottom: 18, maxWidth: 520, margin: "0 auto 18px" }}>
+                {lang === "fr"
+                  ? "Explorez les plateformes canadiennes de confiance, les portefeuilles matériels et les outils pour acheter, sécuriser et accumuler du Bitcoin."
+                  : "Explore trusted Canadian exchanges, hardware wallets, and tools to buy, secure, and stack Bitcoin."}
+              </p>
+              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+                <button onClick={() => { setActiveTab("affiliates"); window.scrollTo(0, 0); }} style={{
+                  background: COLORS.gradient, border: "none", borderRadius: 10, padding: "12px 28px",
+                  color: "#fff", fontWeight: 700, fontSize: 15, fontFamily: "'Space Grotesk', sans-serif",
+                  cursor: "pointer", boxShadow: "0 4px 12px rgba(247,147,26,0.3)",
+                }}>
+                  {lang === "fr" ? "Voir les plateformes" : "Browse Exchanges"} →
+                </button>
+                <button onClick={() => { setActiveTab("dca"); window.scrollTo(0, 0); }} style={{
+                  background: "#fff", border: `2px solid ${COLORS.orange}`, borderRadius: 10, padding: "12px 28px",
+                  color: COLORS.orange, fontWeight: 700, fontSize: 15, fontFamily: "'Space Grotesk', sans-serif",
+                  cursor: "pointer",
+                }}>
+                  {lang === "fr" ? "Essayer le calculateur DCA" : "Try the DCA Calculator"}
+                </button>
+              </div>
             </section>
 
             <section style={{ marginTop: 20 }} aria-label={t.blog.sectionTitle}>
@@ -1002,6 +943,25 @@ CRITICAL RULES:
               ))}
             </div>
 
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 20, boxShadow: COLORS.shadow }} aria-label={t.dashboard.halvingTitle}>
+              <h3 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 17 }}>{t.dashboard.halvingTitle}</h3>
+              <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 16 }}>
+                {t.dashboard.halvingDesc}
+              </p>
+              <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: 16, marginBottom: 12 }}>
+                <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.06em" }}>{t.dashboard.halvingNext}</div>
+                <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: COLORS.orange }}>
+                  {t.dashboard.halvingBlock}
+                </div>
+                <div style={{ fontSize: 13, color: COLORS.textSub, marginTop: 6 }}>
+                  {t.dashboard.halvingReward}
+                </div>
+              </div>
+              <a href="https://www.bitcoin.org/en/how-it-works" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: COLORS.orange, textDecoration: "underline" }}>
+                {t.dashboard.halvingLink} →
+              </a>
+            </section>
+
             <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, boxShadow: COLORS.shadow }} aria-label={t.learn.taxTitle}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
                 <h3 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 17 }}>{t.learn.taxTitle}</h3>
@@ -1021,94 +981,6 @@ CRITICAL RULES:
                 ))}
               </div>
             </section>
-          </div>
-        )}
-
-        {activeTab === "tools" && (
-          <div>
-            <style>{`
-              @media (min-width: 640px) {
-                .tools-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; }
-                .chat-window { height: 500px !important; }
-              }
-            `}</style>
-            <div className="tools-grid" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-              <div>
-                <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 24, boxShadow: COLORS.shadow }} aria-label={t.tools.satsTitle}>
-                  <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16, fontSize: 17 }}>{t.tools.satsTitle}</h2>
-                  <div style={{ marginBottom: 16 }}>
-                    <label htmlFor="sats-amount" style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>{t.tools.satsLabel}</label>
-                    <input id="sats-amount" type="text" inputMode="numeric" value={satsAmount === "" ? "" : satsAmount} onChange={e => handleAmountInput(e.target.value, setSatsAmount)} placeholder={t.tools.satsPlaceholder}
-                      style={{ width: "100%", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }} />
-                  </div>
-                  <div style={{ background: COLORS.orangeLight, borderRadius: 8, padding: 16, textAlign: "center" }} aria-live="polite">
-                    <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 4 }}>{numSats > 0 ? `$${numSats} CAD =` : t.tools.satsPrompt}</div>
-                    <div style={{ fontSize: 28, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{numSats > 0 ? `${cadToSats} sats` : "—"}</div>
-                    {numSats > 0 && <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>{t.tools.satoshis}</div>}
-                  </div>
-                </section>
-
-                <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, boxShadow: COLORS.shadow }} aria-label={t.tools.sentimentTitle}>
-                  <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 17 }}>{t.tools.sentimentTitle}</h2>
-                  {fearGreed ? (
-                    <div>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                        <span style={{ fontSize: 13, color: COLORS.textMuted }}>{t.tools.fgIndex}</span>
-                        <span style={{ fontSize: 13, color: fgColor, fontWeight: 600 }}>{fearGreed.label}</span>
-                      </div>
-                      <div style={{ background: "#E5E7EB", borderRadius: 6, height: 12, overflow: "hidden" }} role="meter" aria-valuenow={fearGreed.value} aria-valuemin={0} aria-valuemax={100} aria-label={t.tools.fgIndex}>
-                        <div style={{ width: `${fearGreed.value}%`, height: "100%", background: `linear-gradient(90deg, ${COLORS.red}, ${COLORS.orange}, ${COLORS.green})`, borderRadius: 6, transition: "width 1s ease" }} />
-                      </div>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6, fontSize: 11, color: COLORS.textMuted }}>
-                        <span>{t.tools.extremeFear}</span><span>{fearGreed.value}/100</span><span>{t.tools.extremeGreed}</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div style={{ fontSize: 14, color: COLORS.textMuted }}>—</div>
-                  )}
-                </section>
-              </div>
-
-              <section className="chat-window" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, display: "flex", flexDirection: "column", minHeight: 380, boxShadow: COLORS.shadow }} aria-label={t.tools.chatTitle}>
-                <div style={{ padding: "16px 20px", borderBottom: `1px solid ${COLORS.cardBorder}`, display: "flex", alignItems: "center", gap: 10, background: COLORS.orangeLight + "66" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: 10, background: COLORS.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, color: "#fff", fontWeight: 700, boxShadow: "0 2px 6px rgba(247,147,26,0.25)" }} aria-hidden="true">₿</div>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 14 }}>{t.tools.chatTitle}</div>
-                    <div style={{ fontSize: 11, color: COLORS.green }}>{t.tools.chatOnline}</div>
-                  </div>
-                </div>
-                <div style={{ flex: 1, overflowY: "auto", padding: 16, display: "flex", flexDirection: "column", gap: 12 }} aria-live="polite">
-                  {chatMessages.map((msg, i) => (
-                    <div key={i} style={{ display: "flex", justifyContent: msg.role === "user" ? "flex-end" : "flex-start" }}>
-                      <div style={{
-                        maxWidth: "85%", padding: "10px 14px",
-                        borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
-                        background: msg.role === "user" ? COLORS.orange : "#fff",
-                        color: msg.role === "user" ? "#fff" : COLORS.textPrimary,
-                        fontSize: 13, lineHeight: 1.6,
-                        border: msg.role === "user" ? "none" : `1px solid ${COLORS.cardBorder}`,
-                      }}>
-                        {msg.text}
-                      </div>
-                    </div>
-                  ))}
-                  {chatLoading && (
-                    <div style={{ display: "flex", gap: 4, padding: "8px 14px", background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: "16px 16px 16px 4px", width: "fit-content" }} aria-label={lang === "en" ? "Loading response" : "Chargement"}>
-                      {[0, 1, 2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.textMuted, animation: `pulse ${0.6 + i * 0.2}s infinite` }} />)}
-                    </div>
-                  )}
-                </div>
-                <div style={{ padding: 12, borderTop: `1px solid ${COLORS.cardBorder}`, display: "flex", gap: 8 }}>
-                  <label htmlFor="chat-input" className="sr-only" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0,0,0,0)" }}>{t.tools.chatPlaceholder}</label>
-                  <input id="chat-input" value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendChat()}
-                    placeholder={t.tools.chatPlaceholder}
-                    style={{ flex: 1, background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 13, fontFamily: "'Inter', sans-serif" }} />
-                  <button onClick={sendChat} style={{ background: COLORS.gradient, border: "none", borderRadius: 10, padding: "10px 18px", color: "#fff", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif", boxShadow: "0 2px 6px rgba(247,147,26,0.25)" }}>
-                    {t.tools.chatSend}
-                  </button>
-                </div>
-              </section>
-            </div>
           </div>
         )}
 
