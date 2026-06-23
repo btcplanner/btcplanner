@@ -11,14 +11,22 @@ function estimateReadingTime(markdown, lang) {
 }
 
 function ShareButtons({ url, title, lang }) {
+  const [copied, setCopied] = useState(false);
   const encoded = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   return (
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
       <a href={`https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#1DA1F2", color: "#fff", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, textDecoration: "none" }}>X / Twitter</a>
       <a href={`https://www.facebook.com/sharer/sharer.php?u=${encoded}`} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#1877F2", color: "#fff", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, textDecoration: "none" }}>Facebook</a>
       <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encoded}&title=${encodedTitle}`} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#0A66C2", color: "#fff", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, textDecoration: "none" }}>LinkedIn</a>
-      <button onClick={() => { navigator.clipboard.writeText(url); }} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#6B7280", color: "#fff", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, border: "none", cursor: "pointer" }}>{lang === "fr" ? "Copier le lien" : "Copy link"}</button>
+      <button onClick={handleCopy} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: copied ? "#10B981" : "#6B7280", color: "#fff", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, border: "none", cursor: "pointer", transition: "background 0.3s ease", minWidth: 95 }}>
+        {copied ? (lang === "fr" ? "Copié !" : "Copied!") : (lang === "fr" ? "Copier le lien" : "Copy link")}
+      </button>
     </div>
   );
 }
