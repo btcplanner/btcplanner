@@ -300,16 +300,21 @@ function RiskBanner({ t }) {
 }
 
 const COLORS = {
-  bg: "#FFFFFF",
-  card: "#F9FAFB",
+  bg: "#FAFAFA",
+  card: "#FFFFFF",
   cardBorder: "#E5E7EB",
   orange: "#F7931A",
+  orangeHover: "#E8850F",
   orangeLight: "#FFF7ED",
   green: "#10B981",
   red: "#EF4444",
-  textPrimary: "#1D1D1B",
+  textPrimary: "#111111",
   textMuted: "#6B7280",
   textSub: "#4B5563",
+  shadow: "0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)",
+  shadowHover: "0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
+  gradient: "linear-gradient(135deg, #F7931A 0%, #FFC107 100%)",
+  headerBg: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)",
 };
 
 const affiliates = [
@@ -391,14 +396,16 @@ function PowerLawChart({ data, t }) {
 
 function StatCard({ label, value, sub, color, pulse }) {
   return (
-    <div style={{
+    <div className="card-hover" style={{
       background: COLORS.card,
       border: `1px solid ${COLORS.cardBorder}`,
-      borderRadius: 12,
+      borderRadius: 14,
       padding: "20px 24px",
       position: "relative",
       overflow: "hidden",
+      boxShadow: COLORS.shadow,
     }}>
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: color === COLORS.green ? COLORS.green : color === COLORS.red ? COLORS.red : COLORS.gradient, borderRadius: "14px 14px 0 0" }} aria-hidden="true" />
       {pulse && (
         <div style={{
           position: "absolute", top: 16, right: 16,
@@ -408,9 +415,57 @@ function StatCard({ label, value, sub, color, pulse }) {
           animation: "pulse 2s infinite",
         }} aria-hidden="true" />
       )}
-      <div style={{ fontSize: 12, color: COLORS.textMuted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.08em" }}>{label}</div>
+      <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 500 }}>{label}</div>
       <div style={{ fontSize: 28, fontWeight: 700, color: color || COLORS.textPrimary, fontFamily: "'Space Grotesk', sans-serif" }}>{value}</div>
-      {sub && <div style={{ fontSize: 13, color: COLORS.textMuted, marginTop: 4 }}>{sub}</div>}
+      {sub && <div style={{ fontSize: 13, color: COLORS.textMuted, marginTop: 6 }}>{sub}</div>}
+    </div>
+  );
+}
+
+function NewsletterCTA({ lang }) {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email.trim()) {
+      try { const subs = JSON.parse(localStorage.getItem("btcplanner_newsletter") || "[]"); subs.push({ email, ts: Date.now() }); localStorage.setItem("btcplanner_newsletter", JSON.stringify(subs)); } catch {}
+      setSubmitted(true);
+    }
+  };
+  if (submitted) return (
+    <div style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}44`, borderRadius: 14, padding: "20px 24px", textAlign: "center", marginTop: 20 }}>
+      <div style={{ fontWeight: 600, fontSize: 15, color: COLORS.textPrimary }}>{lang === "fr" ? "Merci ! Vous êtes inscrit." : "Thanks! You're subscribed."}</div>
+    </div>
+  );
+  return (
+    <div style={{ background: `linear-gradient(135deg, ${COLORS.orangeLight} 0%, #fff 100%)`, border: `1px solid ${COLORS.orange}33`, borderRadius: 14, padding: "20px 24px", marginTop: 20 }}>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 16, color: COLORS.textPrimary, marginBottom: 6 }}>
+        {lang === "fr" ? "Restez informé sur le Bitcoin" : "Stay Updated on Bitcoin"}
+      </div>
+      <p style={{ fontSize: 13, color: COLORS.textSub, marginBottom: 12, lineHeight: 1.5 }}>
+        {lang === "fr" ? "Recevez les derniers articles et alertes de prix." : "Get the latest articles and price alerts delivered to you."}
+      </p>
+      <form onSubmit={handleSubmit} style={{ display: "flex", gap: 8 }}>
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={lang === "fr" ? "Votre courriel" : "Your email"} required
+          style={{ flex: 1, background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 10, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 14, fontFamily: "'Inter', sans-serif" }} />
+        <button type="submit" style={{ background: COLORS.gradient, border: "none", borderRadius: 10, padding: "10px 18px", color: "#fff", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif", cursor: "pointer", boxShadow: "0 2px 6px rgba(247,147,26,0.25)", whiteSpace: "nowrap" }}>
+          {lang === "fr" ? "S'abonner" : "Subscribe"}
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function PriceMilestoneBanner({ btcPrice, lang }) {
+  if (!btcPrice) return null;
+  const cad = btcPrice.cad;
+  const milestones = [250000, 200000, 175000, 150000, 125000, 100000];
+  const milestone = milestones.find(m => cad >= m);
+  if (!milestone) return null;
+  const formatted = milestone.toLocaleString();
+  return (
+    <div style={{ background: COLORS.gradient, padding: "8px 24px", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", animation: "fadeIn 0.5s ease" }}>
+      {lang === "fr" ? `Bitcoin a dépassé $${formatted} CAD !` : `Bitcoin is above $${formatted} CAD!`}
     </div>
   );
 }
@@ -620,19 +675,33 @@ CRITICAL RULES:
         try { sessionStorage.setItem("btcplanner_disclaimer", "1"); } catch {}
       }} />}
       <RiskBanner t={t} />
+      <PriceMilestoneBanner btcPrice={btcPrice} lang={lang} />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-        input, select { outline: none; }
-        button:hover { opacity: 0.85; cursor: pointer; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        input, select { outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+        input:focus, select:focus { border-color: ${COLORS.orange} !important; box-shadow: 0 0 0 3px rgba(247,147,26,0.1) !important; }
+        button { transition: all 0.2s ease; cursor: pointer; }
+        button:hover { transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
+        a { transition: color 0.2s, opacity 0.2s; }
         a:hover { opacity: 0.85; }
         :focus-visible { outline: 2px solid ${COLORS.orange}; outline-offset: 2px; }
+        .card-hover { transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
+        .card-hover:hover { box-shadow: ${COLORS.shadowHover}; transform: translateY(-2px); border-color: ${COLORS.orange}33; }
+        @media (max-width: 640px) {
+          .mobile-stack { grid-template-columns: 1fr !important; }
+          .mobile-hide { display: none !important; }
+        }
       `}</style>
 
-      <header style={{ borderBottom: `1px solid ${COLORS.cardBorder}`, padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "#fff" }}>
+      <header style={{ borderBottom: `1px solid ${COLORS.cardBorder}`, padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", background: COLORS.headerBg, backdropFilter: "blur(8px)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 40, height: 40, borderRadius: 10, background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }} aria-hidden="true">
+          <div style={{ width: 42, height: 42, borderRadius: 12, background: COLORS.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0, boxShadow: "0 2px 8px rgba(247,147,26,0.3)" }} aria-hidden="true">
             ₿
           </div>
           <div>
@@ -666,14 +735,15 @@ CRITICAL RULES:
         </button>
       </div>
 
-      <nav style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#fff" }} aria-label="Main navigation">
+      <nav style={{ display: "flex", borderBottom: `1px solid ${COLORS.cardBorder}`, background: "#fff", padding: "0 8px", gap: 2 }} aria-label="Main navigation">
         {tabs.map(tab => (
           <button key={tab.id} onClick={() => tab.href ? onNavigate(tab.href) : setActiveTab(tab.id)} aria-current={activeTab === tab.id ? "page" : undefined} style={{
-            flex: 1, padding: "12px 0", background: "none", border: "none",
+            flex: 1, padding: "14px 0 12px", background: activeTab === tab.id ? COLORS.orangeLight : "none", border: "none",
             color: activeTab === tab.id ? COLORS.orange : COLORS.textMuted,
-            borderBottom: activeTab === tab.id ? `2px solid ${COLORS.orange}` : "2px solid transparent",
-            fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 500,
-            whiteSpace: "nowrap", textAlign: "center",
+            borderBottom: activeTab === tab.id ? `3px solid ${COLORS.orange}` : "3px solid transparent",
+            fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: activeTab === tab.id ? 600 : 500,
+            whiteSpace: "nowrap", textAlign: "center", borderRadius: "8px 8px 0 0",
+            transition: "all 0.2s ease",
           }}>
             {tab.label}
           </button>
@@ -684,12 +754,12 @@ CRITICAL RULES:
 
         {activeTab === "dashboard" && (
           <div>
-            <div style={{ marginBottom: 24 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, fontWeight: 700 }}>{t.dashboard.welcome}</h1>
+            <div style={{ marginBottom: 28, animation: "fadeIn 0.5s ease" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 700, background: COLORS.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{t.dashboard.welcome}</h1>
                 <CanadaFlag size={24} />
               </div>
-              <p style={{ color: COLORS.textSub, fontSize: 14 }}>{t.dashboard.subtitle}</p>
+              <p style={{ color: COLORS.textSub, fontSize: 15, lineHeight: 1.6 }}>{t.dashboard.subtitle}</p>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 24 }}>
@@ -699,8 +769,8 @@ CRITICAL RULES:
               <StatCard label={t.dashboard.satoshi} value={loading ? "—" : btcPrice ? `$${((1 / 100_000_000) * btcPrice.cad).toFixed(6)}` : "—"} sub={t.dashboard.satUnit} color={COLORS.orange} />
             </div>
 
-            <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }} aria-label={t.dashboard.perfTitle}>
-              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16, fontSize: 16 }}>{t.dashboard.perfTitle}</h2>
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 16, boxShadow: COLORS.shadow }} aria-label={t.dashboard.perfTitle}>
+              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16, fontSize: 17 }}>{t.dashboard.perfTitle}</h2>
               {priceChanges ? (
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(80px, 1fr))", gap: 12, marginBottom: 16 }}>
                   {[
@@ -711,7 +781,7 @@ CRITICAL RULES:
                     { label: "3y", val: priceChanges.y3 },
                     { label: "5y", val: priceChanges.y5 },
                   ].map(p => (
-                    <div key={p.label} style={{ background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "12px 14px", textAlign: "center" }}>
+                    <div key={p.label} style={{ background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 10, padding: "12px 14px", textAlign: "center", transition: "transform 0.2s, box-shadow 0.2s" }}>
                       <div style={{ fontSize: 11, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{p.label}</div>
                       <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: p.val != null ? (p.val >= 0 ? COLORS.green : COLORS.red) : COLORS.textMuted }}>
                         {p.val != null ? `${p.val >= 0 ? "+" : ""}${p.val.toFixed(1)}%` : "—"}
@@ -731,8 +801,8 @@ CRITICAL RULES:
               <div style={{ fontSize: 11, color: COLORS.textMuted, marginTop: 10 }}>{t.dashboard.perfDisclaimer}</div>
             </section>
 
-            <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }} aria-label={t.dashboard.halvingTitle}>
-              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 16 }}>{t.dashboard.halvingTitle}</h2>
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 16, boxShadow: COLORS.shadow }} aria-label={t.dashboard.halvingTitle}>
+              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 17 }}>{t.dashboard.halvingTitle}</h2>
               <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 16 }}>
                 {t.dashboard.halvingDesc}
               </p>
@@ -755,8 +825,8 @@ CRITICAL RULES:
               </div>
             </section>
 
-            <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 16 }} aria-label={t.dashboard.originsTitle}>
-              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 16 }}>{t.dashboard.originsTitle}</h2>
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 16, boxShadow: COLORS.shadow }} aria-label={t.dashboard.originsTitle}>
+              <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 17 }}>{t.dashboard.originsTitle}</h2>
               <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: t.dashboard.originsP1 }} />
               <p style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7, marginBottom: 16 }}>
                 {t.dashboard.originsP2}
@@ -766,7 +836,7 @@ CRITICAL RULES:
               </a>
             </section>
 
-            <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }} aria-label={t.dashboard.powerTitle}>
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 24, boxShadow: COLORS.shadow }} aria-label={t.dashboard.powerTitle}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
                 <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>{t.dashboard.powerTitle}</h2>
                 <div style={{ fontSize: 12, color: COLORS.textMuted }}>{t.dashboard.powerScale}</div>
@@ -793,49 +863,49 @@ CRITICAL RULES:
               </div>
             </section>
 
-            <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }} aria-label={t.dashboard.stepsTitle}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>{t.dashboard.stepsTitle}</h2>
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, boxShadow: COLORS.shadow }} aria-label={t.dashboard.stepsTitle}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
+                <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 17 }}>{t.dashboard.stepsTitle}</h2>
                 <CanadaFlag size={16} />
               </div>
               {[
                 { step: "1", title: t.dashboard.step1Title, body: <>{t.dashboard.step1Body} <a href="https://invite.kraken.com/JDNW/rvqfaxbg" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Kraken</a> · <a href="https://coinbase.com/join/LJZZEMM?src=ios-link" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Coinbase</a> · <a href="https://shakepay.me/r/K0D39LJ" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Shakepay</a></> },
                 { step: "2", title: <>{t.dashboard.step2Title} <button onClick={() => { setActiveTab("dca"); window.scrollTo(0, 0); }} style={{ background: "none", border: "none", color: COLORS.orange, textDecoration: "underline", fontWeight: 600, fontSize: "inherit", fontFamily: "inherit", cursor: "pointer", padding: 0 }}>{t.dashboard.step2Link}</button></>, body: t.dashboard.step2Body },
                 { step: "3", title: t.dashboard.step3Title, body: <>{t.dashboard.step3Body} <a href="https://www.trezor.io" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Trezor</a> · <a href="https://shop.ledger.com/?r=a8b2555293e6" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>Ledger</a>. <a href="https://bitcoin.org/en/secure-your-wallet" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.orange, textDecoration: "underline" }}>{t.dashboard.step3Keys}</a>{t.dashboard.step3Warn}</> },
-              ].map(s => (
-                <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "flex-start" }}>
-                  <div style={{ minWidth: 32, height: 32, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "#fff" }} aria-hidden="true">{s.step}</div>
+              ].map((s, idx) => (
+                <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: idx < 2 ? 20 : 0, alignItems: "flex-start", padding: 16, background: idx % 2 === 0 ? COLORS.orangeLight + "66" : "transparent", borderRadius: 12 }}>
+                  <div style={{ minWidth: 36, height: 36, borderRadius: 12, background: COLORS.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, color: "#fff", boxShadow: "0 2px 6px rgba(247,147,26,0.25)" }} aria-hidden="true">{s.step}</div>
                   <div>
-                    <div style={{ fontWeight: 600, marginBottom: 4 }}>{s.title}</div>
-                    <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.6 }}>{s.body}</div>
+                    <div style={{ fontWeight: 600, marginBottom: 6, fontSize: 15 }}>{s.title}</div>
+                    <div style={{ fontSize: 14, color: COLORS.textSub, lineHeight: 1.7 }}>{s.body}</div>
                   </div>
                 </div>
               ))}
             </section>
 
-            <section style={{ marginTop: 16 }} aria-label={t.blog.sectionTitle}>
+            <section style={{ marginTop: 20 }} aria-label={t.blog.sectionTitle}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-                <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>{t.blog.sectionTitle}</h2>
-                <button onClick={() => onNavigate("blog")} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 13, fontWeight: 500, fontFamily: "'Inter', sans-serif", padding: 0, textDecoration: "underline" }}>
+                <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 17 }}>{t.blog.sectionTitle}</h2>
+                <button onClick={() => onNavigate("blog")} style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}33`, borderRadius: 8, color: COLORS.orange, cursor: "pointer", fontSize: 13, fontWeight: 600, fontFamily: "'Inter', sans-serif", padding: "6px 14px" }}>
                   {t.blog.viewAll} →
                 </button>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 16 }}>
                 {blogPosts.slice(0, 3).map(p => (
-                  <article key={p.slug} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, overflow: "hidden" }}>
+                  <article key={p.slug} className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, overflow: "hidden", boxShadow: COLORS.shadow }}>
                     {p.image && (
                       <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
-                        <img src={p.image} alt={p.imageAlt?.[lang] || ""} loading="lazy" style={{ width: "100%", height: 140, objectFit: "cover", display: "block" }} />
+                        <img src={p.image} alt={p.imageAlt?.[lang] || ""} loading="lazy" style={{ width: "100%", height: 150, objectFit: "cover", display: "block", transition: "transform 0.3s ease" }} />
                       </button>
                     )}
-                    <div style={{ padding: "14px 16px 16px" }}>
-                      <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 6 }}>
+                    <div style={{ padding: "16px 18px 18px" }}>
+                      <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 8 }}>
                         {new Date(p.date + "T00:00:00").toLocaleDateString(lang === "en" ? "en-CA" : "fr-CA", { year: "numeric", month: "short", day: "numeric" })}
                       </div>
-                      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 14, color: COLORS.textPrimary, marginBottom: 8, lineHeight: 1.3 }}>
+                      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 15, color: COLORS.textPrimary, marginBottom: 10, lineHeight: 1.4 }}>
                         {p.title[lang]}
                       </h3>
-                      <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 12, fontWeight: 500, fontFamily: "'Inter', sans-serif", padding: 0, textDecoration: "underline" }}>
+                      <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ background: "none", border: "none", color: COLORS.orange, cursor: "pointer", fontSize: 13, fontWeight: 600, fontFamily: "'Inter', sans-serif", padding: 0 }}>
                         {t.blog.readMore} →
                       </button>
                     </div>
@@ -843,17 +913,21 @@ CRITICAL RULES:
                 ))}
               </div>
             </section>
+
+            <NewsletterCTA lang={lang} />
           </div>
         )}
 
         {activeTab === "dca" && (
           <div>
-            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, marginBottom: 6 }}>{t.dca.title}</h2>
-            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>{t.dca.subtitle}</p>
+            <div style={{ marginBottom: 28, animation: "fadeIn 0.5s ease" }}>
+              <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, marginBottom: 8, background: COLORS.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{t.dca.title}</h2>
+              <p style={{ color: COLORS.textSub, fontSize: 15, lineHeight: 1.6 }}>{t.dca.subtitle}</p>
+            </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
-              <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }}>
-                <div style={{ fontWeight: 600, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif" }}>{t.dca.planTitle}</div>
+            <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+              <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, boxShadow: COLORS.shadow }}>
+                <div style={{ fontWeight: 600, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}>{t.dca.planTitle}</div>
                 <div style={{ marginBottom: 16 }}>
                   <label htmlFor="dca-amount" style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>{t.dca.amountLabel}</label>
                   <input id="dca-amount" type="text" inputMode="numeric" value={dcaAmount === "" ? "" : dcaAmount} onChange={e => handleAmountInput(e.target.value, setDcaAmount)} placeholder={t.dca.placeholder}
@@ -878,15 +952,16 @@ CRITICAL RULES:
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <div style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, flex: 1 }}>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8 }}>{t.dca.totalInvested}</div>
+                <div className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, flex: 1, boxShadow: COLORS.shadow }}>
+                  <div style={{ fontSize: 11, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8, fontWeight: 500 }}>{t.dca.totalInvested}</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.textPrimary, fontFamily: "'Space Grotesk', sans-serif" }}>{dcaResult.totalInvested}</div>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>{t.dca.cadOver} {dcaYears} {t.dca.years}</div>
+                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 6 }}>{t.dca.cadOver} {dcaYears} {t.dca.years}</div>
                 </div>
-                <div style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}55`, borderRadius: 12, padding: 24, flex: 1 }}>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8 }}>{t.dca.projectedValue}</div>
+                <div style={{ background: COLORS.orangeLight, border: `1px solid ${COLORS.orange}44`, borderRadius: 14, padding: 24, flex: 1, position: "relative", overflow: "hidden" }}>
+                  <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: COLORS.gradient }} aria-hidden="true" />
+                  <div style={{ fontSize: 11, color: COLORS.textMuted, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8, fontWeight: 500 }}>{t.dca.projectedValue}</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.orange, fontFamily: "'Space Grotesk', sans-serif" }}>{dcaResult.projectedValue}</div>
-                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 4 }}>{dcaResult.multiplier}x {t.dca.returnModel}</div>
+                  <div style={{ fontSize: 12, color: COLORS.textMuted, marginTop: 6 }}>{dcaResult.multiplier}x {t.dca.returnModel}</div>
                 </div>
               </div>
             </div>
@@ -899,25 +974,27 @@ CRITICAL RULES:
 
         {activeTab === "learn" && (
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-              <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700 }}>{t.learn.title}</h2>
-              <CanadaFlag size={20} />
+            <div style={{ marginBottom: 28, animation: "fadeIn 0.5s ease" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, background: COLORS.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{t.learn.title}</h2>
+                <CanadaFlag size={20} />
+              </div>
+              <p style={{ color: COLORS.textSub, fontSize: 15, lineHeight: 1.6 }}>{t.learn.subtitle}</p>
             </div>
-            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>{t.learn.subtitle}</p>
 
             <div style={{ marginBottom: 24 }}>
               {faqs.map((faq, i) => (
-                <div key={i} style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 10, marginBottom: 10, overflow: "hidden" }}>
+                <div key={i} style={{ background: COLORS.card, border: `1px solid ${openFaq === i ? COLORS.orange + "44" : COLORS.cardBorder}`, borderRadius: 12, marginBottom: 10, overflow: "hidden", boxShadow: COLORS.shadow, transition: "border-color 0.2s" }}>
                   <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} style={{
-                    width: "100%", background: "none", border: "none", padding: "16px 20px", textAlign: "left",
+                    width: "100%", background: "none", border: "none", padding: "18px 20px", textAlign: "left",
                     color: COLORS.textPrimary, fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: 15,
                     display: "flex", justifyContent: "space-between", alignItems: "center"
                   }}>
                     {faq.q}
-                    <span style={{ color: COLORS.orange, fontSize: 20, fontWeight: 300, marginLeft: 12 }} aria-hidden="true">{openFaq === i ? "−" : "+"}</span>
+                    <span style={{ color: COLORS.orange, fontSize: 14, fontWeight: 600, marginLeft: 12, width: 28, height: 28, borderRadius: 8, background: COLORS.orangeLight, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "none" }} aria-hidden="true">+</span>
                   </button>
                   {openFaq === i && (
-                    <div style={{ padding: "0 20px 16px", color: COLORS.textSub, fontSize: 14, lineHeight: 1.7, borderTop: `1px solid ${COLORS.cardBorder}`, paddingTop: 16 }}>
+                    <div style={{ padding: "0 20px 18px", color: COLORS.textSub, fontSize: 14, lineHeight: 1.8, borderTop: `1px solid ${COLORS.cardBorder}`, paddingTop: 16 }}>
                       {faq.a}
                     </div>
                   )}
@@ -925,21 +1002,21 @@ CRITICAL RULES:
               ))}
             </div>
 
-            <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }} aria-label={t.learn.taxTitle}>
+            <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, boxShadow: COLORS.shadow }} aria-label={t.learn.taxTitle}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                <h3 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif" }}>{t.learn.taxTitle}</h3>
+                <h3 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", fontSize: 17 }}>{t.learn.taxTitle}</h3>
                 <CanadaFlag size={16} />
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                 {[
                   { label: t.learn.capitalGains, val: t.learn.capitalGainsVal },
                   { label: t.learn.taxableEvents, val: t.learn.taxableEventsVal },
                   { label: t.learn.holding, val: t.learn.holdingVal },
                   { label: t.learn.taxTools, val: t.learn.taxToolsVal },
                 ].map(item => (
-                  <div key={item.label} style={{ background: "#fff", borderRadius: 8, padding: 14, border: `1px solid ${COLORS.cardBorder}` }}>
-                    <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>{item.label}</div>
-                    <div style={{ fontSize: 14, color: COLORS.textPrimary }}>{item.val}</div>
+                  <div key={item.label} style={{ background: "#fff", borderRadius: 10, padding: 16, border: `1px solid ${COLORS.cardBorder}`, transition: "border-color 0.2s" }}>
+                    <div style={{ fontSize: 11, color: COLORS.textMuted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500 }}>{item.label}</div>
+                    <div style={{ fontSize: 14, color: COLORS.textPrimary, fontWeight: 500 }}>{item.val}</div>
                   </div>
                 ))}
               </div>
@@ -957,8 +1034,8 @@ CRITICAL RULES:
             `}</style>
             <div className="tools-grid" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <div>
-                <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24, marginBottom: 24 }} aria-label={t.tools.satsTitle}>
-                  <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16, fontSize: 16 }}>{t.tools.satsTitle}</h2>
+                <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, marginBottom: 24, boxShadow: COLORS.shadow }} aria-label={t.tools.satsTitle}>
+                  <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 16, fontSize: 17 }}>{t.tools.satsTitle}</h2>
                   <div style={{ marginBottom: 16 }}>
                     <label htmlFor="sats-amount" style={{ fontSize: 13, color: COLORS.textMuted, display: "block", marginBottom: 6 }}>{t.tools.satsLabel}</label>
                     <input id="sats-amount" type="text" inputMode="numeric" value={satsAmount === "" ? "" : satsAmount} onChange={e => handleAmountInput(e.target.value, setSatsAmount)} placeholder={t.tools.satsPlaceholder}
@@ -971,8 +1048,8 @@ CRITICAL RULES:
                   </div>
                 </section>
 
-                <section style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: 24 }} aria-label={t.tools.sentimentTitle}>
-                  <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 16 }}>{t.tools.sentimentTitle}</h2>
+                <section className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: 24, boxShadow: COLORS.shadow }} aria-label={t.tools.sentimentTitle}>
+                  <h2 style={{ fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: 12, fontSize: 17 }}>{t.tools.sentimentTitle}</h2>
                   {fearGreed ? (
                     <div>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
@@ -992,9 +1069,9 @@ CRITICAL RULES:
                 </section>
               </div>
 
-              <section className="chat-window" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, display: "flex", flexDirection: "column", minHeight: 380 }} aria-label={t.tools.chatTitle}>
-                <div style={{ padding: "16px 20px", borderBottom: `1px solid ${COLORS.cardBorder}`, display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: 28, height: 28, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff", fontWeight: 700 }} aria-hidden="true">₿</div>
+              <section className="chat-window" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, display: "flex", flexDirection: "column", minHeight: 380, boxShadow: COLORS.shadow }} aria-label={t.tools.chatTitle}>
+                <div style={{ padding: "16px 20px", borderBottom: `1px solid ${COLORS.cardBorder}`, display: "flex", alignItems: "center", gap: 10, background: COLORS.orangeLight + "66" }}>
+                  <div style={{ width: 32, height: 32, borderRadius: 10, background: COLORS.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, color: "#fff", fontWeight: 700, boxShadow: "0 2px 6px rgba(247,147,26,0.25)" }} aria-hidden="true">₿</div>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 14 }}>{t.tools.chatTitle}</div>
                     <div style={{ fontSize: 11, color: COLORS.green }}>{t.tools.chatOnline}</div>
@@ -1026,7 +1103,7 @@ CRITICAL RULES:
                   <input id="chat-input" value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendChat()}
                     placeholder={t.tools.chatPlaceholder}
                     style={{ flex: 1, background: "#fff", border: `1px solid ${COLORS.cardBorder}`, borderRadius: 8, padding: "10px 14px", color: COLORS.textPrimary, fontSize: 13, fontFamily: "'Inter', sans-serif" }} />
-                  <button onClick={sendChat} style={{ background: COLORS.orange, border: "none", borderRadius: 8, padding: "10px 16px", color: "#fff", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>
+                  <button onClick={sendChat} style={{ background: COLORS.gradient, border: "none", borderRadius: 10, padding: "10px 18px", color: "#fff", fontWeight: 600, fontSize: 13, fontFamily: "'Inter', sans-serif", boxShadow: "0 2px 6px rgba(247,147,26,0.25)" }}>
                     {t.tools.chatSend}
                   </button>
                 </div>
@@ -1037,24 +1114,26 @@ CRITICAL RULES:
 
         {activeTab === "affiliates" && (
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-              <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700 }}>{t.start.title}</h2>
-              <CanadaFlag size={20} />
+            <div style={{ marginBottom: 28, animation: "fadeIn 0.5s ease" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, background: COLORS.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{t.start.title}</h2>
+                <CanadaFlag size={20} />
+              </div>
+              <p style={{ color: COLORS.textSub, fontSize: 15, lineHeight: 1.6 }}>{t.start.subtitle}</p>
             </div>
-            <p style={{ color: COLORS.textSub, fontSize: 14, marginBottom: 24 }}>{t.start.subtitle}</p>
 
             {affiliates.map((cat, ci) => (
               <section key={ci} style={{ marginBottom: 32 }} aria-label={cat.category[lang]}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: COLORS.textMuted, marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.08em" }}>{cat.category[lang]}</h3>
+                <h3 style={{ fontSize: 12, fontWeight: 600, color: COLORS.textMuted, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.1em" }}>{cat.category[lang]}</h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {cat.items.map((item, ii) => (
-                    <a key={ii} href={item.url} target="_blank" rel="noopener noreferrer" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 12, padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, textDecoration: "none", color: "inherit" }}>
-                      <div style={{ width: 32, height: 32, borderRadius: 8, background: item.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0 }} aria-hidden="true">{item.name[0]}</div>
+                    <a key={ii} href={item.url} target="_blank" rel="noopener noreferrer" className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, padding: "18px 22px", display: "flex", alignItems: "center", gap: 16, textDecoration: "none", color: "inherit", boxShadow: COLORS.shadow }}>
+                      <div style={{ width: 40, height: 40, borderRadius: 12, background: item.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, fontWeight: 700, color: "#fff", fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0, boxShadow: `0 2px 8px ${item.color}33` }} aria-hidden="true">{item.name[0]}</div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontWeight: 600, fontSize: 15, color: COLORS.textPrimary }}>{item.name}</div>
-                        <div style={{ fontSize: 13, color: COLORS.textMuted, lineHeight: 1.4 }}>{item.desc[lang]}</div>
+                        <div style={{ fontWeight: 600, fontSize: 15, color: COLORS.textPrimary, marginBottom: 2 }}>{item.name}</div>
+                        <div style={{ fontSize: 13, color: COLORS.textMuted, lineHeight: 1.5 }}>{item.desc[lang]}</div>
                       </div>
-                      <span style={{ color: COLORS.orange, fontSize: 18, flexShrink: 0 }} aria-hidden="true">→</span>
+                      <span style={{ color: COLORS.orange, fontSize: 20, flexShrink: 0, width: 32, height: 32, borderRadius: 8, background: COLORS.orangeLight, display: "flex", alignItems: "center", justifyContent: "center" }} aria-hidden="true">→</span>
                     </a>
                   ))}
                 </div>
@@ -1069,13 +1148,14 @@ CRITICAL RULES:
 
       </main>
 
-      <footer style={{ borderTop: `1px solid ${COLORS.cardBorder}`, padding: "28px 24px", background: COLORS.card, marginTop: 40 }}>
+      <footer style={{ borderTop: `1px solid ${COLORS.cardBorder}`, padding: "36px 24px 28px", background: COLORS.headerBg, marginTop: 48 }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 10 }}>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textMuted, fontSize: 14 }}>BTCPLANNER.CA</span>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 14 }}>
+            <div style={{ width: 28, height: 28, borderRadius: 8, background: COLORS.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 900, color: "#fff", fontFamily: "'Space Grotesk', sans-serif" }} aria-hidden="true">₿</div>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: COLORS.textSub, fontSize: 14, letterSpacing: "-0.2px" }}>BTCPLANNER.CA</span>
             <CanadaFlag size={14} />
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginBottom: 12, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, marginBottom: 16, flexWrap: "wrap" }}>
             {[
               { label: t.footer.terms, page: "terms" },
               { label: t.footer.privacy, page: "privacy" },
@@ -1084,15 +1164,15 @@ CRITICAL RULES:
             ].map(link => (
               <button key={link.label} onClick={() => onNavigate && onNavigate(link.page)} style={{
                 background: "none", border: "none", color: COLORS.textMuted,
-                fontSize: 12, cursor: "pointer", textDecoration: "underline",
-                textDecorationColor: COLORS.cardBorder, fontFamily: "'Inter', sans-serif",
-                padding: 0,
+                fontSize: 12, cursor: "pointer", fontFamily: "'Inter', sans-serif",
+                padding: "4px 0", fontWeight: 500, transition: "color 0.2s",
               }}>
                 {link.label}
               </button>
             ))}
           </div>
-          <div style={{ fontSize: 11, color: COLORS.textMuted, textAlign: "center", lineHeight: 1.6 }}>
+          <div style={{ width: 40, height: 2, background: COLORS.gradient, margin: "0 auto 14px", borderRadius: 1 }} aria-hidden="true" />
+          <div style={{ fontSize: 11, color: COLORS.textMuted, textAlign: "center", lineHeight: 1.7 }}>
             {t.footer.footerText}
           </div>
         </div>

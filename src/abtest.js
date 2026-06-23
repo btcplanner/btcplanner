@@ -37,6 +37,14 @@ export const titleVariants = {
     a: { en: "Bitcoin vs. GICs in Canada: Comparing Your Options", fr: "Bitcoin vs CPG au Canada : comparer vos options" },
     b: { en: "Bitcoin or GICs? What Canadian Investors Should Know", fr: "Bitcoin ou CPG ? Ce que les investisseurs canadiens doivent savoir" },
   },
+  "clarity-act-bitcoin-canada": {
+    a: { en: "The Clarity Act and What It Means for Bitcoin in Canada", fr: "La Loi sur la clarté et ce qu'elle signifie pour le Bitcoin au Canada" },
+    b: { en: "Canada's Clarity Act: How New Crypto Rules Affect You", fr: "La Loi sur la clarté du Canada : comment les nouvelles règles crypto vous affectent" },
+  },
+  "bitcoin-strategic-reserves-stablecoins": {
+    a: { en: "Strategic Bitcoin Reserves and the Rise of Stablecoins", fr: "Réserves stratégiques de Bitcoin et l'essor des stablecoins" },
+    b: { en: "Why Nations Are Stockpiling Bitcoin — And What It Means for You", fr: "Pourquoi les nations accumulent du Bitcoin — et ce que ça signifie pour vous" },
+  },
 };
 
 export function getAbTitle(slug, lang) {
