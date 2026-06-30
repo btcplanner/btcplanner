@@ -2023,4 +2023,794 @@ L'environnement macro évolue en faveur du Bitcoin, mais un investissement disci
 `,
     },
   },
+  {
+    slug: "bitcoin-taxable-tfsa-canada",
+    date: "2026-06-30",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    imageAlt: { en: "Tax documents and calculator on a desk", fr: "Documents fiscaux et calculatrice sur un bureau" },
+    title: {
+      en: "Is Bitcoin Taxable in a TFSA in Canada? (2026 Guide)",
+      fr: "Le Bitcoin est-il imposable dans un CELI au Canada ? (Guide 2026)",
+    },
+    description: {
+      en: "Many Canadians assume a TFSA shields all Bitcoin gains from tax. Here's what the CRA actually says, and the one mistake that can void your tax-free status.",
+      fr: "De nombreux Canadiens supposent que le CELI protège tous leurs gains Bitcoin de l'impôt. Voici ce que l'ARC dit réellement et l'erreur qui peut annuler votre statut exonéré.",
+    },
+    content: {
+      en: `## Is Bitcoin Taxable in a TFSA in Canada?
+
+If you've moved Bitcoin into a TFSA-eligible product expecting zero tax, you're partly right — and partly walking into a trap a lot of Canadians don't see coming.
+
+## The short answer
+
+Capital gains earned inside a TFSA are normally tax-free, full stop. But the CRA draws a hard line between **investing** and **carrying on a business**. If your trading activity inside the TFSA looks like a business — frequent trades, short holding periods, using margin, or treating it like a full-time trading operation — the CRA can reclassify the income as business income, which is **fully taxable**, even inside the TFSA.
+
+This matters more for Bitcoin and crypto-linked holdings than for a typical stock portfolio, because:
+
+- Crypto markets trade 24/7, which makes frequent trading easier to fall into
+- Volatility tempts people into active trading rather than buy-and-hold
+- The CRA has been paying closer attention to crypto-specific TFSA activity in recent years
+
+## What actually triggers reclassification
+
+The CRA doesn't use a single bright-line rule. It looks at the pattern of behaviour, including:
+
+- Frequency of transactions
+- How long you typically hold before selling
+- Whether you have specialized knowledge of crypto markets
+- Time spent on trading activity
+- Whether the trading resembles your livelihood rather than a side investment
+
+A buy-and-hold approach — buying Bitcoin or a Bitcoin ETF and holding for months or years — is very unlikely to be reclassified. Frequent in-and-out trading inside a TFSA is the higher-risk pattern.
+
+## What happens if your TFSA gets reclassified
+
+This is the part that surprises people. If the CRA determines your TFSA trading constitutes a business:
+
+1. The income becomes fully taxable as business income, not a tax-free capital gain
+2. You may owe tax on gains you assumed were sheltered
+3. Penalties and interest can apply for unreported income
+4. Your TFSA contribution room isn't restored for any resulting withdrawals used to pay tax
+
+## How to keep your TFSA crypto exposure low-risk
+
+- Stick to long-term holding rather than active trading
+- Avoid using your TFSA as your primary trading account if you trade frequently elsewhere
+- Keep records of purchase dates and amounts regardless — good practice either way
+- If you're unsure whether your activity could be seen as a business, a chat with a tax professional is worth the cost before issues arise, not after
+
+## Bottom line
+
+A TFSA does not provide blanket protection from tax on crypto gains. It protects *investing*, not *trading as a business*. For most beginners holding Bitcoin long-term in a TFSA-eligible product, this isn't a major concern — but if you're trading actively, it's worth understanding the line before you cross it.
+
+*This article is for general educational purposes and is not tax or legal advice. Speak with a qualified accountant familiar with crypto taxation for guidance on your specific situation.*
+
+### Sources
+
+- [CRA — Tax-Free Savings Account (TFSA)](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/tax-free-savings-account.html)
+- [CRA — Guide for cryptocurrency users and tax professionals](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [CRA — Difference between business income and capital gains](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/difference-between-business-income-capital-gain.html)
+
+### Related Articles
+
+- [Bitcoin in Your TFSA or RRSP: How It Works in Canada](/blog/bitcoin-tfsa-rrsp-canada)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [How to Report Cryptocurrency on Your CRA Tax Return](/blog/report-cryptocurrency-cra-tax-return)
+`,
+      fr: `## Le Bitcoin est-il imposable dans un CELI au Canada ?
+
+Si vous avez investi dans le Bitcoin via un produit admissible au CELI en supposant que tous vos gains seraient libres d'impôt, vous avez en partie raison — et vous pourriez tomber dans un piège que de nombreux Canadiens ne voient pas venir.
+
+## La réponse courte
+
+Les gains en capital réalisés dans un CELI sont normalement libres d'impôt, sans exception. Mais l'ARC trace une ligne nette entre **investir** et **exploiter une entreprise**. Si votre activité de négociation dans le CELI ressemble à une entreprise — transactions fréquentes, courtes périodes de détention, utilisation de la marge, ou traitement comme une activité à temps plein — l'ARC peut reclasser le revenu comme revenu d'entreprise, qui est **entièrement imposable**, même dans le CELI.
+
+Cela touche davantage les détenteurs de Bitcoin et de cryptomonnaies que les portefeuilles d'actions classiques, parce que :
+
+- Les marchés crypto fonctionnent 24 h/24, 7 j/7, ce qui rend la négociation fréquente plus facile à tomber dans
+- La volatilité pousse les investisseurs vers le trading actif plutôt que l'achat et la conservation
+- L'ARC surveille de plus près l'activité crypto spécifique dans les CELI ces dernières années
+
+## Ce qui déclenche une reclassification
+
+L'ARC n'utilise pas de règle précise. Elle examine le profil de comportement, notamment :
+
+- La fréquence des transactions
+- La durée habituelle de détention avant la vente
+- Si vous avez une expertise particulière des marchés crypto
+- Le temps consacré aux activités de trading
+- Si le trading ressemble à votre source principale de revenus plutôt qu'à un investissement secondaire
+
+Une approche d'achat et de conservation — acquérir du Bitcoin ou un FNB Bitcoin et le garder pendant des mois ou des années — est très peu susceptible d'être reclassifiée. Les allers-retours fréquents dans un CELI représentent le profil à risque plus élevé.
+
+## Ce qui se passe si votre CELI est reclassifié
+
+C'est la partie qui surprend les gens. Si l'ARC détermine que vos transactions dans le CELI constituent une entreprise :
+
+1. Le revenu devient entièrement imposable comme revenu d'entreprise, et non comme gain en capital exonéré d'impôt
+2. Vous pourriez devoir de l'impôt sur des gains que vous pensiez être à l'abri
+3. Des pénalités et des intérêts peuvent s'appliquer pour les revenus non déclarés
+4. Les droits de cotisation à votre CELI ne sont pas restaurés pour les retraits utilisés pour payer l'impôt
+
+## Comment minimiser le risque dans votre CELI crypto
+
+- Privilégiez la détention à long terme plutôt que le trading actif
+- Évitez d'utiliser votre CELI comme compte de trading principal si vous négociez fréquemment ailleurs
+- Conservez des registres des dates d'achat et des montants dans tous les cas — c'est une bonne pratique
+- Si vous n'êtes pas certain que votre activité pourrait être considérée comme une entreprise, consultez un fiscaliste avant que des problèmes surviennent, pas après
+
+## En résumé
+
+Un CELI ne protège pas systématiquement contre l'impôt sur les gains crypto. Il protège l'*investissement*, pas le *trading en tant qu'activité commerciale*. Pour la plupart des débutants qui détiennent du Bitcoin à long terme dans un produit admissible au CELI, ce n'est pas une préoccupation majeure — mais si vous négociez activement, il vaut la peine de comprendre la limite avant de la franchir.
+
+*Cet article est à titre informatif général et ne constitue pas un conseil fiscal ou juridique. Consultez un comptable qualifié familier avec la fiscalité des cryptomonnaies pour obtenir des conseils adaptés à votre situation.*
+
+### Sources
+
+- [ARC — Compte d'épargne libre d'impôt (CELI)](https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/compte-epargne-libre-impot.html)
+- [ARC — Guide pour les utilisateurs de cryptomonnaies et les professionnels de la fiscalité](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/conformite/monnaie-numerique/guide-cryptomonnaie.html)
+- [ARC — Différence entre revenu d'entreprise et gain en capital](https://www.canada.ca/fr/agence-revenu/services/impot/entreprises/sujets/entreprises-individuelles-societes-personnes/declarer-revenus-depenses-dune-entreprise/difference-revenu-entreprise-gain-capital.html)
+
+### Articles connexes
+
+- [Bitcoin dans votre CELI ou REER : comment ça fonctionne au Canada](/blog/bitcoin-tfsa-rrsp-canada)
+- [Impôts sur le Bitcoin au Canada : les règles de l'ARC expliquées](/blog/bitcoin-taxes-canada-cra)
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Comment déclarer les cryptomonnaies dans votre déclaration de revenus ARC](/blog/report-cryptocurrency-cra-tax-return)
+`,
+    },
+  },
+  {
+    slug: "fintrac-registered-crypto-exchanges-canada",
+    date: "2026-06-30",
+    image: "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80",
+    imageAlt: { en: "Government building representing financial regulation in Canada", fr: "Bâtiment gouvernemental représentant la réglementation financière au Canada" },
+    title: {
+      en: "FINTRAC-Registered Crypto Exchanges in Canada: 2026 List",
+      fr: "Plateformes crypto inscrites au CANAFE au Canada (liste 2026)",
+    },
+    description: {
+      en: "A practical guide to checking which crypto exchanges are FINTRAC-registered in Canada, plus how to verify it yourself before depositing funds.",
+      fr: "Un guide pratique pour vérifier quelles plateformes crypto sont inscrites au CANAFE au Canada, et comment le vérifier vous-même avant de déposer des fonds.",
+    },
+    content: {
+      en: `## FINTRAC-Registered Crypto Exchanges in Canada (2026)
+
+If you're buying Bitcoin in Canada, checking FINTRAC registration is one of the simplest things you can do to avoid a platform that could disappear with your funds. Here's what registration actually means, which major platforms currently hold it, and — importantly — why you should verify it yourself rather than trusting any list, including this one.
+
+## Why this matters more in 2026
+
+Canadian regulators have ramped up enforcement significantly this year. FINTRAC has cancelled dozens of money services business (MSB) registrations in 2026, the majority tied to crypto firms, as part of a broader push to clean up non-compliant platforms. On top of that, a new CRA reporting framework (CARF) took effect January 1, 2026, requiring registered platforms to collect and report more customer transaction data starting with the 2026 tax year.
+
+The practical takeaway: a platform that was compliant a year ago may not be today. Lists like this one are a starting point, not a guarantee — always verify directly.
+
+## Platforms commonly cited as FINTRAC-registered (verify before depositing)
+
+These platforms are widely reported as FINTRAC-registered and, in several cases, also hold provincial securities registration:
+
+- **Bitbuy** — Toronto-based, also CSA/OSC registered
+- [**Kraken**](https://invite.kraken.com/JDNW/rvqfaxbg) — Operating in Canada since 2011
+- **NDAX** — Calgary-based, CIRO member with CIPF protection on CAD deposits
+- **Wealthsimple Crypto** — FINTRAC, CSA, and OSC registered
+- **Coinbase** — Entered the Canadian market with full registration
+- **Crypto.com** — CSA-approved to operate across all provinces
+- **VirgoCX**
+- **Newton**
+
+This is not an exhaustive or guaranteed-current list — treat it as a starting point for your own check, not a final answer.
+
+## How to verify registration yourself (takes under 5 minutes)
+
+1. Go to FINTRAC's MSB registry search tool on the official Government of Canada site
+2. Search the exchange's legal entity name (not just the brand name — this can differ)
+3. Confirm the registration status is active, not expired or revoked
+4. Separately check the Canadian Securities Administrators' authorized platforms list if the exchange offers staking, margin, or other investment-like products, since these may require additional registration beyond FINTRAC
+
+## Red flags to watch for
+
+- Platforms with no Canadian legal entity or head office
+- No mention of FINTRAC or CSA registration anywhere on the site
+- Exchanges that previously served Canadians but have since exited the market — some platforms wind down Canadian operations without much notice
+- Unusually high yields on staking or "earn" products, which has been a common feature of platforms later found non-compliant
+
+## What FINTRAC registration does and doesn't protect you from
+
+Registration means a platform follows anti-money-laundering rules, identity verification requirements, and reporting obligations. It does **not** mean:
+
+- Your funds are insured against the platform's insolvency (look for CIPF coverage separately, which only some platforms offer)
+- The platform can't lose your funds to a hack
+- You're protected from market volatility
+
+## Bottom line
+
+FINTRAC registration is a minimum bar, not a full safety guarantee — but it's the fastest way to filter out platforms that shouldn't be holding Canadian funds at all, especially given how active enforcement has been in 2026. Always do the live lookup yourself before depositing.
+
+*This article is for general educational purposes and is not financial advice. Registration status changes — always verify directly with FINTRAC and the CSA before funding an account.*
+
+### Sources
+
+- [FINTRAC — Money Services Businesses Registry](https://www.fintrac-canafe.gc.ca/msb-esm/intro-eng)
+- [CSA — Crypto Trading Platforms Authorized to Operate in Canada](https://www.securities-administrators.ca/investor-tools/crypto-trading-platforms/)
+- [CRA — Crypto Asset Reporting Framework (CARF)](https://www.canada.ca/en/department-finance/programs/consultations/2023/crypto-asset-reporting-framework-and-amendments-to-the-common-reporting-standard.html)
+
+### Related Articles
+
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Crypto Regulation in Canada: What Bitcoin Investors Need to Know](/blog/crypto-regulation-canada)
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+`,
+      fr: `## Plateformes crypto inscrites au CANAFE au Canada (2026)
+
+Si vous achetez du Bitcoin au Canada, vérifier l'inscription au CANAFE est l'une des choses les plus simples que vous puissiez faire pour éviter une plateforme qui pourrait disparaître avec vos fonds. Voici ce que l'inscription signifie réellement, quelles grandes plateformes la détiennent actuellement et — surtout — pourquoi vous devriez le vérifier vous-même plutôt que de vous fier à une liste, y compris celle-ci.
+
+## Pourquoi cela importe davantage en 2026
+
+Les autorités de réglementation canadiennes ont considérablement intensifié leur application de la loi cette année. Le CANAFE a annulé des dizaines d'inscriptions d'entreprises de services monétaires (ESM) en 2026, la majorité étant liées à des entreprises crypto, dans le cadre d'une initiative visant à assainir les plateformes non conformes. De plus, un nouveau cadre de déclaration de l'ARC (CARF) est entré en vigueur le 1er janvier 2026, obligeant les plateformes inscrites à collecter et à déclarer davantage de données sur les transactions des clients à partir de l'année d'imposition 2026.
+
+La conclusion pratique : une plateforme conforme il y a un an ne l'est peut-être pas aujourd'hui. Les listes comme celle-ci sont un point de départ, pas une garantie — vérifiez toujours directement.
+
+## Plateformes couramment citées comme inscrites au CANAFE (vérifiez avant de déposer)
+
+Ces plateformes sont largement signalées comme inscrites au CANAFE et, dans plusieurs cas, détiennent également des inscriptions auprès des autorités provinciales des valeurs mobilières :
+
+- **Bitbuy** — Basée à Toronto, également inscrite à l'ACVM/CVMO
+- [**Kraken**](https://invite.kraken.com/JDNW/rvqfaxbg) — Présente au Canada depuis 2011
+- **NDAX** — Basée à Calgary, membre de l'OCRI avec protection CIPF sur les dépôts en CAD
+- **Wealthsimple Crypto** — Inscrite au CANAFE, à l'ACVM et à la CVMO
+- **Coinbase** — Entrée sur le marché canadien avec une inscription complète
+- **Crypto.com** — Approuvée par l'ACVM pour opérer dans toutes les provinces
+- **VirgoCX**
+- **Newton**
+
+Ce n'est pas une liste exhaustive ni garantie à jour — traitez-la comme un point de départ pour votre propre vérification, pas comme une réponse définitive.
+
+## Comment vérifier l'inscription vous-même (moins de 5 minutes)
+
+1. Accédez à l'outil de recherche du registre des ESM du CANAFE sur le site officiel du gouvernement du Canada
+2. Recherchez le nom de l'entité juridique de la plateforme (pas seulement le nom de la marque — ils peuvent différer)
+3. Confirmez que le statut d'inscription est actif, pas expiré ou révoqué
+4. Vérifiez séparément la liste des plateformes autorisées des ACVM si la plateforme offre du staking, de la marge ou d'autres produits de type investissement, car ceux-ci peuvent nécessiter une inscription supplémentaire au-delà du CANAFE
+
+## Signaux d'alarme à surveiller
+
+- Plateformes sans entité juridique canadienne ni siège social
+- Aucune mention de l'inscription au CANAFE ou aux ACVM sur le site
+- Plateformes qui servaient auparavant des Canadiens mais qui ont depuis quitté le marché — certaines cessent leurs activités canadiennes sans beaucoup de préavis
+- Rendements inhabituellement élevés sur les produits de staking ou « earn », ce qui a été une caractéristique courante des plateformes ultérieurement jugées non conformes
+
+## Ce que l'inscription au CANAFE protège et ne protège pas
+
+L'inscription signifie qu'une plateforme suit les règles de lutte contre le blanchiment d'argent, les exigences de vérification d'identité et les obligations de déclaration. Elle **ne signifie pas** :
+
+- Vos fonds sont assurés contre l'insolvabilité de la plateforme (recherchez séparément la couverture CIPF, que seules quelques plateformes offrent)
+- La plateforme ne peut pas perdre vos fonds à la suite d'un piratage
+- Vous êtes protégé contre la volatilité du marché
+
+## En résumé
+
+L'inscription au CANAFE est un niveau minimum, pas une garantie de sécurité totale — mais c'est le moyen le plus rapide de filtrer les plateformes qui ne devraient pas du tout détenir de fonds canadiens, surtout compte tenu de l'intensité de l'application de la loi en 2026. Faites toujours la recherche en direct vous-même avant de déposer.
+
+*Cet article est à titre informatif général et ne constitue pas un conseil financier. Le statut d'inscription change — vérifiez toujours directement auprès du CANAFE et des ACVM avant d'alimenter un compte.*
+
+### Sources
+
+- [CANAFE — Registre des entreprises de services monétaires](https://www.fintrac-canafe.gc.ca/msb-esm/intro-fra)
+- [ACVM — Plateformes de négociation de cryptomonnaies autorisées à exercer au Canada](https://www.securities-administrators.ca/investor-tools/crypto-trading-platforms/)
+- [ARC — Cadre de déclaration des actifs cryptographiques (CARF)](https://www.canada.ca/fr/ministere-finances/programmes/consultations/2023/cadre-declaration-actifs-cryptographiques-modifications-norme-commune-declaration.html)
+
+### Articles connexes
+
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Réglementation crypto au Canada : ce que les investisseurs Bitcoin doivent savoir](/blog/crypto-regulation-canada)
+- [Guide de conservation à froid du Bitcoin pour les Canadiens](/blog/bitcoin-cold-storage-guide-canada)
+`,
+    },
+  },
+  {
+    slug: "report-cryptocurrency-cra-tax-return",
+    date: "2026-06-30",
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80",
+    imageAlt: { en: "Laptop with tax return spreadsheet open", fr: "Ordinateur portable avec une feuille de calcul de déclaration de revenus" },
+    title: {
+      en: "How to Report Cryptocurrency on Your CRA Tax Return (Step-by-Step)",
+      fr: "Comment déclarer les cryptomonnaies dans votre déclaration de revenus ARC (étape par étape)",
+    },
+    description: {
+      en: "A step-by-step walkthrough of reporting Bitcoin and crypto gains to the CRA, including adjusted cost base, Schedule 3, and common mistakes beginners make.",
+      fr: "Un guide étape par étape pour déclarer les gains Bitcoin et crypto à l'ARC, incluant le prix de base rajusté, l'Annexe 3 et les erreurs courantes.",
+    },
+    content: {
+      en: `## How to Report Cryptocurrency on Your CRA Tax Return
+
+Tax season is when most Canadian Bitcoin holders realize they have no idea how to actually report it. Here's a plain-language walkthrough.
+
+## Step 1: Figure out if you're an investor or a trader
+
+This determines everything else. The CRA treats your crypto activity as one of two things:
+
+- **Capital gains/losses** (investor): you bought and held, and 50% of any gain up to $250,000 annually is taxable (66.67% above that threshold, as of June 25, 2024)
+- **Business income** (trader): frequent buying/selling, short holding periods, or trading as your main income source — 100% of the gain is taxable
+
+Most beginners buying and holding Bitcoin fall into the capital gains category, but the CRA looks at your actual pattern of activity, not just what you call yourself.
+
+## Step 2: Track your Adjusted Cost Base (ACB)
+
+The ACB is the average cost of all the Bitcoin you own, used to calculate your gain or loss when you sell. Every time you buy more Bitcoin, your ACB recalculates as a weighted average across all your holdings — you can't cherry-pick which "batch" you're selling.
+
+Example: you buy 0.1 BTC at $80,000 CAD, then later buy another 0.1 BTC at $100,000 CAD. Your ACB is now the average: $90,000 per BTC for your full 0.2 BTC position.
+
+This is the single most common mistake — people track each purchase separately instead of averaging, which throws off every later calculation.
+
+## Step 3: Know what counts as a taxable disposition
+
+You trigger a taxable event any time you:
+
+- Sell Bitcoin for CAD
+- Trade Bitcoin for another cryptocurrency
+- Use Bitcoin to pay for goods or services
+- Gift Bitcoin to someone else
+
+Simply transferring Bitcoin between your own wallets is **not** a taxable event — but keep records showing it was a transfer, not a disposal, in case of a review.
+
+## Step 4: Report it on Schedule 3
+
+Capital gains and losses from crypto get reported on **Schedule 3** of your T1 personal tax return, under the "Capital Gains" section. You'll need:
+
+- The date you acquired the crypto
+- The date you disposed of it
+- Proceeds of disposition
+- Adjusted cost base
+- Resulting gain or loss
+
+If you're classified as carrying on a business, this instead gets reported as business income on Form T2125.
+
+## Step 5: Keep records before you need them
+
+The CRA expects you to substantiate every transaction. At minimum, keep:
+
+- Exchange transaction history exports (most platforms let you download a CSV)
+- Wallet addresses involved in transfers
+- Dates and CAD value at time of each transaction
+- Records of any crypto-for-crypto trades, valued in CAD at the time of trade
+
+Note that starting with the 2026 tax year, Canadian exchanges are required to collect and report more detailed customer transaction data to the CRA under a new reporting framework — meaning the CRA will increasingly already have a copy of your transaction history. Reporting accurately yourself is the safer path either way.
+
+## Common mistakes to avoid
+
+- Forgetting that crypto-to-crypto trades are taxable, not just crypto-to-CAD
+- Not tracking ACB as a running average
+- Assuming small amounts don't need to be reported — there's no minimum threshold
+- Mixing up capital gains treatment with business income treatment
+
+## Bottom line
+
+Reporting crypto on your CRA return isn't complicated once you understand ACB and what counts as a disposition — the hard part is just keeping clean records throughout the year instead of scrambling every April.
+
+*This article is for general educational purposes and is not tax advice. Crypto tax rules involve case-by-case judgment calls — consult a CPA familiar with cryptocurrency for your specific situation.*
+
+### Sources
+
+- [CRA — Guide for cryptocurrency users and tax professionals](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+- [CRA — Schedule 3, Capital Gains (or Losses)](https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/5000-s3.html)
+- [CRA — Report business income and expenses (Form T2125)](https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2125.html)
+- [Canada 2024 Budget — Capital gains inclusion rate changes](https://www.budget.canada.ca/2024/home-accueil-en.html)
+
+### Related Articles
+
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+- [Is Bitcoin Taxable in a TFSA in Canada?](/blog/bitcoin-taxable-tfsa-canada)
+- [How to Report Bitcoin on TurboTax Canada](/blog/how-to-report-bitcoin-turbotax-canada)
+- [Bitcoin in Your TFSA or RRSP: How It Works in Canada](/blog/bitcoin-tfsa-rrsp-canada)
+`,
+      fr: `## Comment déclarer les cryptomonnaies dans votre déclaration de revenus ARC
+
+La période des impôts est le moment où la plupart des détenteurs canadiens de Bitcoin réalisent qu'ils n'ont aucune idée de comment le déclarer réellement. Voici un guide en langage simple.
+
+## Étape 1 : Déterminez si vous êtes un investisseur ou un trader
+
+Cela détermine tout le reste. L'ARC traite votre activité crypto comme l'une de ces deux choses :
+
+- **Gains en capital/pertes** (investisseur) : vous avez acheté et conservé, et 50 % de tout gain jusqu'à 250 000 $ par an est imposable (66,67 % au-delà de ce seuil, depuis le 25 juin 2024)
+- **Revenu d'entreprise** (trader) : achats/ventes fréquents, courtes périodes de détention, ou trading comme source principale de revenus — 100 % du gain est imposable
+
+La plupart des débutants qui achètent et conservent du Bitcoin entrent dans la catégorie des gains en capital, mais l'ARC examine votre profil réel d'activité, pas seulement ce que vous vous appelez.
+
+## Étape 2 : Calculez votre prix de base rajusté (PBR)
+
+Le PBR est le coût moyen de tout le Bitcoin que vous possédez, utilisé pour calculer votre gain ou perte lors de la vente. Chaque fois que vous achetez plus de Bitcoin, votre PBR recalcule comme une moyenne pondérée de tous vos avoirs — vous ne pouvez pas choisir quel « lot » vous vendez.
+
+Exemple : vous achetez 0,1 BTC à 80 000 $ CAD, puis plus tard achetez un autre 0,1 BTC à 100 000 $ CAD. Votre PBR est maintenant la moyenne : 90 000 $ par BTC pour l'ensemble de votre position de 0,2 BTC.
+
+C'est l'erreur la plus courante — les gens suivent chaque achat séparément au lieu de faire la moyenne, ce qui fausse tous les calculs ultérieurs.
+
+## Étape 3 : Sachez ce qui compte comme une disposition imposable
+
+Vous déclenchez un événement imposable chaque fois que vous :
+
+- Vendez du Bitcoin contre des CAD
+- Échangez du Bitcoin contre une autre cryptomonnaie
+- Utilisez du Bitcoin pour payer des biens ou des services
+- Donnez du Bitcoin à quelqu'un d'autre
+
+Simplement transférer du Bitcoin entre vos propres portefeuilles **n'est pas** un événement imposable — mais conservez des registres montrant qu'il s'agissait d'un transfert, pas d'une disposition, en cas de vérification.
+
+## Étape 4 : Déclarez-le à l'Annexe 3
+
+Les gains en capital et les pertes provenant des crypto sont déclarés à l'**Annexe 3** de votre déclaration de revenus personnels T1, sous la section « Gains en capital ». Vous aurez besoin :
+
+- De la date d'acquisition de la crypto
+- De la date de disposition
+- Du produit de disposition
+- Du prix de base rajusté
+- Du gain ou de la perte résultant
+
+Si vous êtes classifié comme exploitant une entreprise, cela est plutôt déclaré comme revenu d'entreprise sur le formulaire T2125.
+
+## Étape 5 : Conservez des registres avant d'en avoir besoin
+
+L'ARC s'attend à ce que vous puissiez justifier chaque transaction. Au minimum, conservez :
+
+- Les exportations d'historique de transactions des plateformes (la plupart permettent de télécharger un CSV)
+- Les adresses de portefeuille impliquées dans les transferts
+- Les dates et la valeur en CAD au moment de chaque transaction
+- Les registres de tout échange crypto contre crypto, évalué en CAD au moment de l'échange
+
+Notez qu'à partir de l'année d'imposition 2026, les plateformes canadiennes sont tenues de collecter et de déclarer des données de transaction client plus détaillées à l'ARC dans le cadre d'un nouveau cadre de déclaration — ce qui signifie que l'ARC aura de plus en plus déjà une copie de votre historique de transactions. Déclarer avec précision vous-même est la voie la plus sûre dans tous les cas.
+
+## Erreurs courantes à éviter
+
+- Oublier que les échanges crypto contre crypto sont imposables, pas seulement crypto contre CAD
+- Ne pas suivre le PBR comme une moyenne courante
+- Supposer que les petits montants n'ont pas besoin d'être déclarés — il n'y a pas de seuil minimum
+- Confondre le traitement des gains en capital avec le traitement du revenu d'entreprise
+
+## En résumé
+
+Déclarer les crypto dans votre déclaration ARC n'est pas compliqué une fois que vous comprenez le PBR et ce qui compte comme disposition — la partie difficile est simplement de tenir des registres propres tout au long de l'année plutôt que de se précipiter chaque avril.
+
+*Cet article est à titre informatif général et ne constitue pas un conseil fiscal. Les règles fiscales sur les crypto impliquent des jugements au cas par cas — consultez un CPA familier avec les cryptomonnaies pour votre situation spécifique.*
+
+### Sources
+
+- [ARC — Guide pour les utilisateurs de cryptomonnaies et les professionnels de la fiscalité](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/conformite/monnaie-numerique/guide-cryptomonnaie.html)
+- [ARC — Annexe 3, Gains (ou pertes) en capital](https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/5000-s3.html)
+- [ARC — Déclarer les revenus et dépenses d'entreprise (formulaire T2125)](https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2125.html)
+- [Budget du Canada 2024 — Modifications du taux d'inclusion des gains en capital](https://www.budget.canada.ca/2024/home-accueil-fr.html)
+
+### Articles connexes
+
+- [Impôts sur le Bitcoin au Canada : les règles de l'ARC expliquées](/blog/bitcoin-taxes-canada-cra)
+- [Le Bitcoin est-il imposable dans un CELI au Canada ?](/blog/bitcoin-taxable-tfsa-canada)
+- [Comment déclarer Bitcoin sur TurboTax Canada](/blog/how-to-report-bitcoin-turbotax-canada)
+- [Bitcoin dans votre CELI ou REER : comment ça fonctionne au Canada](/blog/bitcoin-tfsa-rrsp-canada)
+`,
+    },
+  },
+  {
+    slug: "bitcoin-vs-mstr-vs-etfs-canada",
+    date: "2026-06-30",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+    imageAlt: { en: "Investment charts and financial data on screens", fr: "Graphiques d'investissement et données financières sur des écrans" },
+    title: {
+      en: "Bitcoin vs MSTR vs ETFs: How Canadians Are Getting BTC Exposure in 2026",
+      fr: "Bitcoin vs MSTR vs FNB : comment les Canadiens obtiennent une exposition BTC en 2026",
+    },
+    description: {
+      en: "Direct Bitcoin, MicroStrategy stock, or a Canadian Bitcoin ETF — a breakdown of the differences in fees, tax treatment, and TFSA eligibility for Canadian investors.",
+      fr: "Bitcoin direct, action MicroStrategy ou FNB Bitcoin canadien — une analyse des différences en frais, traitement fiscal et admissibilité au CELI pour les investisseurs canadiens.",
+    },
+    content: {
+      en: `## Bitcoin vs MSTR vs ETFs: How Canadians Are Getting BTC Exposure
+
+There are three common ways Canadians get exposure to Bitcoin's price movement without it being identical: buying Bitcoin directly, buying MicroStrategy (MSTR) stock, or buying a Canadian Bitcoin ETF. They behave differently enough that picking the wrong one for your situation can cost you in fees, taxes, or unwanted risk.
+
+## Option 1: Direct Bitcoin ownership
+
+You buy and hold actual Bitcoin on an exchange or in your own wallet. To buy Bitcoin directly, use a FINTRAC-registered exchange like [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) and transfer to your own wallet for maximum control.
+
+**Pros:**
+- Pure exposure — your returns track Bitcoin's price exactly, no company-specific risk
+- No management fees if self-custodied
+- Full control over your asset
+
+**Cons:**
+- Not TFSA or RRSP eligible directly — you'd need to hold it outside a registered account, meaning capital gains are taxable
+- Self-custody requires you to manage private keys and security yourself
+- Exchange custody carries counterparty risk (see our FINTRAC registration guide before choosing a platform)
+
+## Option 2: MicroStrategy (MSTR) stock
+
+MicroStrategy holds a large Bitcoin treasury on its balance sheet, so its stock price has historically moved with Bitcoin's price, though not perfectly.
+
+**Pros:**
+- Tradable like any stock, including inside a TFSA or RRSP
+- Leveraged-style exposure — MSTR has historically moved more sharply than Bitcoin itself in both directions, since the company uses debt to acquire more BTC
+- No need to manage wallets or private keys
+
+**Cons:**
+- You're exposed to company-specific risk: management decisions, debt levels, dilution from share issuance, and software business performance — not just Bitcoin's price
+- The relationship between MSTR and BTC price isn't fixed and can diverge, especially over shorter timeframes
+- Higher volatility than direct Bitcoin ownership in many periods, which cuts both ways
+
+## Option 3: Canadian Bitcoin ETFs
+
+Canada has regulated spot Bitcoin ETFs available, including products from providers like Purpose Investments and 3iQ, which hold actual Bitcoin and track its price.
+
+**Pros:**
+- TFSA and RRSP eligible
+- Regulated structure with custody handled by the fund provider
+- No wallet management needed
+- Closely tracks spot Bitcoin price, without the company-specific risk that comes with MSTR
+
+**Cons:**
+- Management expense ratio (MER) — an ongoing fee that direct ownership doesn't have
+- You don't actually own the underlying Bitcoin, just fund units
+- Slight tracking variance from spot price is possible, though usually small for established funds
+
+## Tax and account treatment summary
+
+| | TFSA/RRSP eligible | Tax on gains in TFSA | Ongoing fees |
+|---|---|---|---|
+| Direct Bitcoin | No | N/A — held outside | None (beyond exchange fees) |
+| MSTR | Yes | Tax-free* | None beyond brokerage commission |
+| Canadian BTC ETF | Yes | Tax-free* | MER (varies by fund) |
+
+*Assuming standard investor activity, not active trading that could be reclassified as business income — see our [TFSA tax guide](/blog/bitcoin-taxable-tfsa-canada) for details.
+
+## Which one fits your goals?
+
+- **Want the purest, simplest BTC exposure and don't mind handling your own custody or paying tax outside a registered account?** Direct ownership.
+- **Want TFSA-sheltered exposure and are comfortable with extra volatility and company risk?** MSTR.
+- **Want TFSA-sheltered exposure that tracks Bitcoin's price closely without single-company risk?** A Canadian Bitcoin ETF.
+
+Many Canadians use a mix — some direct BTC for actual ownership, and some MSTR or ETF exposure inside a TFSA for tax efficiency.
+
+*This article is for general educational purposes and is not investment advice. Each option carries different risks; consider your own circumstances or speak with a financial advisor before deciding.*
+
+### Sources
+
+- [Purpose Investments — Bitcoin ETF (BTCC)](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
+- [CRA — Tax-Free Savings Account (TFSA)](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/tax-free-savings-account.html)
+- [CSA — Crypto Trading Platforms Authorized to Operate in Canada](https://www.securities-administrators.ca/investor-tools/crypto-trading-platforms/)
+- [CRA — Guide for cryptocurrency users](https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/digital-currency/cryptocurrency-guide.html)
+
+### Related Articles
+
+- [Bitcoin ETFs in Canada: Complete Guide for 2026](/blog/bitcoin-etfs-canada)
+- [Bitcoin in Your TFSA or RRSP: How It Works in Canada](/blog/bitcoin-tfsa-rrsp-canada)
+- [Is Bitcoin Taxable in a TFSA in Canada?](/blog/bitcoin-taxable-tfsa-canada)
+- [FINTRAC-Registered Crypto Exchanges in Canada](/blog/fintrac-registered-crypto-exchanges-canada)
+`,
+      fr: `## Bitcoin vs MSTR vs FNB : comment les Canadiens obtiennent une exposition BTC
+
+Il existe trois façons courantes pour les Canadiens d'obtenir une exposition aux mouvements de prix du Bitcoin sans que ce soit identique : acheter du Bitcoin directement, acheter des actions MicroStrategy (MSTR) ou acheter un FNB Bitcoin canadien. Ces options se comportent suffisamment différemment pour que choisir la mauvaise pour votre situation puisse vous coûter en frais, impôts ou risques indésirables.
+
+## Option 1 : Détention directe de Bitcoin
+
+Vous achetez et détenez du Bitcoin réel sur une plateforme ou dans votre propre portefeuille. Pour acheter du Bitcoin directement, utilisez une plateforme inscrite au CANAFE comme [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg) et transférez-le dans votre propre portefeuille pour un contrôle maximal.
+
+**Avantages :**
+- Exposition pure — vos rendements suivent exactement le prix du Bitcoin, sans risque lié à une entreprise spécifique
+- Pas de frais de gestion si auto-conservé
+- Contrôle total de votre actif
+
+**Inconvénients :**
+- Non admissible directement dans un CELI ou REER — vous devrez le détenir en dehors d'un compte enregistré, ce qui signifie que les gains en capital sont imposables
+- L'auto-conservation nécessite de gérer vous-même les clés privées et la sécurité
+- La conservation sur une plateforme comporte un risque de contrepartie (consultez notre guide d'inscription au CANAFE avant de choisir une plateforme)
+
+## Option 2 : Actions MicroStrategy (MSTR)
+
+MicroStrategy détient une importante trésorerie Bitcoin dans son bilan, de sorte que le cours de son action a historiquement évolué avec le prix du Bitcoin, bien qu'imparfaitement.
+
+**Avantages :**
+- Négociable comme n'importe quelle action, y compris dans un CELI ou REER
+- Exposition de type levier — MSTR a historiquement évolué plus fortement que le Bitcoin lui-même dans les deux sens, car la société utilise de la dette pour acquérir plus de BTC
+- Pas besoin de gérer des portefeuilles ou des clés privées
+
+**Inconvénients :**
+- Vous êtes exposé au risque lié à l'entreprise spécifique : décisions de gestion, niveaux d'endettement, dilution par émission d'actions et performance commerciale — pas seulement le prix du Bitcoin
+- La relation entre MSTR et le prix du BTC n'est pas fixe et peut diverger, surtout sur des périodes plus courtes
+- Volatilité plus élevée que la détention directe de Bitcoin dans de nombreuses périodes, ce qui joue dans les deux sens
+
+## Option 3 : FNB Bitcoin canadiens
+
+Le Canada dispose de FNB Bitcoin au comptant réglementés, notamment des produits de fournisseurs comme Purpose Investments et 3iQ, qui détiennent du Bitcoin réel et suivent son prix.
+
+**Avantages :**
+- Admissibles au CELI et au REER
+- Structure réglementée avec conservation gérée par le fournisseur du fonds
+- Pas de gestion de portefeuille nécessaire
+- Suit de près le prix au comptant du Bitcoin, sans le risque lié à une seule entreprise qui vient avec MSTR
+
+**Inconvénients :**
+- Ratio des frais de gestion (RFG) — frais courants que la détention directe n'a pas
+- Vous ne possédez pas réellement le Bitcoin sous-jacent, seulement des parts de fonds
+- Une légère variance de suivi par rapport au prix au comptant est possible, bien qu'elle soit généralement faible pour les fonds établis
+
+## Résumé du traitement fiscal et des comptes
+
+| | Admissible CELI/REER | Impôt sur gains dans CELI | Frais courants |
+|---|---|---|---|
+| Bitcoin direct | Non | S/O — détenu en dehors | Aucun (sauf frais de plateforme) |
+| MSTR | Oui | Exonéré d'impôt* | Aucun sauf commission de courtage |
+| FNB Bitcoin canadien | Oui | Exonéré d'impôt* | RFG (varie selon le fonds) |
+
+*En supposant une activité d'investisseur standard, pas un trading actif qui pourrait être reclassé comme revenu d'entreprise — voir notre [guide CELI](/blog/bitcoin-taxable-tfsa-canada) pour plus de détails.
+
+## Quelle option correspond à vos objectifs ?
+
+- **Vous voulez l'exposition BTC la plus pure et la plus simple et ne vous dérangez pas de gérer votre propre conservation ou de payer des impôts en dehors d'un compte enregistré ?** Détention directe.
+- **Vous voulez une exposition à l'abri du CELI et êtes à l'aise avec une volatilité supplémentaire et un risque d'entreprise ?** MSTR.
+- **Vous voulez une exposition à l'abri du CELI qui suit de près le prix du Bitcoin sans risque d'une seule entreprise ?** Un FNB Bitcoin canadien.
+
+De nombreux Canadiens utilisent un mélange — du BTC direct pour la possession réelle, et une exposition MSTR ou FNB dans un CELI pour l'efficacité fiscale.
+
+*Cet article est à titre informatif général et ne constitue pas un conseil en placement. Chaque option comporte des risques différents ; tenez compte de votre propre situation ou consultez un conseiller financier avant de décider.*
+
+### Sources
+
+- [Purpose Investments — FNB Bitcoin (BTCC)](https://www.purposeinvest.com/funds/purpose-bitcoin-etf)
+- [ARC — Compte d'épargne libre d'impôt (CELI)](https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/compte-epargne-libre-impot.html)
+- [ACVM — Plateformes de négociation de cryptomonnaies autorisées à exercer au Canada](https://www.securities-administrators.ca/investor-tools/crypto-trading-platforms/)
+- [ARC — Guide pour les utilisateurs de cryptomonnaies](https://www.canada.ca/fr/agence-revenu/programmes/a-propos-agence-revenu-canada-arc/conformite/monnaie-numerique/guide-cryptomonnaie.html)
+
+### Articles connexes
+
+- [FNB Bitcoin au Canada : guide complet pour 2026](/blog/bitcoin-etfs-canada)
+- [Bitcoin dans votre CELI ou REER : comment ça fonctionne au Canada](/blog/bitcoin-tfsa-rrsp-canada)
+- [Le Bitcoin est-il imposable dans un CELI au Canada ?](/blog/bitcoin-taxable-tfsa-canada)
+- [Plateformes crypto inscrites au CANAFE au Canada](/blog/fintrac-registered-crypto-exchanges-canada)
+`,
+    },
+  },
+  {
+    slug: "bitcoin-hardware-wallets-canada-guide",
+    date: "2026-06-30",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
+    imageAlt: { en: "Crypto hardware wallet device on a wooden surface", fr: "Portefeuille matériel crypto sur une surface en bois" },
+    title: {
+      en: "Bitcoin Hardware Wallets in Canada: A Beginner's Buying Guide",
+      fr: "Portefeuilles matériels Bitcoin au Canada : guide d'achat pour débutants",
+    },
+    description: {
+      en: "Why leaving Bitcoin on an exchange is risky, how hardware wallets work, and how to choose between the main options available to Canadians.",
+      fr: "Pourquoi laisser votre Bitcoin sur une plateforme est risqué, comment fonctionnent les portefeuilles matériels et comment choisir parmi les principales options disponibles au Canada.",
+    },
+    content: {
+      en: `## Bitcoin Hardware Wallets in Canada: A Beginner's Buying Guide
+
+If you've bought Bitcoin on an exchange — whether through [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), Coinbase, or another FINTRAC-registered platform — and left it sitting there, this is the article that gets you to actually move it somewhere safer.
+
+## Why not just leave it on the exchange?
+
+"Not your keys, not your coins" is the standard phrase for a reason. When your Bitcoin sits on an exchange, you don't control the private keys — the exchange does. If that platform gets hacked, freezes withdrawals, or shuts down, your funds can be at risk regardless of how reputable the exchange seemed. Canada's regulatory crackdown on non-compliant crypto platforms in 2026 is a reminder that even FINTRAC-registered status today doesn't guarantee a platform stays compliant or operational tomorrow.
+
+A hardware wallet moves your private keys onto a physical device you control, disconnected from the internet — meaning a remote hacker generally cannot access your funds even if your computer is compromised.
+
+## How a hardware wallet actually works
+
+The device stores your private keys offline ("cold storage"). When you want to send Bitcoin, you connect the device, approve the transaction physically on the device itself, and it signs the transaction without ever exposing your private key to your internet-connected computer or phone.
+
+You don't need to keep the device connected to receive funds — your wallet address can receive Bitcoin any time. You only need the device when you want to move funds out.
+
+## What to look for when choosing one
+
+- **Open-source firmware** — lets the security community audit the code, rather than trusting a closed black box
+- **Screen on the device itself** — so you can verify transaction details on the wallet, not just on a potentially compromised computer screen
+- **Track record** — how long the company has operated and whether it's had any past security incidents
+- **Backup method** — typically a recovery seed phrase (12-24 words) you write down and store offline; this is what actually restores your funds if the device is lost or damaged
+
+## The two most established options
+
+**[Ledger](https://shop.ledger.com/?r=a8b2555293e6)** — one of the longest-running hardware wallet makers, widely available through Canadian retailers, supports Bitcoin and a large range of other cryptocurrencies through its companion app.
+
+**[Trezor](https://www.trezor.io)** — fully open-source firmware, also widely supported, similar form factor and price range to Ledger.
+
+Both are reputable, established choices for a Canadian beginner. The differences mostly come down to interface preference and which other assets you might want to store alongside Bitcoin.
+
+## Setting one up for the first time
+
+1. Buy directly from the manufacturer or an authorized retailer — never buy a used or already-opened device, since a tampered device is a real risk
+2. Follow the official setup process to generate a brand-new recovery seed phrase
+3. Write the seed phrase down on paper (or a metal backup plate) — never store it digitally, photograph it, or type it anywhere online
+4. Send a small test amount first before transferring your full balance
+5. Store the device and the seed phrase backup in separate secure locations
+
+## Common mistakes beginners make
+
+- Storing the seed phrase as a photo or note on their phone — defeats the entire purpose
+- Buying a used device from a marketplace instead of directly from the manufacturer
+- Never testing with a small amount before moving a full balance
+- Losing the seed phrase, which is unrecoverable — no company can restore it for you
+
+## Bottom line
+
+If you're holding more than a small, "comfortable to lose" amount of Bitcoin on an exchange, a hardware wallet is one of the highest-value security upgrades a beginner can make. The setup takes under an hour and removes exchange custody as a risk factor entirely.
+
+*This article is for general educational purposes. Always buy hardware wallets directly from the manufacturer or an authorized retailer to avoid tampered devices.*
+
+### Sources
+
+- [Ledger — Official hardware wallet](https://shop.ledger.com/?r=a8b2555293e6)
+- [Trezor — Open-source hardware wallet](https://www.trezor.io)
+- [Bitcoin.org — Securing your wallet](https://bitcoin.org/en/secure-your-wallet)
+- [FINTRAC-Registered Crypto Exchanges in Canada](/blog/fintrac-registered-crypto-exchanges-canada)
+
+### Related Articles
+
+- [Bitcoin Cold Storage Guide for Canadians](/blog/bitcoin-cold-storage-guide-canada)
+- [FINTRAC-Registered Crypto Exchanges in Canada](/blog/fintrac-registered-crypto-exchanges-canada)
+- [How to Buy Bitcoin in Canada (2026 Guide)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Bitcoin Taxes in Canada: CRA Rules Explained](/blog/bitcoin-taxes-canada-cra)
+`,
+      fr: `## Portefeuilles matériels Bitcoin au Canada : guide d'achat pour débutants
+
+Si vous avez acheté du Bitcoin sur une plateforme — que ce soit via [Kraken](https://invite.kraken.com/JDNW/rvqfaxbg), Coinbase ou une autre plateforme inscrite au CANAFE — et que vous l'avez laissé là, cet article vous aidera à le déplacer vers un endroit plus sûr.
+
+## Pourquoi ne pas simplement le laisser sur la plateforme ?
+
+« Pas vos clés, pas vos coins » est la phrase habituelle pour une raison. Quand votre Bitcoin est sur une plateforme, vous ne contrôlez pas les clés privées — la plateforme le fait. Si cette plateforme est piratée, gèle les retraits ou ferme, vos fonds peuvent être à risque, quelle que soit la réputation apparente de la plateforme. La répression réglementaire canadienne contre les plateformes crypto non conformes en 2026 rappelle que même un statut d'inscription au CANAFE aujourd'hui ne garantit pas qu'une plateforme restera conforme ou opérationnelle demain.
+
+Un portefeuille matériel déplace vos clés privées sur un appareil physique que vous contrôlez, déconnecté d'internet — ce qui signifie qu'un pirate informatique à distance ne peut généralement pas accéder à vos fonds, même si votre ordinateur est compromis.
+
+## Comment fonctionne réellement un portefeuille matériel
+
+L'appareil stocke vos clés privées hors ligne (« stockage à froid »). Quand vous voulez envoyer du Bitcoin, vous connectez l'appareil, approuvez physiquement la transaction sur l'appareil lui-même, et il signe la transaction sans jamais exposer votre clé privée à votre ordinateur ou téléphone connecté à internet.
+
+Vous n'avez pas besoin de garder l'appareil connecté pour recevoir des fonds — votre adresse de portefeuille peut recevoir du Bitcoin n'importe quand. Vous n'avez besoin de l'appareil que lorsque vous voulez déplacer des fonds.
+
+## Ce qu'il faut rechercher lors du choix
+
+- **Microprogramme open source** — permet à la communauté de sécurité d'auditer le code, plutôt que de faire confiance à une boîte noire fermée
+- **Écran sur l'appareil lui-même** — pour que vous puissiez vérifier les détails de transaction sur le portefeuille, pas seulement sur un écran d'ordinateur potentiellement compromis
+- **Historique** — depuis combien de temps l'entreprise opère et si elle a eu des incidents de sécurité passés
+- **Méthode de sauvegarde** — généralement une phrase de récupération (12-24 mots) que vous écrivez et stockez hors ligne ; c'est ce qui restaure réellement vos fonds si l'appareil est perdu ou endommagé
+
+## Les deux options les plus établies
+
+**[Ledger](https://shop.ledger.com/?r=a8b2555293e6)** — l'un des fabricants de portefeuilles matériels les plus anciens, largement disponible chez les détaillants canadiens, prend en charge Bitcoin et un large éventail d'autres cryptomonnaies via son application compagnon.
+
+**[Trezor](https://www.trezor.io)** — microprogramme entièrement open source, également largement pris en charge, facteur de forme et gamme de prix similaires à Ledger.
+
+Les deux sont des choix réputés et établis pour un débutant canadien. Les différences se résument surtout à la préférence d'interface et aux autres actifs que vous pourriez vouloir stocker à côté du Bitcoin.
+
+## Configuration pour la première fois
+
+1. Achetez directement auprès du fabricant ou d'un détaillant autorisé — n'achetez jamais un appareil d'occasion ou déjà ouvert, car un appareil altéré est un risque réel
+2. Suivez le processus de configuration officiel pour générer une toute nouvelle phrase de récupération
+3. Notez la phrase de récupération sur papier (ou une plaque de sauvegarde en métal) — ne la stockez jamais numériquement, ne la photographiez pas et ne la saisissez nulle part en ligne
+4. Envoyez d'abord un petit montant test avant de transférer votre solde complet
+5. Stockez l'appareil et la sauvegarde de la phrase de récupération dans des endroits sécurisés séparés
+
+## Erreurs courantes que font les débutants
+
+- Stocker la phrase de récupération comme photo ou note sur leur téléphone — annule complètement le but
+- Acheter un appareil d'occasion sur une place de marché plutôt que directement auprès du fabricant
+- Ne jamais tester avec un petit montant avant de déplacer un solde complet
+- Perdre la phrase de récupération, qui est irrécupérable — aucune entreprise ne peut la restaurer pour vous
+
+## En résumé
+
+Si vous détenez plus qu'un petit montant « que vous pouvez vous permettre de perdre » sur une plateforme, un portefeuille matériel est l'une des mises à niveau de sécurité les plus rentables qu'un débutant puisse faire. La configuration prend moins d'une heure et supprime entièrement la conservation sur une plateforme comme facteur de risque.
+
+*Cet article est à titre informatif général. Achetez toujours les portefeuilles matériels directement auprès du fabricant ou d'un détaillant autorisé pour éviter les appareils altérés.*
+
+### Sources
+
+- [Ledger — Portefeuille matériel officiel](https://shop.ledger.com/?r=a8b2555293e6)
+- [Trezor — Portefeuille matériel open source](https://www.trezor.io)
+- [Bitcoin.org — Sécuriser votre portefeuille](https://bitcoin.org/fr/securiser-votre-portefeuille)
+- [Plateformes crypto inscrites au CANAFE au Canada](/blog/fintrac-registered-crypto-exchanges-canada)
+
+### Articles connexes
+
+- [Guide de conservation à froid du Bitcoin pour les Canadiens](/blog/bitcoin-cold-storage-guide-canada)
+- [Plateformes crypto inscrites au CANAFE au Canada](/blog/fintrac-registered-crypto-exchanges-canada)
+- [Comment acheter du Bitcoin au Canada (Guide 2026)](/blog/how-to-buy-bitcoin-in-canada-2026)
+- [Impôts sur le Bitcoin au Canada : les règles de l'ARC expliquées](/blog/bitcoin-taxes-canada-cra)
+`,
+    },
+  },
 ];

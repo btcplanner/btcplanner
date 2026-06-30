@@ -76,6 +76,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://btcplanner.ca/blog/bitcoin-taxable-tfsa-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/fintrac-registered-crypto-exchanges-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/report-cryptocurrency-cra-tax-return</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/bitcoin-vs-mstr-vs-etfs-canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://btcplanner.ca/blog/bitcoin-hardware-wallets-canada-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://btcplanner.ca/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
