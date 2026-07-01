@@ -2026,8 +2026,8 @@ L'environnement macro évolue en faveur du Bitcoin, mais un investissement disci
   {
     slug: "bitcoin-taxable-tfsa-canada",
     date: "2026-06-30",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
-    imageAlt: { en: "Tax documents and calculator on a desk", fr: "Documents fiscaux et calculatrice sur un bureau" },
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80",
+    imageAlt: { en: "Coins and a jar representing savings and tax-free accounts", fr: "Pièces de monnaie et pot représentant l'épargne et les comptes exonérés d'impôt" },
     title: {
       en: "Is Bitcoin Taxable in a TFSA in Canada? (2026 Guide)",
       fr: "Le Bitcoin est-il imposable dans un CELI au Canada ? (Guide 2026)",

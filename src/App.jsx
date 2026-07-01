@@ -832,7 +832,7 @@ export default function BTCPlanner({ onNavigate }) {
                 </button>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 16 }}>
-                {blogPosts.slice(0, 3).map(p => (
+                {[...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3).map(p => (
                   <article key={p.slug} className="card-hover" style={{ background: COLORS.card, border: `1px solid ${COLORS.cardBorder}`, borderRadius: 14, overflow: "hidden", boxShadow: COLORS.shadow }}>
                     {p.image && (
                       <button onClick={() => onNavigate(`blog/${p.slug}`)} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
