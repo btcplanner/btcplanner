@@ -119,12 +119,13 @@ export default function BlogPage({ slug, onNavigate }) {
 
   const [searchQuery, setSearchQuery] = useState("");
   const post = slug ? blogPosts.find(p => p.slug === slug) : null;
+  const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
   const filteredPosts = searchQuery.trim()
-    ? blogPosts.filter(p => {
+    ? sortedPosts.filter(p => {
         const q = searchQuery.toLowerCase();
         return p.title[lang].toLowerCase().includes(q) || p.description[lang].toLowerCase().includes(q);
       })
-    : blogPosts;
+    : sortedPosts;
 
   useEffect(() => {
     const cleanupFns = [];
@@ -320,7 +321,7 @@ export default function BlogPage({ slug, onNavigate }) {
             </div>
 
             {(() => {
-              const related = blogPosts.filter(p => p.slug !== post.slug).slice(0, 3);
+              const related = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(p => p.slug !== post.slug).slice(0, 3);
               return related.length > 0 && (
                 <div style={{ marginTop: 36 }}>
                   <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 17, marginBottom: 16, color: COLORS.textPrimary }}>{lang === "fr" ? "Articles connexes" : "Related Articles"}</h3>
